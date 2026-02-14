@@ -130,6 +130,65 @@ ImGuiWindowFlags = {
     ChildMenu = 0x00000010, -- **[Internal]** Used by `BeginMenu()`
 }
 
+---@class ImGuiHoveredFlags
+ImGuiHoveredFlags = {
+    None = 0x00000000,
+    ChildWindows = 0x00000001,
+    RootWindow = 0x00000002,
+    AnyWindow = 0x00000004,
+    NoPopupHierarchy = 0x00000008,
+    AllowWhenBlockedByPopup = 0x00000020,
+    AllowWhenBlockedByActiveItem = 0x00000080,
+    AllowWhenOverlappedByItem = 0x00000100,
+    AllowWhenOverlappedByWindow = 0x00000200,
+    AllowWhenDisabled = 0x00000400,
+    NoNavOverride = 0x00000800,
+    AllowWhenOverlapped = 0x00000300,
+    RectOnly = 0x000003A0,
+    RootAndChildWindows = 0x00000003,
+    ForTooltip = 0x00001000,
+    Stationary = 0x00002000,
+    DelayNone = 0x00004000,
+    DelayShort = 0x00008000,
+    DelayNormal = 0x00010000,
+    NoSharedDelay = 0x00020000,
+}
+
+---@class ImGuiInputTextFlags
+ImGuiInputTextFlags = {
+    None = 0x00000000,
+    CharsDecimal = 0x00000001,
+    CharsHexadecimal = 0x00000002,
+    CharsUppercase = 0x00000004,
+    CharsNoBlank = 0x00000008,
+    AutoSelectAll = 0x00000010,
+    EnterReturnsTrue = 0x00000020,
+    CallbackCompletion = 0x00000040,
+    CallbackHistory = 0x00000080,
+    CallbackAlways = 0x00000100,
+    CallbackCharFilter = 0x00000200,
+    AllowTabInput = 0x00000400,
+    CtrlEnterForNewLine = 0x00000800,
+    NoHorizontalScroll = 0x00001000,
+    AlwaysOverwrite = 0x00002000,
+    ReadOnly = 0x00004000,
+    Password = 0x00008000,
+    NoUndoRedo = 0x00010000,
+    CharsScientific = 0x00020000,
+    CallbackResize = 0x00040000,
+    CallbackEdit = 0x00080000,
+    EscapeClearsAll = 0x00100000,
+}
+
+---@class ImGuiCond
+ImGuiCond = {
+    None = 0,
+    Always = 1,
+    Once = 2,
+    FirstUseEver = 3,
+    Appearing = 4,
+}
+
 
 ImGui = {}
 
