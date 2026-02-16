@@ -1,6 +1,5 @@
 ---@meta
 ---@alias ImDrawList any
----@alias ImGuiTableColumnFlags any
 ---@alias ImGuiTableSortSpecs any
 ---@alias ImGuiStyle any
 
@@ -247,6 +246,16 @@ ImGuiTableColumnFlags = {
     IsVisible = 0x02000000,
     IsSorted = 0x04000000,
     IsHovered = 0x08000000,
+}
+
+---@class ImGuiSliderFlags
+ImGuiSliderFlags = {
+    None = 0x00000000,
+    AlwaysClamp = 0x00000010,
+    Logarithmic = 0x00000020,
+    NoRoundToFormat = 0x00000040,
+    NoInput = 0x00000080,
+    InvalidMask_ = 0x7000000f,
 }
 
 ---@class ImGuiCond
