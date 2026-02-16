@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -569,14 +569,14 @@ function MISC.IS_AREA_OCCUPIED_SLOW(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10,
 ---@param z float
 ---@param range float
 ---@param p4 BOOL
----@param checkVehicles BOOL
----@param checkPeds BOOL
+---@param checkvehicles BOOL
+---@param checkpeds BOOL
 ---@param p7 BOOL
 ---@param p8 BOOL
----@param ignoreEntity Entity
+---@param ignoreentity entity
 ---@param p10 BOOL
 ---@return boolean
-function MISC.IS_POSITION_OCCUPIED(x, y, z, range, p4, checkVehicles, checkPeds, p7, p8, ignoreEntity, p10) end
+function MISC.IS_POSITION_OCCUPIED(x, y, z, range, p4, checkvehicles, checkpeds, p7, p8, ignoreentity, p10) end
 
 
 ---@param p0 float
@@ -596,9 +596,9 @@ function MISC.IS_POINT_OBSCURED_BY_A_MISSION_ENTITY(p0, p1, p2, p3, p4, p5, p6) 
 ---@param radius float
 ---@param p4 BOOL
 ---@param ignoreCopCars BOOL
----@param ignoreObjects BOOL
+---@param ignoreobjects BOOL
 ---@param p7 BOOL
-function MISC.CLEAR_AREA(X, Y, Z, radius, p4, ignoreCopCars, ignoreObjects, p7) end
+function MISC.CLEAR_AREA(X, Y, Z, radius, p4, ignoreCopCars, ignoreobjects, p7) end
 
 
 ---@param x float
@@ -678,8 +678,8 @@ function MISC.CLEAR_AREA_OF_PROJECTILES(x, y, z, radius, flags) end
 function MISC.CLEAR_SCENARIO_SPAWN_HISTORY() end
 
 
----@param ignoreVehicle BOOL
-function MISC.SET_SAVE_MENU_ACTIVE(ignoreVehicle) end
+---@param ignorevehicle BOOL
+function MISC.SET_SAVE_MENU_ACTIVE(ignorevehicle) end
 
 
 ---@return int
@@ -895,11 +895,11 @@ function MISC.IS_MEMORY_CARD_IN_USE() end
 ---@param damage int
 ---@param p7 BOOL
 ---@param weaponHash Hash
----@param ownerPed Ped
+---@param ownerped ped
 ---@param isAudible BOOL
 ---@param isInvisible BOOL
 ---@param speed float
-function MISC.SHOOT_SINGLE_BULLET_BETWEEN_COORDS(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed) end
+function MISC.SHOOT_SINGLE_BULLET_BETWEEN_COORDS(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerped, isAudible, isInvisible, speed) end
 
 
 ---@param x1 float
@@ -911,13 +911,13 @@ function MISC.SHOOT_SINGLE_BULLET_BETWEEN_COORDS(x1, y1, z1, x2, y2, z2, damage,
 ---@param damage int
 ---@param p7 BOOL
 ---@param weaponHash Hash
----@param ownerPed Ped
+---@param ownerped ped
 ---@param isAudible BOOL
 ---@param isInvisible BOOL
 ---@param speed float
----@param entity Entity
+---@param entity entity
 ---@param p14 Any
-function MISC.SHOOT_SINGLE_BULLET_BETWEEN_COORDS_IGNORE_ENTITY(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed, entity, p14) end
+function MISC.SHOOT_SINGLE_BULLET_BETWEEN_COORDS_IGNORE_ENTITY(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerped, isAudible, isInvisible, speed, entity, p14) end
 
 
 ---@param x1 float
@@ -929,19 +929,19 @@ function MISC.SHOOT_SINGLE_BULLET_BETWEEN_COORDS_IGNORE_ENTITY(x1, y1, z1, x2, y
 ---@param damage int
 ---@param p7 BOOL
 ---@param weaponHash Hash
----@param ownerPed Ped
+---@param ownerped ped
 ---@param isAudible BOOL
 ---@param isInvisible BOOL
 ---@param speed float
----@param entity Entity
+---@param entity entity
 ---@param p14 BOOL
 ---@param p15 BOOL
----@param targetEntity Entity
+---@param targetentity entity
 ---@param p17 BOOL
 ---@param p18 Any
 ---@param p19 Any
 ---@param p20 Any
-function MISC.SHOOT_SINGLE_BULLET_BETWEEN_COORDS_IGNORE_ENTITY_NEW(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed, entity, p14, p15, targetEntity, p17, p18, p19, p20) end
+function MISC.SHOOT_SINGLE_BULLET_BETWEEN_COORDS_IGNORE_ENTITY_NEW(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerped, isAudible, isInvisible, speed, entity, p14, p15, targetentity, p17, p18, p19, p20) end
 
 
 ---@param modelHash Hash
@@ -1033,9 +1033,9 @@ function MISC.IS_SNIPER_BULLET_IN_AREA(x1, y1, z1, x2, y2, z2) end
 ---@param x2 float
 ---@param y2 float
 ---@param z2 float
----@param ownedByPlayer BOOL
+---@param ownedByplayer BOOL
 ---@return boolean
-function MISC.IS_PROJECTILE_IN_AREA(x1, y1, z1, x2, y2, z2, ownedByPlayer) end
+function MISC.IS_PROJECTILE_IN_AREA(x1, y1, z1, x2, y2, z2, ownedByplayer) end
 
 
 ---@param x1 float
@@ -1045,9 +1045,9 @@ function MISC.IS_PROJECTILE_IN_AREA(x1, y1, z1, x2, y2, z2, ownedByPlayer) end
 ---@param y2 float
 ---@param z2 float
 ---@param type int
----@param ownedByPlayer BOOL
+---@param ownedByplayer BOOL
 ---@return boolean
-function MISC.IS_PROJECTILE_TYPE_IN_AREA(x1, y1, z1, x2, y2, z2, type, ownedByPlayer) end
+function MISC.IS_PROJECTILE_TYPE_IN_AREA(x1, y1, z1, x2, y2, z2, type, ownedByplayer) end
 
 
 ---@param x1 float
@@ -1058,9 +1058,9 @@ function MISC.IS_PROJECTILE_TYPE_IN_AREA(x1, y1, z1, x2, y2, z2, type, ownedByPl
 ---@param z2 float
 ---@param width float
 ---@param p7 Any
----@param ownedByPlayer BOOL
+---@param ownedByplayer BOOL
 ---@return boolean
-function MISC.IS_PROJECTILE_TYPE_IN_ANGLED_AREA(x1, y1, z1, x2, y2, z2, width, p7, ownedByPlayer) end
+function MISC.IS_PROJECTILE_TYPE_IN_ANGLED_AREA(x1, y1, z1, x2, y2, z2, width, p7, ownedByplayer) end
 
 
 ---@param x float
@@ -1068,9 +1068,9 @@ function MISC.IS_PROJECTILE_TYPE_IN_ANGLED_AREA(x1, y1, z1, x2, y2, z2, width, p
 ---@param z float
 ---@param projectileHash Hash
 ---@param radius float
----@param ownedByPlayer BOOL
+---@param ownedByplayer BOOL
 ---@return boolean
-function MISC.IS_PROJECTILE_TYPE_WITHIN_DISTANCE(x, y, z, projectileHash, radius, ownedByPlayer) end
+function MISC.IS_PROJECTILE_TYPE_WITHIN_DISTANCE(x, y, z, projectileHash, radius, ownedByplayer) end
 
 
 ---@param x1 float
@@ -1081,10 +1081,10 @@ function MISC.IS_PROJECTILE_TYPE_WITHIN_DISTANCE(x, y, z, projectileHash, radius
 ---@param z2 float
 ---@param projectileHash Hash
 ---@param projectilePos Vector3
----@param ownedByPlayer BOOL
+---@param ownedByplayer BOOL
 ---@return boolean
 ---@return Vector3 projectilePos
-function MISC.GET_COORDS_OF_PROJECTILE_TYPE_IN_AREA(x1, y1, z1, x2, y2, z2, projectileHash, projectilePos, ownedByPlayer) end
+function MISC.GET_COORDS_OF_PROJECTILE_TYPE_IN_AREA(x1, y1, z1, x2, y2, z2, projectileHash, projectilePos, ownedByplayer) end
 
 
 ---@param vecAngledAreaPoint1X float
@@ -1096,13 +1096,13 @@ function MISC.GET_COORDS_OF_PROJECTILE_TYPE_IN_AREA(x1, y1, z1, x2, y2, z2, proj
 ---@param distanceOfOppositeFace float
 ---@param weaponType Hash
 ---@param positionOut Vector3
----@param bIsPlayer BOOL
+---@param bIsplayer BOOL
 ---@return boolean
 ---@return Vector3 positionOut
-function MISC.GET_COORDS_OF_PROJECTILE_TYPE_IN_ANGLED_AREA(vecAngledAreaPoint1X, vecAngledAreaPoint1Y, vecAngledAreaPoint1Z, vecAngledAreaPoint2X, vecAngledAreaPoint2Y, vecAngledAreaPoint2Z, distanceOfOppositeFace, weaponType, positionOut, bIsPlayer) end
+function MISC.GET_COORDS_OF_PROJECTILE_TYPE_IN_ANGLED_AREA(vecAngledAreaPoint1X, vecAngledAreaPoint1Y, vecAngledAreaPoint1Z, vecAngledAreaPoint2X, vecAngledAreaPoint2Y, vecAngledAreaPoint2Z, distanceOfOppositeFace, weaponType, positionOut, bIsplayer) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param distance float
 ---@param outCoords Vector3
@@ -1112,15 +1112,15 @@ function MISC.GET_COORDS_OF_PROJECTILE_TYPE_IN_ANGLED_AREA(vecAngledAreaPoint1X,
 function MISC.GET_COORDS_OF_PROJECTILE_TYPE_WITHIN_DISTANCE(ped, weaponHash, distance, outCoords, p4) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param distance float
 ---@param outCoords Vector3
----@param outProjectile Object
+---@param outProjectile object
 ---@param p5 BOOL
 ---@return boolean
 ---@return Vector3 outCoords
----@return Object outProjectile
+---@return object outProjectile
 function MISC.GET_PROJECTILE_OF_PROJECTILE_TYPE_WITHIN_DISTANCE(ped, weaponHash, distance, outCoords, outProjectile, p5) end
 
 
@@ -1131,18 +1131,18 @@ function MISC.GET_PROJECTILE_OF_PROJECTILE_TYPE_WITHIN_DISTANCE(ped, weaponHash,
 ---@param y2 float
 ---@param z2 float
 ---@param width float
----@param ownedByPlayer BOOL
+---@param ownedByplayer BOOL
 ---@return boolean
-function MISC.IS_BULLET_IN_ANGLED_AREA(x1, y1, z1, x2, y2, z2, width, ownedByPlayer) end
+function MISC.IS_BULLET_IN_ANGLED_AREA(x1, y1, z1, x2, y2, z2, width, ownedByplayer) end
 
 
 ---@param x float
 ---@param y float
 ---@param z float
 ---@param radius float
----@param ownedByPlayer BOOL
+---@param ownedByplayer BOOL
 ---@return boolean
-function MISC.IS_BULLET_IN_AREA(x, y, z, radius, ownedByPlayer) end
+function MISC.IS_BULLET_IN_AREA(x, y, z, radius, ownedByplayer) end
 
 
 ---@param x1 float
@@ -1151,9 +1151,9 @@ function MISC.IS_BULLET_IN_AREA(x, y, z, radius, ownedByPlayer) end
 ---@param x2 float
 ---@param y2 float
 ---@param z2 float
----@param ownedByPlayer BOOL
+---@param ownedByplayer BOOL
 ---@return boolean
-function MISC.IS_BULLET_IN_BOX(x1, y1, z1, x2, y2, z2, ownedByPlayer) end
+function MISC.IS_BULLET_IN_BOX(x1, y1, z1, x2, y2, z2, ownedByplayer) end
 
 
 ---@param x float
@@ -1510,7 +1510,7 @@ function MISC.CREATE_INCIDENT(dispatchService, x, y, z, numUnits, radius, outInc
 
 
 ---@param dispatchService int
----@param ped Ped
+---@param ped ped
 ---@param numUnits int
 ---@param radius float
 ---@param outIncidentID int
@@ -1605,18 +1605,18 @@ function MISC.DOES_POP_MULTIPLIER_SPHERE_EXIST(id) end
 function MISC.REMOVE_POP_MULTIPLIER_SPHERE(id, p1) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param toggle BOOL
 ---@param p2 BOOL
 function MISC.ENABLE_TENNIS_MODE(ped, toggle, p2) end
 
 
----@param ped Ped
+---@param ped ped
 ---@return boolean
 function MISC.IS_TENNIS_MODE(ped) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param animDict string
 ---@param animName string
 ---@param p3 float
@@ -1625,22 +1625,22 @@ function MISC.IS_TENNIS_MODE(ped) end
 function MISC.PLAY_TENNIS_SWING_ANIM(ped, animDict, animName, p3, p4, p5) end
 
 
----@param ped Ped
+---@param ped ped
 ---@return boolean
 function MISC.GET_TENNIS_SWING_ANIM_COMPLETE(ped) end
 
 
----@param ped Ped
+---@param ped ped
 ---@return boolean
 function MISC.GET_TENNIS_SWING_ANIM_CAN_BE_INTERRUPTED(ped) end
 
 
----@param ped Ped
+---@param ped ped
 ---@return boolean
 function MISC.GET_TENNIS_SWING_ANIM_SWUNG(ped) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param p1 int
 ---@param p2 float
 ---@param p3 float
@@ -1649,7 +1649,7 @@ function MISC.GET_TENNIS_SWING_ANIM_SWUNG(ped) end
 function MISC.PLAY_TENNIS_DIVE_ANIM(ped, p1, p2, p3, p4, p5) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param p1 string
 ---@param p2 float
 function MISC.SET_TENNIS_MOVE_NETWORK_SIGNAL_FLOAT(ped, p1, p2) end
@@ -1787,27 +1787,27 @@ function MISC.GET_REAL_WORLD_TIME() end
 function MISC.SUPRESS_RANDOM_EVENT_THIS_FRAME(eventType, suppress) end
 
 
----@param player Player
+---@param player player
 function MISC.SET_EXPLOSIVE_AMMO_THIS_FRAME(player) end
 
 
----@param player Player
+---@param player player
 function MISC.SET_FIRE_AMMO_THIS_FRAME(player) end
 
 
----@param player Player
+---@param player player
 function MISC.SET_EXPLOSIVE_MELEE_THIS_FRAME(player) end
 
 
----@param player Player
+---@param player player
 function MISC.SET_SUPER_JUMP_THIS_FRAME(player) end
 
 
----@param player Player
+---@param player player
 function MISC.SET_BEAST_JUMP_THIS_FRAME(player) end
 
 
----@param player Player
+---@param player player
 function MISC.SET_FORCED_JUMP_THIS_FRAME(player) end
 
 
@@ -1838,14 +1838,14 @@ function MISC.SCRIPT_RACE_INIT(p0, p1, p2, p3) end
 function MISC.SCRIPT_RACE_SHUTDOWN() end
 
 
----@param player Player
+---@param player player
 ---@param p1 Any
 ---@param p2 Any
 ---@param p3 Any
 function MISC.SCRIPT_RACE_PLAYER_HIT_CHECKPOINT(player, p1, p2, p3) end
 
 
----@param player Player
+---@param player player
 ---@param p1 int
 ---@param p2 int
 ---@return boolean

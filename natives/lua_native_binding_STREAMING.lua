@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -236,16 +236,16 @@ function STREAMING.CLEAR_FOCUS() end
 function STREAMING.SET_FOCUS_POS_AND_VEL(x, y, z, offsetX, offsetY, offsetZ) end
 
 
----@param entity Entity
+---@param entity entity
 function STREAMING.SET_FOCUS_ENTITY(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function STREAMING.IS_ENTITY_FOCUS(entity) end
 
 
----@param p0 Entity
+---@param p0 entity
 function STREAMING.SET_RESTORE_FOCUS_ENTITY(p0) end
 
 
@@ -346,8 +346,8 @@ function STREAMING.IS_NEW_LOAD_SCENE_LOADED() end
 function STREAMING.IS_SAFE_TO_START_PLAYER_SWITCH() end
 
 
----@param from Ped
----@param to Ped
+---@param from ped
+---@param to ped
 ---@param flags int
 ---@param switchType int
 function STREAMING.START_PLAYER_SWITCH(from, to, flags, switchType) end
@@ -428,13 +428,13 @@ function STREAMING.ENABLE_SWITCH_PAUSE_BEFORE_DESCENT() end
 function STREAMING.DISABLE_SWITCH_OUTRO_FX() end
 
 
----@param ped Ped
+---@param ped ped
 ---@param flags int
 ---@param switchType int
 function STREAMING.SWITCH_TO_MULTI_FIRSTPART(ped, flags, switchType) end
 
 
----@param ped Ped
+---@param ped ped
 function STREAMING.SWITCH_TO_MULTI_SECONDPART(ped) end
 
 

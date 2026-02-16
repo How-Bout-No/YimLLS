@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -26,7 +26,7 @@ SHAPETEST = {}
 ---@param y2 float
 ---@param z2 float
 ---@param flags int
----@param entity Entity
+---@param entity entity
 ---@param p8 int
 ---@return int
 function SHAPETEST.START_SHAPE_TEST_LOS_PROBE(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
@@ -39,13 +39,13 @@ function SHAPETEST.START_SHAPE_TEST_LOS_PROBE(x1, y1, z1, x2, y2, z2, flags, ent
 ---@param y2 float
 ---@param z2 float
 ---@param flags int
----@param entity Entity
+---@param entity entity
 ---@param p8 int
 ---@return int
 function SHAPETEST.START_EXPENSIVE_SYNCHRONOUS_SHAPE_TEST_LOS_PROBE(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param flags1 int
 ---@param flags2 int
 ---@return int
@@ -63,13 +63,13 @@ function SHAPETEST.START_SHAPE_TEST_BOUNDING_BOX(entity, flags1, flags2) end
 ---@param rotZ float
 ---@param p9 Any
 ---@param flags int
----@param entity Entity
+---@param entity entity
 ---@param p12 Any
 ---@return int
 function SHAPETEST.START_SHAPE_TEST_BOX(x, y, z, dimX, dimY, dimZ, rotX, rotY, rotZ, p9, flags, entity, p12) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param flags1 int
 ---@param flags2 int
 ---@return int
@@ -84,7 +84,7 @@ function SHAPETEST.START_SHAPE_TEST_BOUND(entity, flags1, flags2) end
 ---@param z2 float
 ---@param radius float
 ---@param flags int
----@param entity Entity
+---@param entity entity
 ---@param p9 int
 ---@return int
 function SHAPETEST.START_SHAPE_TEST_CAPSULE(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
@@ -98,7 +98,7 @@ function SHAPETEST.START_SHAPE_TEST_CAPSULE(x1, y1, z1, x2, y2, z2, radius, flag
 ---@param z2 float
 ---@param radius float
 ---@param flags int
----@param entity Entity
+---@param entity entity
 ---@param p9 Any
 ---@return int
 function SHAPETEST.START_SHAPE_TEST_SWEPT_SPHERE(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
@@ -107,7 +107,7 @@ function SHAPETEST.START_SHAPE_TEST_SWEPT_SPHERE(x1, y1, z1, x2, y2, z2, radius,
 ---@param pVec1 Vector3
 ---@param pVec2 Vector3
 ---@param flag int
----@param entity Entity
+---@param entity entity
 ---@param flag2 int
 ---@return int
 ---@return Vector3 pVec1
@@ -119,12 +119,12 @@ function SHAPETEST.START_SHAPE_TEST_MOUSE_CURSOR_LOS_PROBE(pVec1, pVec2, flag, e
 ---@param hit BOOL
 ---@param endCoords Vector3
 ---@param surfaceNormal Vector3
----@param entityHit Entity
+---@param entityHit entity
 ---@return int
 ---@return BOOL hit
 ---@return Vector3 endCoords
 ---@return Vector3 surfaceNormal
----@return Entity entityHit
+---@return entity entityHit
 function SHAPETEST.GET_SHAPE_TEST_RESULT(shapeTestHandle, hit, endCoords, surfaceNormal, entityHit) end
 
 
@@ -133,17 +133,17 @@ function SHAPETEST.GET_SHAPE_TEST_RESULT(shapeTestHandle, hit, endCoords, surfac
 ---@param endCoords Vector3
 ---@param surfaceNormal Vector3
 ---@param materialHash Hash
----@param entityHit Entity
+---@param entityHit entity
 ---@return int
 ---@return BOOL hit
 ---@return Vector3 endCoords
 ---@return Vector3 surfaceNormal
 ---@return Hash materialHash
----@return Entity entityHit
+---@return entity entityHit
 function SHAPETEST.GET_SHAPE_TEST_RESULT_INCLUDING_MATERIAL(shapeTestHandle, hit, endCoords, surfaceNormal, materialHash, entityHit) end
 
 
----@param entityHit Entity
+---@param entityHit entity
 function SHAPETEST.RELEASE_SCRIPT_GUID_FROM_ENTITY(entityHit) end
 
 

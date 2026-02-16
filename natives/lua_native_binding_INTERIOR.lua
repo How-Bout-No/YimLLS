@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -54,37 +54,37 @@ function INTERIOR.IS_INTERIOR_SCENE() end
 function INTERIOR.IS_VALID_INTERIOR(interior) end
 
 
----@param entity Entity
+---@param entity entity
 function INTERIOR.CLEAR_ROOM_FOR_ENTITY(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param interior Interior
 ---@param roomHashKey Hash
 function INTERIOR.FORCE_ROOM_FOR_ENTITY(entity, interior, roomHashKey) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return Hash
 function INTERIOR.GET_ROOM_KEY_FROM_ENTITY(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return Hash
 function INTERIOR.GET_KEY_FOR_ENTITY_IN_ROOM(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return Interior
 function INTERIOR.GET_INTERIOR_FROM_ENTITY(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param interior Interior
 function INTERIOR.RETAIN_ENTITY_IN_INTERIOR(entity, interior) end
 
 
----@param entity Entity
+---@param entity entity
 function INTERIOR.CLEAR_INTERIOR_STATE_OF_ENTITY(entity) end
 
 
@@ -210,12 +210,12 @@ function INTERIOR.SET_INTERIOR_ENTITY_SET_TINT_INDEX(interior, entitySetName, co
 function INTERIOR.REFRESH_INTERIOR(interior) end
 
 
----@param mapObjectHash Hash
-function INTERIOR.ENABLE_EXTERIOR_CULL_MODEL_THIS_FRAME(mapObjectHash) end
+---@param mapobjectHash Hash
+function INTERIOR.ENABLE_EXTERIOR_CULL_MODEL_THIS_FRAME(mapobjectHash) end
 
 
----@param mapObjectHash Hash
-function INTERIOR.ENABLE_SHADOW_CULL_MODEL_THIS_FRAME(mapObjectHash) end
+---@param mapobjectHash Hash
+function INTERIOR.ENABLE_SHADOW_CULL_MODEL_THIS_FRAME(mapobjectHash) end
 
 
 ---@param interior Interior
@@ -242,7 +242,7 @@ function INTERIOR.IS_INTERIOR_CAPPED(interior) end
 function INTERIOR.DISABLE_METRO_SYSTEM(toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function INTERIOR.SET_IS_EXTERIOR_ONLY(entity, toggle) end
 

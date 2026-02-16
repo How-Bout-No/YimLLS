@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -157,7 +157,7 @@ function CUTSCENE.GET_CUTSCENE_SECTION_PLAYING() end
 
 ---@param cutsceneEntName string
 ---@param modelHash Hash
----@return Entity
+---@return entity
 function CUTSCENE.GET_ENTITY_INDEX_OF_CUTSCENE_ENTITY(cutsceneEntName, modelHash) end
 
 
@@ -175,17 +175,17 @@ function CUTSCENE.IS_CUTSCENE_AUTHORIZED(cutsceneName) end
 function CUTSCENE.DOES_CUTSCENE_HANDLE_EXIST(cutsceneHandle) end
 
 
----@param cutscenePed Ped
+---@param cutsceneped ped
 ---@param cutsceneEntName string
 ---@param p2 int
 ---@param modelHash Hash
 ---@param p4 int
-function CUTSCENE.REGISTER_ENTITY_FOR_CUTSCENE(cutscenePed, cutsceneEntName, p2, modelHash, p4) end
+function CUTSCENE.REGISTER_ENTITY_FOR_CUTSCENE(cutsceneped, cutsceneEntName, p2, modelHash, p4) end
 
 
 ---@param cutsceneEntName string
 ---@param modelHash Hash
----@return Entity
+---@return entity
 function CUTSCENE.GET_ENTITY_INDEX_OF_REGISTERED_ENTITY(cutsceneEntName, modelHash) end
 
 
@@ -273,7 +273,7 @@ function CUTSCENE.SET_CUTSCENE_PED_COMPONENT_VARIATION(cutsceneEntName, componen
 
 
 ---@param cutsceneEntName string
----@param ped Ped
+---@param ped ped
 ---@param modelHash Hash
 function CUTSCENE.SET_CUTSCENE_PED_COMPONENT_VARIATION_FROM_PED(cutsceneEntName, ped, modelHash) end
 

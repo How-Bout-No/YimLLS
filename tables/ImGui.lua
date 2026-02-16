@@ -1,273 +1,277 @@
 ---@meta
----@alias ImDrawList any
+
+---@class ImVec2
+---@field x float
+---@field y float
+ImVec2 = {}
+
+---@class ImDrawList : userdata
+
+---@class ImGuiStyle: userdata
+---@field WindowRounding float
+---@field ChildRounding float
+---@field GrabRounding float
+---@field ScrollbarRounding float
+---@field ScrollbarSize float
+---@field TabRounding float
+---@field WindowBorderSize float
+---@field WindowPadding ImVec2
+---@field FramePadding ImVec2
+---@field FrameRounding float
+---@field FrameBorderSize float
+---@field PopupBorderSize float
+---@field ItemSpacing ImVec2
+ImGuiStyle = {}
+
+---@class ImGuiTableFlags
+---@field None                       integer = 0,
+---@field Resizable                  integer = 1 << 0,   // Enable resizing columns.
+---@field Reorderable                integer = 1 << 1,   // Enable reordering columns in header row (need calling TableSetupColumn() + TableHeadersRow() to display headers)
+---@field Hideable                   integer = 1 << 2,   // Enable hiding/disabling columns in context menu.
+---@field Sortable                   integer = 1 << 3,   // Enable sorting. Call TableGetSortSpecs() to obtain sort specs. Also see ImGuiTableFlags_SortMulti and ImGuiTableFlags_SortTristate.
+---@field NoSavedSettings            integer = 1 << 4,   // Disable persisting columns order, width and sort settings in the .ini file.
+---@field ContextMenuInBody          integer = 1 << 5,   // Right-click on columns body/contents will display table context menu. By default it is available in TableHeadersRow().
+---@field RowBg                      integer = 1 << 6,   // Set each RowBg color with ImGuiCol_TableRowBg or ImGuiCol_TableRowBgAlt (equivalent of calling TableSetBgColor with ImGuiTableBgFlags_RowBg0 on each row manually)
+---@field BordersInnerH              integer = 1 << 7,   // Draw horizontal borders between rows.
+---@field BordersOuterH              integer = 1 << 8,   // Draw horizontal borders at the top and bottom.
+---@field BordersInnerV              integer = 1 << 9,   // Draw vertical borders between columns.
+---@field BordersOuterV              integer = 1 << 10,  // Draw vertical borders on the left and right sides.
+---@field BordersH                   integer = ImGuiTableFlags_BordersInnerH | ImGuiTableFlags_BordersOuterH, // Draw horizontal borders.
+---@field BordersV                   integer = ImGuiTableFlags_BordersInnerV | ImGuiTableFlags_BordersOuterV, // Draw vertical borders.
+---@field BordersInner               integer = ImGuiTableFlags_BordersInnerV | ImGuiTableFlags_BordersInnerH, // Draw inner borders.
+---@field BordersOuter               integer = ImGuiTableFlags_BordersOuterV | ImGuiTableFlags_BordersOuterH, // Draw outer borders.
+---@field Borders                    integer = ImGuiTableFlags_BordersInner | ImGuiTableFlags_BordersOuter,   // Draw all borders.
+---@field NoBordersInBody            integer = 1 << 11,  // [ALPHA] Disable vertical borders in columns Body (borders will always appear in Headers). -> May move to style
+---@field NoBordersInBodyUntilResize integer = 1 << 12,  // [ALPHA] Disable vertical borders in columns Body until hovered for resize (borders will always appear in Headers). -> May move to style Policy (read above for defaults)
+---@field SizingFixedFit             integer = 1 << 13,  // Columns default to _WidthFixed or _WidthAuto (if resizable or not resizable), matching contents width.
+---@field SizingFixedSame            integer = 2 << 13,  // Columns default to _WidthFixed or _WidthAuto (if resizable or not resizable), matching the maximum contents width of all columns. Implicitly enable ImGuiTableFlags_NoKeepColumnsVisible.
+---@field SizingStretchProp          integer = 3 << 13,  // Columns default to _WidthStretch with default weights proportional to each columns contents widths.
+---@field SizingStretchSame          integer = 4 << 13,  // Columns default to _WidthStretch with default weights all equal, unless overridden by TableSetupColumn(). Extra Options
+---@field NoHostExtendX              integer = 1 << 16,  // Make outer width auto-fit to columns, overriding outer_size.x value. Only available when ScrollX/ScrollY are disabled and Stretch columns are not used.
+---@field NoHostExtendY              integer = 1 << 17,  // Make outer height stop exactly at outer_size.y (prevent auto-extending table past the limit). Only available when ScrollX/ScrollY are disabled. Data below the limit will be clipped and not visible.
+---@field NoKeepColumnsVisible       integer = 1 << 18,  // Disable keeping column always minimally visible when ScrollX is off and table gets too small. Not recommended if columns are resizable.
+---@field PreciseWidths              integer = 1 << 19,  // Disable distributing remainder width to stretched columns (width allocation on a 100-wide table with 3 columns: Without this flag: 33,33,34. With this flag: 33,33,33). With larger number of columns, resizing will appear to be less smooth.
+---@field NoClip                     integer = 1 << 20,  // Disable clipping rectangle for every individual columns (reduce draw command count, items will be able to overflow into other columns). Generally incompatible with TableSetupScrollFreeze().
+---@field PadOuterX                  integer = 1 << 21,  // Default if BordersOuterV is on. Enable outermost padding. Generally desirable if you have headers.
+---@field NoPadOuterX                integer = 1 << 22,  // Default if BordersOuterV is off. Disable outermost padding.
+---@field NoPadInnerX                integer = 1 << 23,  // Disable inner padding between columns (double inner padding if BordersOuterV is on, single inner padding if BordersOuterV is off).
+---@field ScrollX                    integer = 1 << 24,  // Enable horizontal scrolling. Require 'outer_size' parameter of BeginTable() to specify the container size. Changes default sizing policy. Because this creates a child window, ScrollY is currently generally recommended when using ScrollX.
+---@field ScrollY                    integer = 1 << 25,  // Enable vertical scrolling. Require 'outer_size' parameter of BeginTable() to specify the container size.
+---@field SortMulti                  integer = 1 << 26,  // Hold shift when clicking headers to sort on multiple column. TableGetSortSpecs() may return specs where (SpecsCount > 1).
+---@field SortTristate               integer = 1 << 27,  // Allow no sorting, disable default sorting. TableGetSortSpecs() may return specs where (SpecsCount == 0).
+---@field HighlightHoveredColumn     integer = 1 << 28,  // Highlight column headers when hovered (may evolve into a fuller highlight)
+ImGuiTableFlags = {}
+
+---@class ImGuiTableColumnFlags
+---@field None                  integer = 0,
+---@field Disabled              integer 1 << 0,   // Overriding/master disable flag: hide column, won't show in context menu (unlike calling TableSetColumnEnabled() which manipulates the user accessible state)
+---@field DefaultHide           integer 1 << 1,   // Default as a hidden/disabled column.
+---@field DefaultSort           integer 1 << 2,   // Default as a sorting column.
+---@field WidthStretch          integer 1 << 3,   // Column will stretch. Preferable with horizontal scrolling disabled (default if table sizing policy is _SizingStretchSame or _SizingStretchProp).
+---@field WidthFixed            integer 1 << 4,   // Column will not stretch. Preferable with horizontal scrolling enabled (default if table sizing policy is _SizingFixedFit and table is resizable).
+---@field NoResize              integer 1 << 5,   // Disable manual resizing.
+---@field NoReorder             integer 1 << 6,   // Disable manual reordering this column, this will also prevent other columns from crossing over this column.
+---@field NoHide                integer 1 << 7,   // Disable ability to hide/disable this column.
+---@field NoClip                integer 1 << 8,   // Disable clipping for this column (all NoClip columns will render in a same draw command).
+---@field NoSort                integer 1 << 9,   // Disable ability to sort on this field (even if ImGuiTableFlags_Sortable is set on the table).
+---@field NoSortAscending       integer 1 << 10,  // Disable ability to sort in the ascending direction.
+---@field NoSortDescending      integer 1 << 11,  // Disable ability to sort in the descending direction.
+---@field NoHeaderLabel         integer 1 << 12,  // TableHeadersRow() will submit an empty label for this column. Convenient for some small columns. Name will still appear in context menu or in angled headers. You may append into this cell by calling TableSetColumnIndex() right after the TableHeadersRow() call.
+---@field NoHeaderWidth         integer 1 << 13,  // Disable header text width contribution to automatic column width.
+---@field PreferSortAscending   integer 1 << 14,  // Make the initial sort direction Ascending when first sorting on this column (default).
+---@field PreferSortDescending  integer 1 << 15,  // Make the initial sort direction Descending when first sorting on this column.
+---@field IndentEnable          integer 1 << 16,  // Use current Indent value when entering cell (default for column 0).
+---@field IndentDisable         integer 1 << 17,  // Ignore current Indent value when entering cell (default for columns > 0). Indentation changes _within_ the cell will still be honored.
+---@field AngledHeader          integer 1 << 18,  // TableHeadersRow() will submit an angled header row for this column. Note this will add an extra row.
+ImGuiTableColumnFlags = {}
+
 ---@alias ImGuiTableSortSpecs any
----@alias ImGuiStyle any
 
----@class ImGuiStyleVar
+---@enum ImGuiStyleVar
 ImGuiStyleVar = {
-    Alpha = 0, -- `float`
-    DisabledAlpha = 1, -- `float`
-    WindowPadding = 2, -- `ImVec2`
-    WindowRounding = 3, -- `float`
-    WindowBorderSize = 4, -- `float`
-    WindowMinSize = 5, -- `ImVec2`
-    WindowTitleAlign = 6, -- `ImVec2`
-    ChildRounding = 7, -- `float`
-    ChildBorderSize = 8, -- `float`
-    PopupRounding = 9, -- `float`
-    PopupBorderSize = 10, -- `float`
-    FramePadding = 11, -- `ImVec2`
-    FrameRounding = 12, -- `float`
-    FrameBorderSize = 13, -- `float`
-    ItemSpacing = 14, -- `ImVec2`
-    ItemInnerSpacing = 15, -- `ImVec2`
-    IndentSpacing = 16, -- `float`
-    CellPadding = 17, -- `ImVec2`
-    ScrollbarSize = 18, -- `float`
-    ScrollbarRounding = 19, -- `float`
-    GrabMinSize = 20, -- `float`
-    GrabRounding = 21, -- `float`
-    TabRounding = 22, -- `float`
-    ButtonTextAlign = 23, -- `ImVec2`
-    SelectableTextAlign = 24, -- `ImVec2`
-    SeparatorTextBorderSize = 25, -- `float`
-    SeparatorTextAlign = 26, -- `ImVec2`
-    SeparatorTextPadding = 27, -- `ImVec2`
-    Count = 28
+	Alpha                   = 0, -- `float`
+	DisabledAlpha           = 1, -- `float`
+	WindowPadding           = 2, -- `ImVec2`
+	WindowRounding          = 3, -- `float`
+	WindowBorderSize        = 4, -- `float`
+	WindowMinSize           = 5, -- `ImVec2`
+	WindowTitleAlign        = 6, -- `ImVec2`
+	ChildRounding           = 7, -- `float`
+	ChildBorderSize         = 8, -- `float`
+	PopupRounding           = 9, -- `float`
+	PopupBorderSize         = 10, -- `float`
+	FramePadding            = 11, -- `ImVec2`
+	FrameRounding           = 12, -- `float`
+	FrameBorderSize         = 13, -- `float`
+	ItemSpacing             = 14, -- `ImVec2`
+	ItemInnerSpacing        = 15, -- `ImVec2`
+	IndentSpacing           = 16, -- `float`
+	CellPadding             = 17, -- `ImVec2`
+	ScrollbarSize           = 18, -- `float`
+	ScrollbarRounding       = 19, -- `float`
+	GrabMinSize             = 20, -- `float`
+	GrabRounding            = 21, -- `float`
+	TabRounding             = 22, -- `float`
+	ButtonTextAlign         = 23, -- `ImVec2`
+	SelectableTextAlign     = 24, -- `ImVec2`
+	SeparatorTextBorderSize = 25, -- `float`
+	SeparatorTextAlign      = 26, -- `ImVec2`
+	SeparatorTextPadding    = 27, -- `ImVec2`
+	Count                   = 28
 }
 
----@class ImGuiCol
+---@enum ImGuiCol
 ImGuiCol = {
-    Text = 0x00,
-    TextDisabled = 0x01,
-    WindowBg = 0x02,
-    ChildBg = 0x03,
-    PopupBg = 0x04,
-    Border = 0x05,
-    BorderShadow = 0x06,
-    FrameBg = 0x07,
-    FrameBgHovered = 0x08,
-    FrameBgActive = 0x09,
-    TitleBg = 0x0A,
-    TitleBgActive = 0x0B,
-    TitleBgCollapsed = 0x0C,
-    MenuBarBg = 0x0D,
-    ScrollbarBg = 0x0E,
-    ScrollbarGrab = 0x0F,
-    ScrollbarGrabHovered = 0x10,
-    ScrollbarGrabActive = 0x11,
-    CheckMark = 0x12,
-    SliderGrab = 0x13,
-    SliderGrabActive = 0x14,
-    Button = 0x15,
-    ButtonHovered = 0x16,
-    ButtonActive = 0x17,
-    Header = 0x18,
-    HeaderHovered = 0x19,
-    HeaderActive = 0x1A,
-    Separator = 0x1B,
-    SeparatorHovered = 0x1C,
-    SeparatorActive = 0x1D,
-    ResizeGrip = 0x1E,
-    ResizeGripHovered = 0x1F,
-    ResizeGripActive = 0x20,
-    Tab = 0x21,
-    TabHovered = 0x22,
-    TabActive = 0x23,
-    TabUnfocused = 0x24,
-    TabUnfocusedActive = 0x25,
-    PlotLines = 0x26,
-    PlotLinesHovered = 0x27,
-    PlotHistogram = 0x28,
-    PlotHistogramHovered = 0x29,
-    TableHeaderBg = 0x2A,
-    TableBorderStrong = 0x2B,
-    TableBorderLight = 0x2C,
-    TableRowBg = 0x2D,
-    TableRowBgAlt = 0x2E,
-    TextSelectedBg = 0x2F,
-    DragDropTarget = 0x30,
-    NavHighlight = 0x31,
-    NavWindowingHighlight = 0x32,
-    NavWindowingDimBg = 0x33,
-    ModalWindowDimBg = 0x34,
-    Count = 0x35
+	Text                  = 0x00,
+	TextDisabled          = 0x01,
+	WindowBg              = 0x02,
+	ChildBg               = 0x03,
+	PopupBg               = 0x04,
+	Border                = 0x05,
+	BorderShadow          = 0x06,
+	FrameBg               = 0x07,
+	FrameBgHovered        = 0x08,
+	FrameBgActive         = 0x09,
+	TitleBg               = 0x0A,
+	TitleBgActive         = 0x0B,
+	TitleBgCollapsed      = 0x0C,
+	MenuBarBg             = 0x0D,
+	ScrollbarBg           = 0x0E,
+	ScrollbarGrab         = 0x0F,
+	ScrollbarGrabHovered  = 0x10,
+	ScrollbarGrabActive   = 0x11,
+	CheckMark             = 0x12,
+	SliderGrab            = 0x13,
+	SliderGrabActive      = 0x14,
+	Button                = 0x15,
+	ButtonHovered         = 0x16,
+	ButtonActive          = 0x17,
+	Header                = 0x18,
+	HeaderHovered         = 0x19,
+	HeaderActive          = 0x1A,
+	Separator             = 0x1B,
+	SeparatorHovered      = 0x1C,
+	SeparatorActive       = 0x1D,
+	ResizeGrip            = 0x1E,
+	ResizeGripHovered     = 0x1F,
+	ResizeGripActive      = 0x20,
+	Tab                   = 0x21,
+	TabHovered            = 0x22,
+	TabActive             = 0x23,
+	TabUnfocused          = 0x24,
+	TabUnfocusedActive    = 0x25,
+	PlotLines             = 0x26,
+	PlotLinesHovered      = 0x27,
+	PlotHistogram         = 0x28,
+	PlotHistogramHovered  = 0x29,
+	TableHeaderBg         = 0x2A,
+	TableBorderStrong     = 0x2B,
+	TableBorderLight      = 0x2C,
+	TableRowBg            = 0x2D,
+	TableRowBgAlt         = 0x2E,
+	TextSelectedBg        = 0x2F,
+	DragDropTarget        = 0x30,
+	NavHighlight          = 0x31,
+	NavWindowingHighlight = 0x32,
+	NavWindowingDimBg     = 0x33,
+	ModalWindowDimBg      = 0x34,
+	Count                 = 0x35
 }
 
----@class ImGuiWindowFlags
+---@enum ImGuiWindowFlags
 ImGuiWindowFlags = {
-    None = 0x00000000,
-    NoTitleBar = 0x00000001,
-    NoResize = 0x00000002,
-    NoMove = 0x00000004,
-    NoScrollbar = 0x00000008,
-    NoScrollWithMouse = 0x00000010,
-    NoCollapse = 0x00000020,
-    AlwaysAutoResize = 0x00000040,
-    NoBackground = 0x00000080,
-    NoSavedSettings = 0x00000100,
-    NoMouseInputs = 0x00000200,
-    MenuBar = 0x00000400,
-    HorizontalScrollbar = 0x00000800,
-    NoFocusOnAppearing = 0x00001000,
-    NoBringToFrontOnFocus = 0x00002000,
-    AlwaysVerticalScrollbar = 0x00004000,
-    AlwaysHorizontalScrollbar = 0x00008000,
-    AlwaysUseWindowPadding = 0x00010000,
-    NoNavInputs = 0x00020000,
-    NoNavFocus = 0x00040000,
-    UnsavedDocument = 0x00080000,
-    NoDocking = 0x00100000,
-    NoNav = 0x00060000, -- `NoNavInputs | NoNavFocus`
-    NoDecoration = 0x0000003F, -- `NoTitleBar | NoResize | NoScrollbar | NoCollapse`
-    NoInputs = 0x000C0000, -- `NoMouseInputs | NoNav`
-    NavFlattened = 0x00200000,
-    ChildWindow = 0x00000001, -- **[Internal]** Used by `BeginChild()`
-    Tooltip = 0x00000002, -- **[Internal]** Used by `BeginTooltip()`
-    Popup = 0x00000004, -- **[Internal]** Used by `BeginPopup()`
-    Modal = 0x00000008, -- **[Internal]** Used by `BeginPopupModal()`
-    ChildMenu = 0x00000010, -- **[Internal]** Used by `BeginMenu()`
-}
-
----@class ImGuiHoveredFlags
-ImGuiHoveredFlags = {
-    None = 0x00000000,
-    ChildWindows = 0x00000001,
-    RootWindow = 0x00000002,
-    AnyWindow = 0x00000004,
-    NoPopupHierarchy = 0x00000008,
-    AllowWhenBlockedByPopup = 0x00000020,
-    AllowWhenBlockedByActiveItem = 0x00000080,
-    AllowWhenOverlappedByItem = 0x00000100,
-    AllowWhenOverlappedByWindow = 0x00000200,
-    AllowWhenDisabled = 0x00000400,
-    NoNavOverride = 0x00000800,
-    AllowWhenOverlapped = 0x00000300,
-    RectOnly = 0x000003A0,
-    RootAndChildWindows = 0x00000003,
-    ForTooltip = 0x00001000,
-    Stationary = 0x00002000,
-    DelayNone = 0x00004000,
-    DelayShort = 0x00008000,
-    DelayNormal = 0x00010000,
-    NoSharedDelay = 0x00020000,
+	None                      = 0x00000000,
+	NoTitleBar                = 0x00000001,
+	NoResize                  = 0x00000002,
+	NoMove                    = 0x00000004,
+	NoScrollbar               = 0x00000008,
+	NoScrollWithMouse         = 0x00000010,
+	NoCollapse                = 0x00000020,
+	AlwaysAutoResize          = 0x00000040,
+	NoBackground              = 0x00000080,
+	NoSavedSettings           = 0x00000100,
+	NoMouseInputs             = 0x00000200,
+	MenuBar                   = 0x00000400,
+	HorizontalScrollbar       = 0x00000800,
+	NoFocusOnAppearing        = 0x00001000,
+	NoBringToFrontOnFocus     = 0x00002000,
+	AlwaysVerticalScrollbar   = 0x00004000,
+	AlwaysHorizontalScrollbar = 0x00008000,
+	AlwaysUseWindowPadding    = 0x00010000,
+	NoNavInputs               = 0x00020000,
+	NoNavFocus                = 0x00040000,
+	UnsavedDocument           = 0x00080000,
+	NoDocking                 = 0x00100000,
+	NoNav                     = 0x00060000, -- `NoNavInputs | NoNavFocus`
+	NoDecoration              = 0x0000003F, -- `NoTitleBar | NoResize | NoScrollbar | NoCollapse`
+	NoInputs                  = 0x000C0000, -- `NoMouseInputs | NoNav`
+	NavFlattened              = 0x00200000,
+	ChildWindow               = 0x00000001, -- **[Internal]** Used by `BeginChild()`
+	Tooltip                   = 0x00000002, -- **[Internal]** Used by `BeginTooltip()`
+	Popup                     = 0x00000004, -- **[Internal]** Used by `BeginPopup()`
+	Modal                     = 0x00000008, -- **[Internal]** Used by `BeginPopupModal()`
+	ChildMenu                 = 0x00000010, -- **[Internal]** Used by `BeginMenu()`
 }
 
 ---@class ImGuiInputTextFlags
-ImGuiInputTextFlags = {
-    None = 0x00000000,
-    CharsDecimal = 0x00000001,
-    CharsHexadecimal = 0x00000002,
-    CharsUppercase = 0x00000004,
-    CharsNoBlank = 0x00000008,
-    AutoSelectAll = 0x00000010,
-    EnterReturnsTrue = 0x00000020,
-    CallbackCompletion = 0x00000040,
-    CallbackHistory = 0x00000080,
-    CallbackAlways = 0x00000100,
-    CallbackCharFilter = 0x00000200,
-    AllowTabInput = 0x00000400,
-    CtrlEnterForNewLine = 0x00000800,
-    NoHorizontalScroll = 0x00001000,
-    AlwaysOverwrite = 0x00002000,
-    ReadOnly = 0x00004000,
-    Password = 0x00008000,
-    NoUndoRedo = 0x00010000,
-    CharsScientific = 0x00020000,
-    CallbackResize = 0x00040000,
-    CallbackEdit = 0x00080000,
-    EscapeClearsAll = 0x00100000,
-}
+---@field All number
+---@field None number
+---@field CharsDecimal number
+---@field CharsHexadecimal number
+---@field CharsUppercase number
+---@field CharsNoBlank number
+---@field AutoSelectAll number
+---@field EnterReturnsTrue number
+---@field CallbackCompletion number
+---@field CallbackHistory number
+---@field CallbackAlways number
+---@field CallbackCharFilter number
+---@field AllowTabInput number
+---@field CtrlEnterForNewLine number
+---@field NoHorizontalScroll number
+---@field AlwaysOverwrite number
+---@field ReadOnly number
+---@field Password number
+---@field NoUndoRedo number
+---@field CharsScientific number
+---@field CallbackResize number
+---@field CallbackEdit number
+---@field EscapeClearsAll number
+ImGuiInputTextFlags = {}
 
-
----@class ImGuiTableFlags
-ImGuiTableFlags = {
-    None = 0x00000000,
-    Resizable = 0x00000001,
-    Reorderable = 0x00000002,
-    Hideable = 0x00000004,
-    Sortable = 0x00000008,
-    NoSavedSettings = 0x00000010,
-    ContextMenuInBody = 0x00000020,
-    RowBg = 0x00000040,
-    BordersInnerH = 0x00000080,
-    BordersOuterH = 0x00000100,
-    BordersInnerV = 0x00000200,
-    BordersOuterV = 0x00000400,
-    BordersH = 0x00000180,
-    BordersV = 0x00000600,
-    BordersInner = 0x00000280,
-    BordersOuter = 0x00000500,
-    Borders = 0x00000780,
-    NoBordersInBody = 0x00000800,
-    NoBordersInBodyUntilResize = 0x00001000,
-    SizingFixedFit = 0x00002000,
-    SizingFixedSame = 0x00004000,
-    SizingStretchProp = 0x00006000,
-    SizingStretchSame = 0x00008000,
-    NoHostExtendX = 0x00010000,
-    NoHostExtendY = 0x00020000,
-    NoKeepColumnsVisible = 0x00040000,
-    PreciseWidths = 0x00080000,
-    NoClip = 0x00100000,
-    PadOuterX = 0x00200000,
-    NoPadOuterX = 0x00400000,
-    NoPadInnerX = 0x00800000,
-    ScrollX = 0x01000000,
-    ScrollY = 0x02000000,
-    SortMulti = 0x04000000,
-    SortTristate = 0x08000000,
-    HighlightHoveredColumn = 0x10000000,
-}
-
----@class ImGuiTableColumnFlags
-ImGuiTableColumnFlags = {
-    None = 0x00000000,
-    Disabled = 0x00000001,
-    DefaultHide = 0x00000002,
-    DefaultSort = 0x00000004,
-    WidthStretch = 0x00000008,
-    WidthFixed = 0x00000010,
-    NoResize = 0x00000020,
-    NoReorder = 0x00000040,
-    NoHide = 0x00000080,
-    NoClip = 0x00000100,
-    NoSort = 0x00000200,
-    NoSortAscending = 0x00000400,
-    NoSortDescending = 0x00000800,
-    NoHeaderLabel = 0x00001000,
-    NoHeaderWidth = 0x00002000,
-    PreferSortAscending = 0x00004000,
-    PreferSortDescending = 0x00008000,
-    IndentEnable = 0x00010000,
-    IndentDisable = 0x00020000,
-    AngledHeader = 0x00040000,
-    IsEnabled = 0x01000000,
-    IsVisible = 0x02000000,
-    IsSorted = 0x04000000,
-    IsHovered = 0x08000000,
-}
-
----@class ImGuiSliderFlags
-ImGuiSliderFlags = {
-    None = 0x00000000,
-    AlwaysClamp = 0x00000010,
-    Logarithmic = 0x00000020,
-    NoRoundToFormat = 0x00000040,
-    NoInput = 0x00000080,
-    InvalidMask_ = 0x7000000f,
-}
+---@class ImGuiHoveredFlags
+---@field All number
+---@field None number
+---@field ChildWindows number
+---@field RootWindow number
+---@field AnyWindow number
+---@field NoPopupHierarchy number
+---@field AllowWhenBlockedByPopup number
+---@field AllowWhenBlockedByActiveItem number
+---@field AllowWhenOverlappedByItem number
+---@field AllowWhenOverlappedByWindow number
+---@field AllowWhenDisabled number
+---@field NoNavOverride number
+---@field AllowWhenOverlapped number
+---@field RectOnly number
+---@field RootAndChildWindows number
+---@field ForTooltip number
+---@field Stationary number
+---@field DelayNone number
+---@field DelayShort number
+---@field DelayNormal number
+---@field NoSharedDelay number
+ImGuiHoveredFlags = {}
 
 ---@class ImGuiCond
-ImGuiCond = {
-    None = 0,
-    Always = 1,
-    Once = 2,
-    FirstUseEver = 3,
-    Appearing = 4,
-}
+---@field None number 0x0
+---@field Always number 0x1
+---@field Once number 0x2
+---@field FirstUseEver number 0x4
+---@field Appearing number 0x8
+ImGuiCond = {}
 
-
+---@class ImGui
 ImGui = {}
 
 ---@param name string
@@ -2742,7 +2746,9 @@ function ImGui.ImDrawListAddRectFilled(drawlist, p_minX, p_minY, p_maxX, p_maxY,
 ---@param col_upr_right integer
 ---@param col_bot_right integer
 ---@param col_bot_left integer
-function ImGui.ImDrawListAddRectFilledMultiColor(drawlist, p_minX, p_minY, p_maxX, p_maxY, col_upr_left, col_upr_right, col_bot_right, col_bot_left) end
+function ImGui.ImDrawListAddRectFilledMultiColor(drawlist, p_minX, p_minY, p_maxX, p_maxY, col_upr_left, col_upr_right,
+												 col_bot_right, col_bot_left)
+end
 
 ---@param drawlist ImDrawList
 ---@param p1X number

@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -487,7 +487,7 @@ function MONEY.NETWORK_SPENT_AMMO_DROP(p0, p1, p2, p3) end
 
 
 ---@param amount int
----@param victim Player
+---@param victim player
 ---@param p2 BOOL
 ---@param p3 BOOL
 ---@param p4 Any
@@ -1259,7 +1259,7 @@ function MONEY.NETWORK_SPEND_NIGHTCLUB_AND_WAREHOUSE(p0, p1, p2, p3) end
 function MONEY.NETWORK_SPENT_RDR_HATCHET_BONUS(amount, p1, p2) end
 
 
----@param player Player
+---@param player player
 ---@param amount int
 ---@param p1 Any
 ---@param p2 BOOL

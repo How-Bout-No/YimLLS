@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -38,7 +38,7 @@ function MOBILE.SET_MOBILE_PHONE_ROTATION(rotX, rotY, rotZ, p3) end
 
 
 ---@param rotation Vector3
----@param p1 Vehicle
+---@param p1 vehicle
 function MOBILE.GET_MOBILE_PHONE_ROTATION(rotation, p1) end
 
 
@@ -117,7 +117,7 @@ function MOBILE.CELL_CAM_SET_SELFIE_MODE_HEAD_ROLL_OFFSET(roll) end
 function MOBILE.CELL_CAM_SET_SELFIE_MODE_HEAD_PITCH_OFFSET(pitch) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function MOBILE.CELL_CAM_IS_CHAR_VISIBLE_NO_FACE_CHECK(entity) end
 

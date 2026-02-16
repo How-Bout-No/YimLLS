@@ -3,54 +3,54 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
 ENTITY = {}
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.DOES_ENTITY_EXIST(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param p1 BOOL
 ---@return boolean
 function ENTITY.DOES_ENTITY_BELONG_TO_THIS_SCRIPT(entity, p1) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.DOES_ENTITY_HAVE_DRAWABLE(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.DOES_ENTITY_HAVE_PHYSICS(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.DOES_ENTITY_HAVE_SKELETON(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.DOES_ENTITY_HAVE_ANIM_DIRECTOR(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param animDict string
 ---@param animName string
 ---@param p3 int
@@ -58,80 +58,80 @@ function ENTITY.DOES_ENTITY_HAVE_ANIM_DIRECTOR(entity) end
 function ENTITY.HAS_ENTITY_ANIM_FINISHED(entity, animDict, animName, p3) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.HAS_ENTITY_BEEN_DAMAGED_BY_ANY_OBJECT(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.HAS_ENTITY_BEEN_DAMAGED_BY_ANY_PED(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.HAS_ENTITY_BEEN_DAMAGED_BY_ANY_VEHICLE(entity) end
 
 
----@param entity1 Entity
----@param entity2 Entity
+---@param entity1 entity
+---@param entity2 entity
 ---@param p2 BOOL
 ---@return boolean
 function ENTITY.HAS_ENTITY_BEEN_DAMAGED_BY_ENTITY(entity1, entity2, p2) end
 
 
----@param entity1 Entity
----@param entity2 Entity
+---@param entity1 entity
+---@param entity2 entity
 ---@param traceType int
 ---@return boolean
 function ENTITY.HAS_ENTITY_CLEAR_LOS_TO_ENTITY(entity1, entity2, traceType) end
 
 
----@param entity1 Entity
----@param entity2 Entity
+---@param entity1 entity
+---@param entity2 entity
 ---@param traceType int
 ---@return boolean
 function ENTITY.HAS_ENTITY_CLEAR_LOS_TO_ENTITY_ADJUST_FOR_COVER(entity1, entity2, traceType) end
 
 
----@param entity1 Entity
----@param entity2 Entity
+---@param entity1 entity
+---@param entity2 entity
 ---@return boolean
 function ENTITY.HAS_ENTITY_CLEAR_LOS_TO_ENTITY_IN_FRONT(entity1, entity2) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.HAS_ENTITY_COLLIDED_WITH_ANYTHING(entity) end
 
 
----@param entity Entity
----@return Entity
+---@param entity entity
+---@return entity
 function ENTITY.GET_LAST_ENTITY_HIT_BY_ENTITY_(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return Hash
 function ENTITY.GET_LAST_MATERIAL_HIT_BY_ENTITY(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return Vector3
 function ENTITY.GET_COLLISION_NORMAL_OF_LAST_HIT_FOR_ENTITY(entity) end
 
 
----@param entity Entity
+---@param entity entity
 function ENTITY.FORCE_ENTITY_AI_AND_ANIMATION_UPDATE(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param animDict string
 ---@param animName string
 ---@return float
 function ENTITY.GET_ENTITY_ANIM_CURRENT_TIME(entity, animDict, animName) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param animDict string
 ---@param animName string
 ---@return float
@@ -144,58 +144,58 @@ function ENTITY.GET_ENTITY_ANIM_TOTAL_TIME(entity, animDict, animName) end
 function ENTITY.GET_ANIM_DURATION(animDict, animName) end
 
 
----@param entity Entity
----@return Entity
+---@param entity entity
+---@return entity
 function ENTITY.GET_ENTITY_ATTACHED_TO(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param alive BOOL
 ---@return Vector3
 function ENTITY.GET_ENTITY_COORDS(entity, alive) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return Vector3
 function ENTITY.GET_ENTITY_FORWARD_VECTOR(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return float
 function ENTITY.GET_ENTITY_FORWARD_X(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return float
 function ENTITY.GET_ENTITY_FORWARD_Y(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return float
 function ENTITY.GET_ENTITY_HEADING(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return float
 function ENTITY.GET_ENTITY_HEADING_FROM_EULERS(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return int
 function ENTITY.GET_ENTITY_HEALTH(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return int
 function ENTITY.GET_ENTITY_MAX_HEALTH(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param value int
 function ENTITY.SET_ENTITY_MAX_HEALTH(entity, value) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param X float
 ---@param Y float
 ---@param Z float
@@ -205,12 +205,12 @@ function ENTITY.SET_ENTITY_MAX_HEALTH(entity, value) end
 function ENTITY.GET_ENTITY_HEIGHT(entity, X, Y, Z, atTop, inWorldCoords) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return float
 function ENTITY.GET_ENTITY_HEIGHT_ABOVE_GROUND(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param forwardVector Vector3
 ---@param rightVector Vector3
 ---@param upVector Vector3
@@ -222,12 +222,12 @@ function ENTITY.GET_ENTITY_HEIGHT_ABOVE_GROUND(entity) end
 function ENTITY.GET_ENTITY_MATRIX(entity, forwardVector, rightVector, upVector, position) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return Hash
 function ENTITY.GET_ENTITY_MODEL(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param posX float
 ---@param posY float
 ---@param posZ float
@@ -235,7 +235,7 @@ function ENTITY.GET_ENTITY_MODEL(entity) end
 function ENTITY.GET_OFFSET_FROM_ENTITY_GIVEN_WORLD_COORDS(entity, posX, posY, posZ) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param offsetX float
 ---@param offsetY float
 ---@param offsetZ float
@@ -243,12 +243,12 @@ function ENTITY.GET_OFFSET_FROM_ENTITY_GIVEN_WORLD_COORDS(entity, posX, posY, po
 function ENTITY.GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(entity, offsetX, offsetY, offsetZ) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return float
 function ENTITY.GET_ENTITY_PITCH(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param x float
 ---@param y float
 ---@param z float
@@ -260,93 +260,93 @@ function ENTITY.GET_ENTITY_PITCH(entity) end
 function ENTITY.GET_ENTITY_QUATERNION(entity, x, y, z, w) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return float
 function ENTITY.GET_ENTITY_ROLL(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param rotationOrder int
 ---@return Vector3
 function ENTITY.GET_ENTITY_ROTATION(entity, rotationOrder) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return Vector3
 function ENTITY.GET_ENTITY_ROTATION_VELOCITY(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param script ScrHandle
 ---@return string
 ---@return ScrHandle script
 function ENTITY.GET_ENTITY_SCRIPT(entity, script) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return float
 function ENTITY.GET_ENTITY_SPEED(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param relative BOOL
 ---@return Vector3
 function ENTITY.GET_ENTITY_SPEED_VECTOR(entity, relative) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return float
 function ENTITY.GET_ENTITY_UPRIGHT_VALUE(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return Vector3
 function ENTITY.GET_ENTITY_VELOCITY(entity) end
 
 
----@param entity Entity
----@return Object
+---@param entity entity
+---@return object
 function ENTITY.GET_OBJECT_INDEX_FROM_ENTITY_INDEX(entity) end
 
 
----@param entity Entity
----@return Ped
+---@param entity entity
+---@return ped
 function ENTITY.GET_PED_INDEX_FROM_ENTITY_INDEX(entity) end
 
 
----@param entity Entity
----@return Vehicle
+---@param entity entity
+---@return vehicle
 function ENTITY.GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param boneIndex int
 ---@return Vector3
 function ENTITY.GET_WORLD_POSITION_OF_ENTITY_BONE(entity, boneIndex) end
 
 
----@param entity Entity
----@return Player
+---@param entity entity
+---@return player
 function ENTITY.GET_NEAREST_PLAYER_TO_ENTITY(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param team int
----@return Player
+---@return player
 function ENTITY.GET_NEAREST_PLAYER_TO_ENTITY_ON_TEAM(entity, team) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return int
 function ENTITY.GET_NEAREST_PARTICIPANT_TO_ENTITY(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return int
 function ENTITY.GET_ENTITY_TYPE(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return int
 function ENTITY.GET_ENTITY_POPULATION_TYPE(entity) end
 
@@ -356,27 +356,27 @@ function ENTITY.GET_ENTITY_POPULATION_TYPE(entity) end
 function ENTITY.IS_AN_ENTITY(handle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_A_PED(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_A_MISSION_ENTITY(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_A_VEHICLE(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_AN_OBJECT(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param xPos float
 ---@param yPos float
 ---@param zPos float
@@ -390,8 +390,8 @@ function ENTITY.IS_ENTITY_AN_OBJECT(entity) end
 function ENTITY.IS_ENTITY_AT_COORD(entity, xPos, yPos, zPos, xSize, ySize, zSize, p7, p8, p9) end
 
 
----@param entity1 Entity
----@param entity2 Entity
+---@param entity1 entity
+---@param entity2 entity
 ---@param xSize float
 ---@param ySize float
 ---@param zSize float
@@ -402,44 +402,44 @@ function ENTITY.IS_ENTITY_AT_COORD(entity, xPos, yPos, zPos, xSize, ySize, zSize
 function ENTITY.IS_ENTITY_AT_ENTITY(entity1, entity2, xSize, ySize, zSize, p5, p6, p7) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_ATTACHED(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_ATTACHED_TO_ANY_OBJECT(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_ATTACHED_TO_ANY_PED(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_ATTACHED_TO_ANY_VEHICLE(entity) end
 
 
----@param from Entity
----@param to Entity
+---@param from entity
+---@param to entity
 ---@return boolean
 function ENTITY.IS_ENTITY_ATTACHED_TO_ENTITY(from, to) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param p1 BOOL
 ---@return boolean
 function ENTITY.IS_ENTITY_DEAD(entity, p1) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_IN_AIR(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param x1 float
 ---@param y1 float
 ---@param z1 float
@@ -454,7 +454,7 @@ function ENTITY.IS_ENTITY_IN_AIR(entity) end
 function ENTITY.IS_ENTITY_IN_ANGLED_AREA(entity, x1, y1, z1, x2, y2, z2, width, debug, includeZ, p10) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param x1 float
 ---@param y1 float
 ---@param z1 float
@@ -468,33 +468,33 @@ function ENTITY.IS_ENTITY_IN_ANGLED_AREA(entity, x1, y1, z1, x2, y2, z2, width, 
 function ENTITY.IS_ENTITY_IN_AREA(entity, x1, y1, z1, x2, y2, z2, p7, p8, p9) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param zone string
 ---@return boolean
 function ENTITY.IS_ENTITY_IN_ZONE(entity, zone) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_IN_WATER(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return float
 function ENTITY.GET_ENTITY_SUBMERGED_LEVEL(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_REQUIRES_MORE_EXPENSIVE_RIVER_CHECK(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_ON_SCREEN(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param animDict string
 ---@param animName string
 ---@param taskFlag int
@@ -502,45 +502,45 @@ function ENTITY.IS_ENTITY_ON_SCREEN(entity) end
 function ENTITY.IS_ENTITY_PLAYING_ANIM(entity, animDict, animName, taskFlag) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_STATIC(entity) end
 
 
----@param entity Entity
----@param targetEntity Entity
+---@param entity entity
+---@param targetentity entity
 ---@return boolean
-function ENTITY.IS_ENTITY_TOUCHING_ENTITY(entity, targetEntity) end
+function ENTITY.IS_ENTITY_TOUCHING_ENTITY(entity, targetentity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param modelHash Hash
 ---@return boolean
 function ENTITY.IS_ENTITY_TOUCHING_MODEL(entity, modelHash) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param angle float
 ---@return boolean
 function ENTITY.IS_ENTITY_UPRIGHT(entity, angle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_UPSIDEDOWN(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_VISIBLE(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_VISIBLE_TO_SCRIPT(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_OCCLUDED(entity) end
 
@@ -554,12 +554,12 @@ function ENTITY.IS_ENTITY_OCCLUDED(entity) end
 function ENTITY.WOULD_ENTITY_BE_OCCLUDED(entityModelHash, x, y, z, p4) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.IS_ENTITY_WAITING_FOR_WORLD_COLLISION(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param forceType int
 ---@param x float
 ---@param y float
@@ -571,7 +571,7 @@ function ENTITY.IS_ENTITY_WAITING_FOR_WORLD_COLLISION(entity) end
 function ENTITY.APPLY_FORCE_TO_ENTITY_CENTER_OF_MASS(entity, forceType, x, y, z, p5, isDirectionRel, isForceRel, p8) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param forceFlags int
 ---@param x float
 ---@param y float
@@ -588,8 +588,8 @@ function ENTITY.APPLY_FORCE_TO_ENTITY_CENTER_OF_MASS(entity, forceType, x, y, z,
 function ENTITY.APPLY_FORCE_TO_ENTITY(entity, forceFlags, x, y, z, offX, offY, offZ, boneIndex, isDirectionRel, ignoreUpVec, isForceRel, p12, p13) end
 
 
----@param entity1 Entity
----@param entity2 Entity
+---@param entity1 entity
+---@param entity2 entity
 ---@param boneIndex int
 ---@param xPos float
 ---@param yPos float
@@ -600,15 +600,15 @@ function ENTITY.APPLY_FORCE_TO_ENTITY(entity, forceFlags, x, y, z, offX, offY, o
 ---@param p9 BOOL
 ---@param useSoftPinning BOOL
 ---@param collision BOOL
----@param isPed BOOL
+---@param isped BOOL
 ---@param vertexIndex int
 ---@param fixedRot BOOL
 ---@param p15 Any
-function ENTITY.ATTACH_ENTITY_TO_ENTITY(entity1, entity2, boneIndex, xPos, yPos, zPos, xRot, yRot, zRot, p9, useSoftPinning, collision, isPed, vertexIndex, fixedRot, p15) end
+function ENTITY.ATTACH_ENTITY_TO_ENTITY(entity1, entity2, boneIndex, xPos, yPos, zPos, xRot, yRot, zRot, p9, useSoftPinning, collision, isped, vertexIndex, fixedRot, p15) end
 
 
----@param entity1 Entity
----@param entity2 Entity
+---@param entity1 entity
+---@param entity2 entity
 ---@param boneIndex1 int
 ---@param boneIndex2 int
 ---@param p4 BOOL
@@ -616,8 +616,8 @@ function ENTITY.ATTACH_ENTITY_TO_ENTITY(entity1, entity2, boneIndex, xPos, yPos,
 function ENTITY.ATTACH_ENTITY_BONE_TO_ENTITY_BONE(entity1, entity2, boneIndex1, boneIndex2, p4, p5) end
 
 
----@param entity1 Entity
----@param entity2 Entity
+---@param entity1 entity
+---@param entity2 entity
 ---@param boneIndex1 int
 ---@param boneIndex2 int
 ---@param p4 BOOL
@@ -625,8 +625,8 @@ function ENTITY.ATTACH_ENTITY_BONE_TO_ENTITY_BONE(entity1, entity2, boneIndex1, 
 function ENTITY.ATTACH_ENTITY_BONE_TO_ENTITY_BONE_Y_FORWARD(entity1, entity2, boneIndex1, boneIndex2, p4, p5) end
 
 
----@param entity1 Entity
----@param entity2 Entity
+---@param entity1 entity
+---@param entity2 entity
 ---@param boneIndex1 int
 ---@param boneIndex2 int
 ---@param xPos1 float
@@ -647,65 +647,65 @@ function ENTITY.ATTACH_ENTITY_BONE_TO_ENTITY_BONE_Y_FORWARD(entity1, entity2, bo
 function ENTITY.ATTACH_ENTITY_TO_ENTITY_PHYSICALLY(entity1, entity2, boneIndex1, boneIndex2, xPos1, yPos1, zPos1, xPos2, yPos2, zPos2, xRot, yRot, zRot, breakForce, fixedRot, p15, collision, p17, p18) end
 
 
----@param firstEntityIndex Entity
----@param secondEntityIndex Entity
----@param firstEntityBoneIndex int
----@param secondEntityBoneIndex int
----@param secondEntityOffsetX float
----@param secondEntityOffsetY float
----@param secondEntityOffsetZ float
----@param firstEntityOffsetX float
----@param firstEntityOffsetY float
----@param firstEntityOffsetZ float
+---@param firstentityIndex entity
+---@param secondentityIndex entity
+---@param firstentityBoneIndex int
+---@param secondentityBoneIndex int
+---@param secondentityOffsetX float
+---@param secondentityOffsetY float
+---@param secondentityOffsetZ float
+---@param firstentityOffsetX float
+---@param firstentityOffsetY float
+---@param firstentityOffsetZ float
 ---@param vecRotationX float
 ---@param vecRotationY float
 ---@param vecRotationZ float
 ---@param physicalStrength float
 ---@param constrainRotation BOOL
 ---@param doInitialWarp BOOL
----@param collideWithEntity BOOL
+---@param collideWithentity BOOL
 ---@param addInitialSeperation BOOL
 ---@param rotOrder int
 ---@param invMassScaleA float
 ---@param invMassScaleB float
-function ENTITY.ATTACH_ENTITY_TO_ENTITY_PHYSICALLY_OVERRIDE_INVERSE_MASS(firstEntityIndex, secondEntityIndex, firstEntityBoneIndex, secondEntityBoneIndex, secondEntityOffsetX, secondEntityOffsetY, secondEntityOffsetZ, firstEntityOffsetX, firstEntityOffsetY, firstEntityOffsetZ, vecRotationX, vecRotationY, vecRotationZ, physicalStrength, constrainRotation, doInitialWarp, collideWithEntity, addInitialSeperation, rotOrder, invMassScaleA, invMassScaleB) end
+function ENTITY.ATTACH_ENTITY_TO_ENTITY_PHYSICALLY_OVERRIDE_INVERSE_MASS(firstentityIndex, secondentityIndex, firstentityBoneIndex, secondentityBoneIndex, secondentityOffsetX, secondentityOffsetY, secondentityOffsetZ, firstentityOffsetX, firstentityOffsetY, firstentityOffsetZ, vecRotationX, vecRotationY, vecRotationZ, physicalStrength, constrainRotation, doInitialWarp, collideWithentity, addInitialSeperation, rotOrder, invMassScaleA, invMassScaleB) end
 
 
----@param entity Entity
+---@param entity entity
 function ENTITY.PROCESS_ENTITY_ATTACHMENTS(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param boneName string
----@return int
+---@return integer
 function ENTITY.GET_ENTITY_BONE_INDEX_BY_NAME(entity, boneName) end
 
 
----@param entity Entity
+---@param entity entity
 function ENTITY.CLEAR_ENTITY_LAST_DAMAGE_ENTITY(entity) end
 
 
----@param entity Entity
+---@param entity entity
 function ENTITY.DELETE_ENTITY(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param dynamic BOOL
 ---@param collision BOOL
 function ENTITY.DETACH_ENTITY(entity, dynamic, collision) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.FREEZE_ENTITY_POSITION(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_SHOULD_FREEZE_WAITING_ON_COLLISION(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param animName string
 ---@param animDict string
 ---@param p3 float
@@ -718,7 +718,7 @@ function ENTITY.SET_ENTITY_SHOULD_FREEZE_WAITING_ON_COLLISION(entity, toggle) en
 function ENTITY.PLAY_ENTITY_ANIM(entity, animName, animDict, p3, loop, stayInAnim, p6, delta, bitset) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param syncedScene int
 ---@param animation string
 ---@param propName string
@@ -756,7 +756,7 @@ function ENTITY.PLAY_SYNCHRONIZED_MAP_ENTITY_ANIM(x1, y1, z1, x2, y2, z2, p6, p7
 function ENTITY.STOP_SYNCHRONIZED_MAP_ENTITY_ANIM(x1, y1, z1, x2, y2, z2) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param animation string
 ---@param animGroup string
 ---@param p3 float
@@ -764,14 +764,14 @@ function ENTITY.STOP_SYNCHRONIZED_MAP_ENTITY_ANIM(x1, y1, z1, x2, y2, z2) end
 function ENTITY.STOP_ENTITY_ANIM(entity, animation, animGroup, p3) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param p1 float
 ---@param p2 BOOL
 ---@return boolean
 function ENTITY.STOP_SYNCHRONIZED_ENTITY_ANIM(entity, p1, p2) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param actionHash Hash
 ---@return boolean
 function ENTITY.HAS_ANIM_EVENT_FIRED(entity, actionHash) end
@@ -786,86 +786,86 @@ function ENTITY.HAS_ANIM_EVENT_FIRED(entity, actionHash) end
 function ENTITY.FIND_ANIM_EVENT_PHASE(animDictionary, animName, p2, p3, p4) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param animDictionary string
 ---@param animName string
 ---@param time float
 function ENTITY.SET_ENTITY_ANIM_CURRENT_TIME(entity, animDictionary, animName, time) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param animDictionary string
 ---@param animName string
 ---@param speedMultiplier float
 function ENTITY.SET_ENTITY_ANIM_SPEED(entity, animDictionary, animName, speedMultiplier) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param p1 BOOL
 ---@param p2 BOOL
 function ENTITY.SET_ENTITY_AS_MISSION_ENTITY(entity, p1, p2) end
 
 
----@param entity Entity
+---@param entity entity
 function ENTITY.SET_ENTITY_AS_NO_LONGER_NEEDED(entity) end
 
 
----@param ped Ped
+---@param ped ped
 function ENTITY.SET_PED_AS_NO_LONGER_NEEDED(ped) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 function ENTITY.SET_VEHICLE_AS_NO_LONGER_NEEDED(vehicle) end
 
 
----@param object Object
+---@param object object
 function ENTITY.SET_OBJECT_AS_NO_LONGER_NEEDED(object) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_CAN_BE_DAMAGED(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.GET_ENTITY_CAN_BE_DAMAGED(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param bCanBeDamaged BOOL
 ---@param relGroup int
 function ENTITY.SET_ENTITY_CAN_BE_DAMAGED_BY_RELATIONSHIP_GROUP(entity, bCanBeDamaged, relGroup) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_CAN_ONLY_BE_DAMAGED_BY_SCRIPT_PARTICIPANTS(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_CAN_BE_TARGETED_WITHOUT_LOS(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 ---@param keepPhysics BOOL
 function ENTITY.SET_ENTITY_COLLISION(entity, toggle, keepPhysics) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.GET_ENTITY_COLLISION_DISABLED(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 ---@param keepPhysics BOOL
 function ENTITY.SET_ENTITY_COMPLETELY_DISABLE_COLLISION(entity, toggle, keepPhysics) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param xPos float
 ---@param yPos float
 ---@param zPos float
@@ -876,7 +876,7 @@ function ENTITY.SET_ENTITY_COMPLETELY_DISABLE_COLLISION(entity, toggle, keepPhys
 function ENTITY.SET_ENTITY_COORDS(entity, xPos, yPos, zPos, xAxis, yAxis, zAxis, clearArea) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param xPos float
 ---@param yPos float
 ---@param zPos float
@@ -887,7 +887,7 @@ function ENTITY.SET_ENTITY_COORDS(entity, xPos, yPos, zPos, xAxis, yAxis, zAxis,
 function ENTITY.SET_ENTITY_COORDS_WITHOUT_PLANTS_RESET(entity, xPos, yPos, zPos, alive, deadFlag, ragdollFlag, clearArea) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param xPos float
 ---@param yPos float
 ---@param zPos float
@@ -897,67 +897,67 @@ function ENTITY.SET_ENTITY_COORDS_WITHOUT_PLANTS_RESET(entity, xPos, yPos, zPos,
 function ENTITY.SET_ENTITY_COORDS_NO_OFFSET(entity, xPos, yPos, zPos, xAxis, yAxis, zAxis) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_DYNAMIC(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param heading float
 function ENTITY.SET_ENTITY_HEADING(entity, heading) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param health int
----@param instigator Entity
+---@param instigator entity
 ---@param weaponType Hash
 function ENTITY.SET_ENTITY_HEALTH(entity, health, instigator, weaponType) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_INVINCIBLE(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param p1 BOOL
 ---@param p2 float
 function ENTITY.SET_ENTITY_IS_TARGET_PRIORITY(entity, p1, p2) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_LIGHTS(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 ---@param p2 Any
 function ENTITY.SET_ENTITY_LOAD_COLLISION_FLAG(entity, toggle, p2) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function ENTITY.HAS_COLLISION_LOADED_AROUND_ENTITY(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param speed float
 function ENTITY.SET_ENTITY_MAX_SPEED(entity, speed) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param p1 BOOL
 ---@param p2 Any
 function ENTITY.SET_ENTITY_ONLY_DAMAGED_BY_RELATIONSHIP_GROUP(entity, p1, p2) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param bulletProof BOOL
 ---@param fireProof BOOL
 ---@param explosionProof BOOL
@@ -969,7 +969,7 @@ function ENTITY.SET_ENTITY_ONLY_DAMAGED_BY_RELATIONSHIP_GROUP(entity, p1, p2) en
 function ENTITY.SET_ENTITY_PROOFS(entity, bulletProof, fireProof, explosionProof, collisionProof, meleeProof, steamProof, p7, waterProof) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param bulletProof BOOL
 ---@param fireProof BOOL
 ---@param explosionProof BOOL
@@ -990,7 +990,7 @@ function ENTITY.SET_ENTITY_PROOFS(entity, bulletProof, fireProof, explosionProof
 function ENTITY.GET_ENTITY_PROOFS(entity, bulletProof, fireProof, explosionProof, collisionProof, meleeProof, steamProof, p7, drownProof) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param x float
 ---@param y float
 ---@param z float
@@ -998,12 +998,12 @@ function ENTITY.GET_ENTITY_PROOFS(entity, bulletProof, fireProof, explosionProof
 function ENTITY.SET_ENTITY_QUATERNION(entity, x, y, z, w) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_RECORDS_COLLISIONS(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param pitch float
 ---@param roll float
 ---@param yaw float
@@ -1012,67 +1012,67 @@ function ENTITY.SET_ENTITY_RECORDS_COLLISIONS(entity, toggle) end
 function ENTITY.SET_ENTITY_ROTATION(entity, pitch, roll, yaw, rotationOrder, p5) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 ---@param p2 BOOL
 function ENTITY.SET_ENTITY_VISIBLE(entity, toggle, p2) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_WATER_REFLECTION_FLAG(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param p1 BOOL
 function ENTITY.SET_ENTITY_MIRROR_REFLECTION_FLAG(entity, p1) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param x float
 ---@param y float
 ---@param z float
 function ENTITY.SET_ENTITY_VELOCITY(entity, x, y, z) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param x float
 ---@param y float
 ---@param z float
 function ENTITY.SET_ENTITY_ANGULAR_VELOCITY(entity, x, y, z) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_HAS_GRAVITY(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param value int
 function ENTITY.SET_ENTITY_LOD_DIST(entity, value) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return int
 function ENTITY.GET_ENTITY_LOD_DIST(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param alphaLevel int
 ---@param skin BOOL
 function ENTITY.SET_ENTITY_ALPHA(entity, alphaLevel, skin) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return int
 function ENTITY.GET_ENTITY_ALPHA(entity) end
 
 
----@param entity Entity
+---@param entity entity
 function ENTITY.RESET_ENTITY_ALPHA(entity) end
 
 
----@param entity Entity
+---@param entity entity
 function ENTITY.RESET_PICKUP_ENTITY_GLOW(entity) end
 
 
@@ -1081,27 +1081,27 @@ function ENTITY.RESET_PICKUP_ENTITY_GLOW(entity) end
 function ENTITY.SET_PICKUP_COLLIDES_WITH_PROJECTILES(p0, p1) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param p1 float
 function ENTITY.SET_ENTITY_SORT_BIAS(entity, p1) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_ALWAYS_PRERENDER(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_RENDER_SCORCHED(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param state int
 function ENTITY.SET_ENTITY_TRAFFICLIGHT_OVERRIDE(entity, state) end
 
 
----@param entity Entity
+---@param entity entity
 function ENTITY.SET_ENTITY_IS_IN_VEHICLE(entity) end
 
 
@@ -1169,97 +1169,97 @@ function ENTITY.CREATE_FORCED_OBJECT(x, y, z, p3, modelHash, p5) end
 function ENTITY.REMOVE_FORCED_OBJECT(x, y, z, p3, modelHash) end
 
 
----@param entity1 Entity
----@param entity2 Entity
+---@param entity1 entity
+---@param entity2 entity
 ---@param thisFrameOnly BOOL
 function ENTITY.SET_ENTITY_NO_COLLISION_ENTITY(entity1, entity2, thisFrameOnly) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_ENTITY_MOTION_BLUR(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_CAN_AUTO_VAULT_ON_ENTITY(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_CAN_CLIMB_ON_ENTITY(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_WAIT_FOR_COLLISIONS_BEFORE_PROBE(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param p1 BOOL
 function ENTITY.SET_ENTITY_NOWEAPONDECALS(entity, p1) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param p1 BOOL
 function ENTITY.SET_ENTITY_USE_MAX_DISTANCE_FOR_WATER_REFLECTION(entity, p1) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param boneIndex int
 ---@return Vector3
 function ENTITY.GET_ENTITY_BONE_ROTATION(entity, boneIndex) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param boneIndex int
 ---@return Vector3
 function ENTITY.GET_ENTITY_BONE_POSTION(entity, boneIndex) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param boneIndex int
 ---@return Vector3
 function ENTITY.GET_ENTITY_BONE_OBJECT_ROTATION(entity, boneIndex) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param boneIndex int
 ---@return Vector3
 function ENTITY.GET_ENTITY_BONE_OBJECT_POSTION(entity, boneIndex) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return int
 function ENTITY.GET_ENTITY_BONE_COUNT(entity) end
 
 
----@param entity Entity
+---@param entity entity
 function ENTITY.ENABLE_ENTITY_BULLET_COLLISION(entity) end
 
 
----@param entity1 Entity
----@param entity2 Entity
+---@param entity1 entity
+---@param entity2 entity
 function ENTITY.SET_ENTITY_CAN_ONLY_BE_DAMAGED_BY_ENTITY(entity1, entity2) end
 
 
----@param entity1 Entity
----@param entity2 Entity
+---@param entity1 entity
+---@param entity2 entity
 function ENTITY.SET_ENTITY_CANT_CAUSE_COLLISION_DAMAGED_ENTITY(entity1, entity2) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param p1 Any
 function ENTITY.SET_ALLOW_MIGRATE_TO_SPECTATOR(entity, p1) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param modelHash Hash
----@return Entity
+---@return entity
 function ENTITY.GET_ENTITY_OF_TYPE_ATTACHED_TO_ENTITY(entity, modelHash) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function ENTITY.SET_PICK_UP_BY_CARGOBOB_DISABLED(entity, toggle) end
 

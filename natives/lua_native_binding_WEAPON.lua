@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -54,13 +54,13 @@ function WEAPON.GET_WEAPON_COMPONENT_VARIANT_EXTRA_COUNT(componentHash) end
 function WEAPON.GET_WEAPON_COMPONENT_VARIANT_EXTRA_MODEL(componentHash, extraComponentIndex) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param bForceInHand BOOL
 function WEAPON.SET_CURRENT_PED_WEAPON(ped, weaponHash, bForceInHand) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param p2 BOOL
 ---@return boolean
@@ -68,36 +68,36 @@ function WEAPON.SET_CURRENT_PED_WEAPON(ped, weaponHash, bForceInHand) end
 function WEAPON.GET_CURRENT_PED_WEAPON(ped, weaponHash, p2) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param p1 Any
----@return Entity
+---@return entity
 function WEAPON.GET_CURRENT_PED_WEAPON_ENTITY_INDEX(ped, p1) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param p1 BOOL
 ---@return Hash
 function WEAPON.GET_BEST_PED_WEAPON(ped, p1) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@return boolean
 function WEAPON.SET_CURRENT_PED_VEHICLE_WEAPON(ped, weaponHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@return boolean
 ---@return Hash weaponHash
 function WEAPON.GET_CURRENT_PED_VEHICLE_WEAPON(ped, weaponHash) end
 
 
----@param ped Ped
+---@param ped ped
 function WEAPON.SET_PED_CYCLE_VEHICLE_WEAPONS_ONLY(ped) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param typeFlags int
 ---@return boolean
 function WEAPON.IS_PED_ARMED(ped, typeFlags) end
@@ -108,50 +108,50 @@ function WEAPON.IS_PED_ARMED(ped, typeFlags) end
 function WEAPON.IS_WEAPON_VALID(weaponHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param p2 BOOL
 ---@return boolean
 function WEAPON.HAS_PED_GOT_WEAPON(ped, weaponHash, p2) end
 
 
----@param ped Ped
+---@param ped ped
 ---@return boolean
 function WEAPON.IS_PED_WEAPON_READY_TO_SHOOT(ped) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponSlot Hash
 ---@return Hash
 function WEAPON.GET_PED_WEAPONTYPE_IN_SLOT(ped, weaponSlot) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponhash Hash
 ---@return int
 function WEAPON.GET_AMMO_IN_PED_WEAPON(ped, weaponhash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param ammo int
 function WEAPON.ADD_AMMO_TO_PED(ped, weaponHash, ammo) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param ammo int
 ---@param p3 BOOL
 function WEAPON.SET_PED_AMMO(ped, weaponHash, ammo, p3) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param toggle BOOL
 ---@param weaponHash Hash
 function WEAPON.SET_PED_INFINITE_AMMO(ped, toggle, weaponHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param toggle BOOL
 function WEAPON.SET_PED_INFINITE_AMMO_CLIP(ped, toggle) end
 
@@ -161,7 +161,7 @@ function WEAPON.SET_PED_INFINITE_AMMO_CLIP(ped, toggle) end
 function WEAPON.SET_PED_STUN_GUN_FINITE_AMMO(p0, p1) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param ammoCount int
 ---@param isHidden BOOL
@@ -169,29 +169,29 @@ function WEAPON.SET_PED_STUN_GUN_FINITE_AMMO(p0, p1) end
 function WEAPON.GIVE_WEAPON_TO_PED(ped, weaponHash, ammoCount, isHidden, bForceInHand) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param ammoCount int
 ---@param bForceInHand BOOL
 function WEAPON.GIVE_DELAYED_WEAPON_TO_PED(ped, weaponHash, ammoCount, bForceInHand) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param p1 BOOL
 function WEAPON.REMOVE_ALL_PED_WEAPONS(ped, p1) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 function WEAPON.REMOVE_WEAPON_FROM_PED(ped, weaponHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param toggle BOOL
 function WEAPON.HIDE_PED_WEAPON_FOR_SCRIPTED_CUTSCENE(ped, toggle) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param visible BOOL
 ---@param deselectWeapon BOOL
 ---@param p3 BOOL
@@ -199,38 +199,38 @@ function WEAPON.HIDE_PED_WEAPON_FOR_SCRIPTED_CUTSCENE(ped, toggle) end
 function WEAPON.SET_PED_CURRENT_WEAPON_VISIBLE(ped, visible, deselectWeapon, p3, p4) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param toggle BOOL
 function WEAPON.SET_PED_DROPS_WEAPONS_WHEN_DEAD(ped, toggle) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param weaponType int
 ---@return boolean
 function WEAPON.HAS_PED_BEEN_DAMAGED_BY_WEAPON(ped, weaponHash, weaponType) end
 
 
----@param ped Ped
+---@param ped ped
 function WEAPON.CLEAR_PED_LAST_WEAPON_DAMAGE(ped) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param weaponHash Hash
 ---@param weaponType int
 ---@return boolean
 function WEAPON.HAS_ENTITY_BEEN_DAMAGED_BY_WEAPON(entity, weaponHash, weaponType) end
 
 
----@param entity Entity
+---@param entity entity
 function WEAPON.CLEAR_ENTITY_LAST_WEAPON_DAMAGE(entity) end
 
 
----@param ped Ped
+---@param ped ped
 function WEAPON.SET_PED_DROPS_WEAPON(ped) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param xOffset float
 ---@param yOffset float
@@ -239,14 +239,14 @@ function WEAPON.SET_PED_DROPS_WEAPON(ped) end
 function WEAPON.SET_PED_DROPS_INVENTORY_WEAPON(ped, weaponHash, xOffset, yOffset, zOffset, ammoCount) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param p2 BOOL
 ---@return int
 function WEAPON.GET_MAX_AMMO_IN_CLIP(ped, weaponHash, p2) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param ammo int
 ---@return boolean
@@ -254,14 +254,14 @@ function WEAPON.GET_MAX_AMMO_IN_CLIP(ped, weaponHash, p2) end
 function WEAPON.GET_AMMO_IN_CLIP(ped, weaponHash, ammo) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param ammo int
 ---@return boolean
 function WEAPON.SET_AMMO_IN_CLIP(ped, weaponHash, ammo) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param ammo int
 ---@return boolean
@@ -269,7 +269,7 @@ function WEAPON.SET_AMMO_IN_CLIP(ped, weaponHash, ammo) end
 function WEAPON.GET_MAX_AMMO(ped, weaponHash, ammo) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param ammoTypeHash Hash
 ---@param ammo int
 ---@return boolean
@@ -277,25 +277,25 @@ function WEAPON.GET_MAX_AMMO(ped, weaponHash, ammo) end
 function WEAPON.GET_MAX_AMMO_BY_TYPE(ped, ammoTypeHash, ammo) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param ammoTypeHash Hash
 ---@param ammo int
 function WEAPON.ADD_PED_AMMO_BY_TYPE(ped, ammoTypeHash, ammo) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param ammoTypeHash Hash
 ---@param ammo int
 function WEAPON.SET_PED_AMMO_BY_TYPE(ped, ammoTypeHash, ammo) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param ammoTypeHash Hash
 ---@return int
 function WEAPON.GET_PED_AMMO_BY_TYPE(ped, ammoTypeHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param p1 int
 function WEAPON.SET_PED_AMMO_TO_DROP(ped, p1) end
 
@@ -304,43 +304,43 @@ function WEAPON.SET_PED_AMMO_TO_DROP(ped, p1) end
 function WEAPON.SET_PICKUP_AMMO_AMOUNT_SCALER(p0) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@return Hash
 function WEAPON.GET_PED_AMMO_TYPE_FROM_WEAPON(ped, weaponHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@return Hash
 function WEAPON.GET_PED_ORIGINAL_AMMO_TYPE_FROM_WEAPON(ped, weaponHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param coords Vector3
 ---@return boolean
 ---@return Vector3 coords
 function WEAPON.GET_PED_LAST_WEAPON_IMPACT_COORD(ped, coords) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param gadgetHash Hash
 ---@param p2 BOOL
 function WEAPON.SET_PED_GADGET(ped, gadgetHash, p2) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param gadgetHash Hash
 ---@return boolean
 function WEAPON.GET_IS_PED_GADGET_EQUIPPED(ped, gadgetHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@return Hash
 function WEAPON.GET_SELECTED_PED_WEAPON(ped) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param p2 BOOL
 function WEAPON.EXPLODE_PROJECTILES(ped, weaponHash, p2) end
@@ -351,56 +351,56 @@ function WEAPON.EXPLODE_PROJECTILES(ped, weaponHash, p2) end
 function WEAPON.REMOVE_ALL_PROJECTILES_OF_TYPE(weaponHash, explode) end
 
 
----@param ped Ped
+---@param ped ped
 ---@return float
 function WEAPON.GET_LOCKON_DISTANCE_OF_CURRENT_PED_WEAPON(ped) end
 
 
----@param ped Ped
+---@param ped ped
 ---@return float
 function WEAPON.GET_MAX_RANGE_OF_CURRENT_PED_WEAPON(ped) end
 
 
----@param driver Ped
----@param vehicle Vehicle
+---@param driver ped
+---@param vehicle vehicle
 ---@param weaponHash Hash
 ---@param p3 Any
 ---@return boolean
 function WEAPON.HAS_VEHICLE_GOT_PROJECTILE_ATTACHED(driver, vehicle, weaponHash, p3) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param componentHash Hash
 function WEAPON.GIVE_WEAPON_COMPONENT_TO_PED(ped, weaponHash, componentHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param componentHash Hash
 function WEAPON.REMOVE_WEAPON_COMPONENT_FROM_PED(ped, weaponHash, componentHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param componentHash Hash
 ---@return boolean
 function WEAPON.HAS_PED_GOT_WEAPON_COMPONENT(ped, weaponHash, componentHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param componentHash Hash
 ---@return boolean
 function WEAPON.IS_PED_WEAPON_COMPONENT_ACTIVE(ped, weaponHash, componentHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@return boolean
 function WEAPON.REFILL_AMMO_INSTANTLY(ped) end
 
 
----@param ped Ped
+---@param ped ped
 ---@return boolean
 function WEAPON.MAKE_PED_RELOAD(ped) end
 
@@ -430,29 +430,29 @@ function WEAPON.REMOVE_WEAPON_ASSET(weaponHash) end
 ---@param p7 Any
 ---@param p8 Any
 ---@param p9 Any
----@return Object
+---@return object
 function WEAPON.CREATE_WEAPON_OBJECT(weaponHash, ammoCount, x, y, z, showWorldModel, scale, p7, p8, p9) end
 
 
----@param weaponObject Object
+---@param weaponobject object
 ---@param componentHash Hash
-function WEAPON.GIVE_WEAPON_COMPONENT_TO_WEAPON_OBJECT(weaponObject, componentHash) end
+function WEAPON.GIVE_WEAPON_COMPONENT_TO_WEAPON_OBJECT(weaponobject, componentHash) end
 
 
----@param object Object
+---@param object object
 ---@param componentHash Hash
 function WEAPON.REMOVE_WEAPON_COMPONENT_FROM_WEAPON_OBJECT(object, componentHash) end
 
 
----@param weapon Object
+---@param weapon object
 ---@param componentHash Hash
 ---@return boolean
 function WEAPON.HAS_WEAPON_GOT_WEAPON_COMPONENT(weapon, componentHash) end
 
 
----@param weaponObject Object
----@param ped Ped
-function WEAPON.GIVE_WEAPON_OBJECT_TO_PED(weaponObject, ped) end
+---@param weaponobject object
+---@param ped ped
+function WEAPON.GIVE_WEAPON_OBJECT_TO_PED(weaponobject, ped) end
 
 
 ---@param weaponHash Hash
@@ -461,35 +461,35 @@ function WEAPON.GIVE_WEAPON_OBJECT_TO_PED(weaponObject, ped) end
 function WEAPON.DOES_WEAPON_TAKE_WEAPON_COMPONENT(weaponHash, componentHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param p1 BOOL
----@return Object
+---@return object
 function WEAPON.GET_WEAPON_OBJECT_FROM_PED(ped, p1) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param loadoutHash Hash
 function WEAPON.GIVE_LOADOUT_TO_PED(ped, loadoutHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param tintIndex int
 function WEAPON.SET_PED_WEAPON_TINT_INDEX(ped, weaponHash, tintIndex) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@return int
 function WEAPON.GET_PED_WEAPON_TINT_INDEX(ped, weaponHash) end
 
 
----@param weapon Object
+---@param weapon object
 ---@param tintIndex int
 function WEAPON.SET_WEAPON_OBJECT_TINT_INDEX(weapon, tintIndex) end
 
 
----@param weapon Object
+---@param weapon object
 ---@return int
 function WEAPON.GET_WEAPON_OBJECT_TINT_INDEX(weapon) end
 
@@ -499,41 +499,41 @@ function WEAPON.GET_WEAPON_OBJECT_TINT_INDEX(weapon) end
 function WEAPON.GET_WEAPON_TINT_COUNT(weaponHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param camoComponentHash Hash
 ---@param colorIndex int
 function WEAPON.SET_PED_WEAPON_COMPONENT_TINT_INDEX(ped, weaponHash, camoComponentHash, colorIndex) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param camoComponentHash Hash
 ---@return int
 function WEAPON.GET_PED_WEAPON_COMPONENT_TINT_INDEX(ped, weaponHash, camoComponentHash) end
 
 
----@param weaponObject Object
+---@param weaponobject object
 ---@param camoComponentHash Hash
 ---@param colorIndex int
-function WEAPON.SET_WEAPON_OBJECT_COMPONENT_TINT_INDEX(weaponObject, camoComponentHash, colorIndex) end
+function WEAPON.SET_WEAPON_OBJECT_COMPONENT_TINT_INDEX(weaponobject, camoComponentHash, colorIndex) end
 
 
----@param weaponObject Object
+---@param weaponobject object
 ---@param camoComponentHash Hash
 ---@return int
-function WEAPON.GET_WEAPON_OBJECT_COMPONENT_TINT_INDEX(weaponObject, camoComponentHash) end
+function WEAPON.GET_WEAPON_OBJECT_COMPONENT_TINT_INDEX(weaponobject, camoComponentHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@return int
 function WEAPON.GET_PED_WEAPON_CAMO_INDEX(ped, weaponHash) end
 
 
----@param weaponObject Object
+---@param weaponobject object
 ---@param p1 int
-function WEAPON.SET_WEAPON_OBJECT_CAMO_INDEX(weaponObject, p1) end
+function WEAPON.SET_WEAPON_OBJECT_CAMO_INDEX(weaponobject, p1) end
 
 
 ---@param weaponHash Hash
@@ -564,20 +564,20 @@ function WEAPON.GET_WEAPON_CLIP_SIZE(weaponHash) end
 function WEAPON.GET_WEAPON_TIME_BETWEEN_SHOTS(weaponHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param xBias float
 ---@param yBias float
 function WEAPON.SET_PED_CHANCE_OF_FIRING_BLANKS(ped, xBias, yBias) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param p1 float
----@return Object
+---@return object
 function WEAPON.SET_PED_SHOOT_ORDNANCE_WEAPON(ped, p1) end
 
 
----@param weaponObject Entity
-function WEAPON.REQUEST_WEAPON_HIGH_DETAIL_MODEL(weaponObject) end
+---@param weaponobject entity
+function WEAPON.REQUEST_WEAPON_HIGH_DETAIL_MODEL(weaponobject) end
 
 
 ---@param weapon Hash
@@ -600,12 +600,12 @@ function WEAPON.SET_WEAPON_AOE_MODIFIER(weaponHash, multiplier) end
 function WEAPON.SET_WEAPON_EFFECT_DURATION_MODIFIER(p0, p1) end
 
 
----@param ped Ped
+---@param ped ped
 ---@return boolean
 function WEAPON.IS_PED_CURRENT_WEAPON_SILENCED(ped) end
 
 
----@param ped Ped
+---@param ped ped
 ---@return boolean
 function WEAPON.IS_FLASH_LIGHT_ON(ped) end
 
@@ -615,12 +615,12 @@ function WEAPON.IS_FLASH_LIGHT_ON(ped) end
 function WEAPON.SET_FLASH_LIGHT_FADE_DISTANCE(distance) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param toggle BOOL
 function WEAPON.SET_FLASH_LIGHT_ACTIVE_HISTORY(ped, toggle) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param animStyle Hash
 function WEAPON.SET_WEAPON_ANIMATION_OVERRIDE(ped, animStyle) end
 
@@ -630,7 +630,7 @@ function WEAPON.SET_WEAPON_ANIMATION_OVERRIDE(ped, animStyle) end
 function WEAPON.GET_WEAPON_DAMAGE_TYPE(weaponHash) end
 
 
----@param ped Ped
+---@param ped ped
 function WEAPON.SET_EQIPPED_WEAPON_START_SPINNING_AT_FULL_SPEED(ped) end
 
 
@@ -674,7 +674,7 @@ function WEAPON.REMOVE_AIR_DEFENCE_SPHERE(zoneId) end
 function WEAPON.REMOVE_ALL_AIR_DEFENCE_SPHERES() end
 
 
----@param player Player
+---@param player player
 ---@param zoneId int
 ---@param enable BOOL
 function WEAPON.SET_PLAYER_TARGETTABLE_FOR_AIR_DEFENCE_SPHERE(player, zoneId, enable) end
@@ -702,13 +702,13 @@ function WEAPON.FIRE_AIR_DEFENCE_SPHERE_WEAPON_AT_POSITION(zoneId, x, y, z) end
 function WEAPON.DOES_AIR_DEFENCE_SPHERE_EXIST(zoneId) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param weaponHash Hash
 ---@param toggle BOOL
 function WEAPON.SET_CAN_PED_SELECT_INVENTORY_WEAPON(ped, weaponHash, toggle) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param toggle BOOL
 function WEAPON.SET_CAN_PED_SELECT_ALL_WEAPONS(ped, toggle) end
 

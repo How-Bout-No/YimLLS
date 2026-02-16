@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -279,7 +279,7 @@ function CAM.SET_CAM_DOF_SHOULD_KEEP_LOOK_AT_TARGET_IN_FOCUS(camera, state) end
 
 
 ---@param cam Cam
----@param entity Entity
+---@param entity entity
 ---@param xOffset float
 ---@param yOffset float
 ---@param zOffset float
@@ -288,7 +288,7 @@ function CAM.ATTACH_CAM_TO_ENTITY(cam, entity, xOffset, yOffset, zOffset, isRela
 
 
 ---@param cam Cam
----@param ped Ped
+---@param ped ped
 ---@param boneIndex int
 ---@param x float
 ---@param y float
@@ -298,7 +298,7 @@ function CAM.ATTACH_CAM_TO_PED_BONE(cam, ped, boneIndex, x, y, z, heading) end
 
 
 ---@param cam Cam
----@param ped Ped
+---@param ped ped
 ---@param boneIndex int
 ---@param p3 float
 ---@param p4 float
@@ -311,7 +311,7 @@ function CAM.HARD_ATTACH_CAM_TO_PED_BONE(cam, ped, boneIndex, p3, p4, p5, p6, p7
 
 
 ---@param cam Cam
----@param entity Entity
+---@param entity entity
 ---@param xRot float
 ---@param yRot float
 ---@param zRot float
@@ -323,7 +323,7 @@ function CAM.HARD_ATTACH_CAM_TO_ENTITY(cam, entity, xRot, yRot, zRot, xOffset, y
 
 
 ---@param cam Cam
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@param boneIndex int
 ---@param relativeRotation BOOL
 ---@param rotX float
@@ -353,7 +353,7 @@ function CAM.POINT_CAM_AT_COORD(cam, x, y, z) end
 
 
 ---@param cam Cam
----@param entity Entity
+---@param entity entity
 ---@param p2 float
 ---@param p3 float
 ---@param p4 float
@@ -362,7 +362,7 @@ function CAM.POINT_CAM_AT_ENTITY(cam, entity, p2, p3, p4, p5) end
 
 
 ---@param cam Cam
----@param ped Ped
+---@param ped ped
 ---@param boneIndex int
 ---@param x float
 ---@param y float
@@ -592,7 +592,7 @@ function CAM.IS_SCRIPT_GLOBAL_SHAKING() end
 function CAM.STOP_SCRIPT_GLOBAL_SHAKING(p0) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@param p1 int
 ---@param p2 float
 function CAM.TRIGGER_VEHICLE_PART_BROKEN_CAMERA_SHAKE(vehicle, p1, p2) end
@@ -787,7 +787,7 @@ function CAM.SET_GAMEPLAY_CAM_SHAKE_AMPLITUDE(amplitude) end
 function CAM.STOP_GAMEPLAY_CAM_SHAKING(p0) end
 
 
----@param ped Ped
+---@param ped ped
 function CAM.SET_GAMEPLAY_CAM_FOLLOW_PED_THIS_UPDATE(ped) end
 
 
@@ -814,18 +814,18 @@ function CAM.DISABLE_GAMEPLAY_CAM_ALTITUDE_FOV_SCALING_THIS_UPDATE() end
 function CAM.IS_GAMEPLAY_CAM_LOOKING_BEHIND() end
 
 
----@param entity Entity
+---@param entity entity
 function CAM.SET_GAMEPLAY_CAM_IGNORE_ENTITY_COLLISION_THIS_UPDATE(entity) end
 
 
----@param entity Entity
+---@param entity entity
 function CAM.DISABLE_CAM_COLLISION_FOR_OBJECT(entity) end
 
 
 function CAM.BYPASS_CAMERA_COLLISION_BUOYANCY_TEST_THIS_UPDATE() end
 
 
----@param entity Entity
+---@param entity entity
 function CAM.SET_GAMEPLAY_CAM_ENTITY_TO_LIMIT_FOCUS_OVER_BOUNDING_SPHERE_THIS_UPDATE(entity) end
 
 
@@ -884,7 +884,7 @@ function CAM.GET_THIRD_PERSON_CAM_MIN_ORBIT_DISTANCE_SPRING_() end
 function CAM.GET_THIRD_PERSON_CAM_MAX_ORBIT_DISTANCE_SPRING_() end
 
 
----@param p0 Vehicle
+---@param p0 vehicle
 ---@param p1 int
 function CAM.SET_IN_VEHICLE_CAM_STATE_THIS_UPDATE(p0, p1) end
 
@@ -1034,7 +1034,7 @@ function CAM.GET_FINAL_RENDERED_CAM_COORD() end
 function CAM.GET_FINAL_RENDERED_CAM_ROT(rotationOrder) end
 
 
----@param player Player
+---@param player player
 ---@param rotationOrder int
 ---@return Vector3
 function CAM.GET_FINAL_RENDERED_REMOTE_PLAYER_CAM_ROT(player, rotationOrder) end
@@ -1044,7 +1044,7 @@ function CAM.GET_FINAL_RENDERED_REMOTE_PLAYER_CAM_ROT(player, rotationOrder) end
 function CAM.GET_FINAL_RENDERED_CAM_FOV() end
 
 
----@param player Player
+---@param player player
 ---@return float
 function CAM.GET_FINAL_RENDERED_REMOTE_PLAYER_CAM_FOV(player) end
 
@@ -1079,7 +1079,7 @@ function CAM.GET_FINAL_RENDERED_CAM_MOTION_BLUR_STRENGTH() end
 function CAM.SET_GAMEPLAY_COORD_HINT(x, y, z, duration, blendOutDuration, blendInDuration, p6) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param x1 float
 ---@param y1 float
 ---@param z1 float
@@ -1090,7 +1090,7 @@ function CAM.SET_GAMEPLAY_COORD_HINT(x, y, z, duration, blendOutDuration, blendI
 function CAM.SET_GAMEPLAY_PED_HINT(ped, x1, y1, z1, p4, duration, blendOutDuration, blendInDuration) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@param offsetX float
 ---@param offsetY float
 ---@param offsetZ float
@@ -1101,7 +1101,7 @@ function CAM.SET_GAMEPLAY_PED_HINT(ped, x1, y1, z1, p4, duration, blendOutDurati
 function CAM.SET_GAMEPLAY_VEHICLE_HINT(vehicle, offsetX, offsetY, offsetZ, p4, time, easeInTime, easeOutTime) end
 
 
----@param object Object
+---@param object object
 ---@param xOffset float
 ---@param yOffset float
 ---@param zOffset float
@@ -1112,7 +1112,7 @@ function CAM.SET_GAMEPLAY_VEHICLE_HINT(vehicle, offsetX, offsetY, offsetZ, p4, t
 function CAM.SET_GAMEPLAY_OBJECT_HINT(object, xOffset, yOffset, zOffset, p4, time, easeInTime, easeOutTime) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param xOffset float
 ---@param yOffset float
 ---@param zOffset float
@@ -1216,7 +1216,7 @@ function CAM.IS_CINEMATIC_FIRST_PERSON_VEHICLE_INTERIOR_CAM_RENDERING() end
 ---@param p0 Hash
 ---@param time int
 ---@param p2 BOOL
----@param entity Entity
+---@param entity entity
 function CAM.CREATE_CINEMATIC_SHOT(p0, time, p2, entity) end
 
 
@@ -1279,7 +1279,7 @@ function CAM.SET_CUTSCENE_CAM_FAR_CLIP_THIS_UPDATE(p0) end
 ---@param p6 float
 ---@param p7 int
 ---@param p8 int
----@return Ped
+---@return ped
 function CAM.GET_FOCUS_PED_ON_SCREEN(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
 

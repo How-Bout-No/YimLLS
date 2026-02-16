@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -457,12 +457,12 @@ function STATS.PLAYSTATS_RANDOM_MISSION_DONE(name, p1, p2, p3) end
 
 ---@param amount int
 ---@param act int
----@param player Player
+---@param player player
 ---@param cm float
 function STATS.PLAYSTATS_ROS_BET(amount, act, player, cm) end
 
 
----@param p0 Vehicle
+---@param p0 vehicle
 ---@param p1 Any
 ---@param p2 int
 ---@param p3 int
@@ -550,14 +550,14 @@ function STATS.PLAYSTATS_FRIEND_ACTIVITY(p0, p1) end
 function STATS.PLAYSTATS_ODDJOB_DONE(totalTimeMs, p1, p2) end
 
 
----@param p0 Ped
+---@param p0 ped
 ---@param p1 int
 ---@param p2 int
 ---@param p3 int
 function STATS.PLAYSTATS_PROP_CHANGE(p0, p1, p2, p3) end
 
 
----@param p0 Ped
+---@param p0 ped
 ---@param p1 Any
 ---@param p2 Any
 ---@param p3 Any

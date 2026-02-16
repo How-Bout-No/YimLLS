@@ -7,7 +7,7 @@
 ---integer = joaat(str)
 ---```
 ---@param str string The string that needs to be joaat hashed.
----@return integer The joaat hashed input string.
+---@return integer -- The joaat hashed input string.
 function joaat(str) end
 
 

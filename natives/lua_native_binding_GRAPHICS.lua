@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -375,7 +375,7 @@ function GRAPHICS.DRAW_SHADOWED_SPOT_LIGHT(posX, posY, posZ, dirX, dirY, dirZ, c
 function GRAPHICS.FADE_UP_PED_LIGHT(p0) end
 
 
----@param entity Entity
+---@param entity entity
 function GRAPHICS.UPDATE_LIGHTS_ON_ENTITY(entity) end
 
 
@@ -673,18 +673,18 @@ function GRAPHICS.DRAW_SPRITE_NAMED_RENDERTARGET(textureDict, textureName, scree
 function GRAPHICS.DRAW_SPRITE_ARX_WITH_UV(textureDict, textureName, x, y, width, height, u1, v1, u2, v2, heading, red, green, blue, alpha, p15) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param icon string
 ---@return int
 function GRAPHICS.ADD_ENTITY_ICON(entity, icon) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function GRAPHICS.SET_ENTITY_ICON_VISIBILITY(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param red int
 ---@param green int
 ---@param blue int
@@ -747,7 +747,7 @@ function GRAPHICS.GET_BINK_MOVIE_TIME(binkMovie) end
 function GRAPHICS.SET_BINK_MOVIE_VOLUME(binkMovie, value) end
 
 
----@param entity Entity
+---@param entity entity
 function GRAPHICS.ATTACH_TV_AUDIO_TO_ENTITY(entity) end
 
 
@@ -862,7 +862,7 @@ function GRAPHICS.GET_SCREEN_COORD_FROM_WORLD_COORD(worldX, worldY, worldZ, scre
 function GRAPHICS.GET_TEXTURE_RESOLUTION(textureDict, textureName) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param txd string
 ---@param txn string
 ---@return boolean
@@ -1294,7 +1294,7 @@ function GRAPHICS.START_NETWORKED_PARTICLE_FX_NON_LOOPED_AT_COORD(effectName, xP
 
 
 ---@param effectName string
----@param ped Ped
+---@param ped ped
 ---@param offsetX float
 ---@param offsetY float
 ---@param offsetZ float
@@ -1311,7 +1311,7 @@ function GRAPHICS.START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE(effectName, ped, offs
 
 
 ---@param effectName string
----@param ped Ped
+---@param ped ped
 ---@param offsetX float
 ---@param offsetY float
 ---@param offsetZ float
@@ -1328,7 +1328,7 @@ function GRAPHICS.START_NETWORKED_PARTICLE_FX_NON_LOOPED_ON_PED_BONE(effectName,
 
 
 ---@param effectName string
----@param entity Entity
+---@param entity entity
 ---@param offsetX float
 ---@param offsetY float
 ---@param offsetZ float
@@ -1344,7 +1344,7 @@ function GRAPHICS.START_PARTICLE_FX_NON_LOOPED_ON_ENTITY(effectName, entity, off
 
 
 ---@param effectName string
----@param entity Entity
+---@param entity entity
 ---@param offsetX float
 ---@param offsetY float
 ---@param offsetZ float
@@ -1360,7 +1360,7 @@ function GRAPHICS.START_NETWORKED_PARTICLE_FX_NON_LOOPED_ON_ENTITY(effectName, e
 
 
 ---@param effectName string
----@param entity Entity
+---@param entity entity
 ---@param offsetX float
 ---@param offsetY float
 ---@param offsetZ float
@@ -1417,7 +1417,7 @@ function GRAPHICS.START_PARTICLE_FX_LOOPED_AT_COORD(effectName, x, y, z, xRot, y
 
 
 ---@param effectName string
----@param ped Ped
+---@param ped ped
 ---@param xOffset float
 ---@param yOffset float
 ---@param zOffset float
@@ -1434,7 +1434,7 @@ function GRAPHICS.START_PARTICLE_FX_LOOPED_ON_PED_BONE(effectName, ped, xOffset,
 
 
 ---@param effectName string
----@param entity Entity
+---@param entity entity
 ---@param xOffset float
 ---@param yOffset float
 ---@param zOffset float
@@ -1450,7 +1450,7 @@ function GRAPHICS.START_PARTICLE_FX_LOOPED_ON_ENTITY(effectName, entity, xOffset
 
 
 ---@param effectName string
----@param entity Entity
+---@param entity entity
 ---@param xOffset float
 ---@param yOffset float
 ---@param zOffset float
@@ -1467,7 +1467,7 @@ function GRAPHICS.START_PARTICLE_FX_LOOPED_ON_ENTITY_BONE(effectName, entity, xO
 
 
 ---@param effectName string
----@param entity Entity
+---@param entity entity
 ---@param xOffset float
 ---@param yOffset float
 ---@param zOffset float
@@ -1487,7 +1487,7 @@ function GRAPHICS.START_NETWORKED_PARTICLE_FX_LOOPED_ON_ENTITY(effectName, entit
 
 
 ---@param effectName string
----@param entity Entity
+---@param entity entity
 ---@param xOffset float
 ---@param yOffset float
 ---@param zOffset float
@@ -1517,7 +1517,7 @@ function GRAPHICS.STOP_PARTICLE_FX_LOOPED(ptfxHandle, p1) end
 function GRAPHICS.REMOVE_PARTICLE_FX(ptfxHandle, p1) end
 
 
----@param entity Entity
+---@param entity entity
 function GRAPHICS.REMOVE_PARTICLE_FX_FROM_ENTITY(entity) end
 
 
@@ -1587,7 +1587,7 @@ function GRAPHICS.SET_PARTICLE_FX_LOOPED_CAMERA_BIAS_(ptfxHandle, p1) end
 function GRAPHICS.SET_PARTICLE_FX_CAM_INSIDE_VEHICLE(p0) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@param p1 BOOL
 function GRAPHICS.SET_PARTICLE_FX_CAM_INSIDE_NONPLAYER_VEHICLE(vehicle, p1) end
 
@@ -1679,7 +1679,7 @@ function GRAPHICS.SET_PARTICLE_FX_OVERRIDE(oldAsset, newAsset) end
 function GRAPHICS.RESET_PARTICLE_FX_OVERRIDE(name) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@param effectName string
 ---@param frontBack BOOL
 ---@param leftRight BOOL
@@ -1704,7 +1704,7 @@ function GRAPHICS.SET_WEATHER_PTFX_OVERRIDE_CURR_LEVEL(p0) end
 function GRAPHICS.WASH_DECALS_IN_RANGE(x, y, z, range, p4) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@param p1 float
 function GRAPHICS.WASH_DECALS_FROM_VEHICLE(vehicle, p1) end
 
@@ -1724,18 +1724,18 @@ function GRAPHICS.FADE_DECALS_IN_RANGE(x, y, z, p3, p4) end
 function GRAPHICS.REMOVE_DECALS_IN_RANGE(x, y, z, range) end
 
 
----@param obj Object
+---@param obj object
 function GRAPHICS.REMOVE_DECALS_FROM_OBJECT(obj) end
 
 
----@param obj Object
+---@param obj object
 ---@param x float
 ---@param y float
 ---@param z float
 function GRAPHICS.REMOVE_DECALS_FROM_OBJECT_FACING(obj, x, y, z) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 function GRAPHICS.REMOVE_DECALS_FROM_VEHICLE(vehicle) end
 
 
@@ -1843,8 +1843,8 @@ function GRAPHICS.UNPATCH_DECAL_DIFFUSE_MAP(decalType) end
 function GRAPHICS.MOVE_VEHICLE_DECALS(p0, p1) end
 
 
----@param vehicle Vehicle
----@param ped Ped
+---@param vehicle vehicle
+---@param ped ped
 ---@param boneIndex int
 ---@param x1 float
 ---@param x2 float
@@ -1868,18 +1868,18 @@ function GRAPHICS.ADD_VEHICLE_CREW_EMBLEM(vehicle, ped, boneIndex, x1, x2, x3, y
 function GRAPHICS.ABORT_VEHICLE_CREW_EMBLEM_REQUEST(p0) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@param p1 int
 function GRAPHICS.REMOVE_VEHICLE_CREW_EMBLEM(vehicle, p1) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@param p1 int
 ---@return int
 function GRAPHICS.GET_VEHICLE_CREW_EMBLEM_REQUEST_STATE(vehicle, p1) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@param p1 int
 ---@return boolean
 function GRAPHICS.DOES_VEHICLE_HAVE_CREW_EMBLEM(vehicle, p1) end
@@ -2388,7 +2388,7 @@ function GRAPHICS.UI3DSCENE_PUSH_PRESET(presetName) end
 
 
 ---@param presetName string
----@param ped Ped
+---@param ped ped
 ---@param slot int
 ---@param posX float
 ---@param posY float

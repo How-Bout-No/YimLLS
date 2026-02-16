@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -94,7 +94,7 @@ function FILES.GET_SHOP_PED_QUERY_PROP_INDEX(componentHash) end
 function FILES.GET_SHOP_PED_PROP(componentHash, outProp) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param componentId int
 ---@param drawableVariant int
 ---@param textureVariant int
@@ -102,7 +102,7 @@ function FILES.GET_SHOP_PED_PROP(componentHash, outProp) end
 function FILES.GET_HASH_NAME_FOR_COMPONENT(entity, componentId, drawableVariant, textureVariant) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param componentId int
 ---@param propIndex int
 ---@param propTextureIndex int
@@ -181,14 +181,14 @@ function FILES.GET_FORCED_PROP(componentHash, forcedPropIndex, nameHash, enumVal
 function FILES.DOES_SHOP_PED_APPAREL_HAVE_RESTRICTION_TAG(componentHash, restrictionTagHash, componentId) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param componentId int
 ---@param restrictionTagHash Hash
 ---@return boolean
 function FILES.DOES_CURRENT_PED_COMPONENT_HAVE_RESTRICTION_TAG(ped, componentId, restrictionTagHash) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param componentId int
 ---@param restrictionTagHash Hash
 ---@return boolean
@@ -234,20 +234,20 @@ function FILES.GET_SHOP_PED_OUTFIT_COMPONENT_VARIANT(outfitHash, variantIndex, o
 function FILES.GET_NUM_DLC_VEHICLES() end
 
 
----@param dlcVehicleIndex int
+---@param dlcvehicleIndex int
 ---@return Hash
-function FILES.GET_DLC_VEHICLE_MODEL(dlcVehicleIndex) end
+function FILES.GET_DLC_VEHICLE_MODEL(dlcvehicleIndex) end
 
 
----@param dlcVehicleIndex int
+---@param dlcvehicleIndex int
 ---@param outData number
 ---@return boolean
-function FILES.GET_DLC_VEHICLE_DATA(dlcVehicleIndex, outData) end
+function FILES.GET_DLC_VEHICLE_DATA(dlcvehicleIndex, outData) end
 
 
----@param dlcVehicleIndex int
+---@param dlcvehicleIndex int
 ---@return int
-function FILES.GET_DLC_VEHICLE_FLAGS(dlcVehicleIndex) end
+function FILES.GET_DLC_VEHICLE_FLAGS(dlcvehicleIndex) end
 
 
 ---@return int

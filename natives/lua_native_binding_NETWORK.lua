@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -75,7 +75,7 @@ function NETWORK.NETWORK_ARE_SOCIAL_CLUB_POLICIES_CURRENT() end
 function NETWORK.NETWORK_IS_HOST() end
 
 
----@return Player
+---@return player
 function NETWORK.NETWORK_GET_HOST_PLAYER_INDEX() end
 
 
@@ -97,7 +97,7 @@ function NETWORK.NETWORK_HAVE_USER_CONTENT_PRIVILEGES(p0) end
 
 
 ---@param p0 int
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_HAVE_COMMUNICATION_PRIVILEGES(p0, player) end
 
@@ -254,9 +254,9 @@ function NETWORK.NETWORK_SESSION_DO_FRIEND_MATCHMAKING(p0, p1, p2) end
 ---@param crewId int
 ---@param p1 int
 ---@param p2 int
----@param maxPlayers int
+---@param maxplayers int
 ---@return boolean
-function NETWORK.NETWORK_SESSION_DO_CREW_MATCHMAKING(crewId, p1, p2, maxPlayers) end
+function NETWORK.NETWORK_SESSION_DO_CREW_MATCHMAKING(crewId, p1, p2, maxplayers) end
 
 
 ---@param p0 Any
@@ -269,22 +269,22 @@ function NETWORK.NETWORK_SESSION_DO_ACTIVITY_QUICKMATCH(p0, p1, p2, p3, p4) end
 
 
 ---@param p0 int
----@param maxPlayers int
+---@param maxplayers int
 ---@param p2 BOOL
 ---@return boolean
-function NETWORK.NETWORK_SESSION_HOST(p0, maxPlayers, p2) end
+function NETWORK.NETWORK_SESSION_HOST(p0, maxplayers, p2) end
 
 
 ---@param p0 int
----@param maxPlayers int
+---@param maxplayers int
 ---@return boolean
-function NETWORK.NETWORK_SESSION_HOST_CLOSED(p0, maxPlayers) end
+function NETWORK.NETWORK_SESSION_HOST_CLOSED(p0, maxplayers) end
 
 
 ---@param p0 int
----@param maxPlayers int
+---@param maxplayers int
 ---@return boolean
-function NETWORK.NETWORK_SESSION_HOST_FRIENDS_ONLY(p0, maxPlayers) end
+function NETWORK.NETWORK_SESSION_HOST_FRIENDS_ONLY(p0, maxplayers) end
 
 
 ---@return boolean
@@ -320,11 +320,11 @@ function NETWORK.NETWORK_SESSION_END(p0, p1) end
 function NETWORK.NETWORK_SESSION_LEAVE(p0) end
 
 
----@param player Player
+---@param player player
 function NETWORK.NETWORK_SESSION_KICK_PLAYER(player) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_SESSION_GET_KICK_VOTE(player) end
 
@@ -809,16 +809,16 @@ function NETWORK.NETWORK_BAIL_TRANSITION(p0, p1, p2) end
 
 
 ---@param p0 BOOL
----@param maxPlayers int
+---@param maxplayers int
 ---@return boolean
-function NETWORK.NETWORK_DO_TRANSITION_TO_GAME(p0, maxPlayers) end
+function NETWORK.NETWORK_DO_TRANSITION_TO_GAME(p0, maxplayers) end
 
 
 ---@param p0 BOOL
----@param maxPlayers int
+---@param maxplayers int
 ---@param p2 BOOL
 ---@return boolean
-function NETWORK.NETWORK_DO_TRANSITION_TO_NEW_GAME(p0, maxPlayers, p2) end
+function NETWORK.NETWORK_DO_TRANSITION_TO_NEW_GAME(p0, maxplayers, p2) end
 
 
 ---@param p0 number
@@ -953,7 +953,7 @@ function NETWORK.NETWORK_CHANGE_TRANSITION_SLOTS(p0, p1) end
 function NETWORK.NETWORK_TRANSITION_BLOCK_JOIN_REQUESTS(p0) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_HAS_PLAYER_STARTED_TRANSITION(player) end
 
@@ -963,7 +963,7 @@ function NETWORK.NETWORK_HAS_PLAYER_STARTED_TRANSITION(player) end
 function NETWORK.NETWORK_ARE_TRANSITION_DETAILS_VALID(p0) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_JOIN_TRANSITION(player) end
 
@@ -1254,7 +1254,7 @@ function NETWORK.NETWORK_PLAYER_GET_CHEATER_REASON() end
 function NETWORK.NETWORK_PLAYER_IS_BADSPORT() end
 
 
----@param player Player
+---@param player player
 ---@param a int
 ---@param b int
 ---@return boolean
@@ -1280,7 +1280,7 @@ function NETWORK.NETWORK_REMOVE_INVALID_OBJECT_MODEL(modelHash) end
 function NETWORK.NETWORK_CLEAR_INVALID_OBJECT_MODELS() end
 
 
----@param ped Ped
+---@param ped ped
 ---@param p1 int
 function NETWORK.NETWORK_APPLY_PED_SCAR_DATA(ped, p1) end
 
@@ -1345,8 +1345,8 @@ function NETWORK.NETWORK_FINISH_BROADCASTING_DATA() end
 function NETWORK.NETWORK_HAS_RECEIVED_HOST_BROADCAST_DATA() end
 
 
----@param player Player
----@return Player
+---@param player player
+---@return player
 function NETWORK.NETWORK_GET_PLAYER_INDEX(player) end
 
 
@@ -1355,8 +1355,8 @@ function NETWORK.NETWORK_GET_PLAYER_INDEX(player) end
 function NETWORK.NETWORK_GET_PARTICIPANT_INDEX(index) end
 
 
----@param ped Ped
----@return Player
+---@param ped ped
+---@return player
 function NETWORK.NETWORK_GET_PLAYER_INDEX_FROM_PED(ped) end
 
 
@@ -1364,7 +1364,7 @@ function NETWORK.NETWORK_GET_PLAYER_INDEX_FROM_PED(ped) end
 function NETWORK.NETWORK_GET_NUM_CONNECTED_PLAYERS() end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_IS_PLAYER_CONNECTED(player) end
 
@@ -1378,12 +1378,12 @@ function NETWORK.NETWORK_GET_TOTAL_NUM_PLAYERS() end
 function NETWORK.NETWORK_IS_PARTICIPANT_ACTIVE(p0) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_IS_PLAYER_ACTIVE(player) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_IS_PLAYER_A_PARTICIPANT(player) end
 
@@ -1392,14 +1392,14 @@ function NETWORK.NETWORK_IS_PLAYER_A_PARTICIPANT(player) end
 function NETWORK.NETWORK_IS_HOST_OF_THIS_SCRIPT() end
 
 
----@return Player
+---@return player
 function NETWORK.NETWORK_GET_HOST_OF_THIS_SCRIPT() end
 
 
 ---@param scriptName string
 ---@param instance_id int
 ---@param position_hash int
----@return Player
+---@return player
 function NETWORK.NETWORK_GET_HOST_OF_SCRIPT(scriptName, instance_id, position_hash) end
 
 
@@ -1442,7 +1442,7 @@ function NETWORK.NETWORK_GET_INSTANCE_ID_OF_THIS_SCRIPT() end
 function NETWORK.NETWORK_GET_POSITION_HASH_OF_THIS_SCRIPT() end
 
 
----@param player Player
+---@param player player
 ---@param script string
 ---@param instance_id int
 ---@return boolean
@@ -1455,7 +1455,7 @@ function NETWORK.NETWORK_PREVENT_SCRIPT_HOST_MIGRATION() end
 function NETWORK.NETWORK_REQUEST_TO_BE_HOST_OF_THIS_SCRIPT() end
 
 
----@return Player
+---@return player
 function NETWORK.PARTICIPANT_ID() end
 
 
@@ -1463,46 +1463,46 @@ function NETWORK.PARTICIPANT_ID() end
 function NETWORK.PARTICIPANT_ID_TO_INT() end
 
 
----@param player Player
+---@param player player
 ---@param weaponHash Hash
----@return Player
+---@return player
 ---@return Hash weaponHash
 function NETWORK.NETWORK_GET_KILLER_OF_PLAYER(player, weaponHash) end
 
 
 ---@param netId int
 ---@param weaponHash Hash
----@return Player
+---@return player
 ---@return Hash weaponHash
 function NETWORK.NETWORK_GET_DESTROYER_OF_NETWORK_ID(netId, weaponHash) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param weaponHash Hash
----@return Player
+---@return player
 ---@return Hash weaponHash
 function NETWORK.NETWORK_GET_DESTROYER_OF_ENTITY(entity, weaponHash) end
 
 
----@param player Player
----@param entity Entity
+---@param player player
+---@param entity entity
 ---@param p2 int
 ---@return boolean
 ---@return int p2
 function NETWORK.NETWORK_GET_ASSISTED_KILL_OF_ENTITY(player, entity, p2) end
 
 
----@param player Player
----@param entity Entity
+---@param player player
+---@param entity entity
 ---@param p2 int
 ---@return boolean
 ---@return int p2
 function NETWORK.NETWORK_GET_ASSISTED_DAMAGE_OF_ENTITY(player, entity, p2) end
 
 
----@param player Player
+---@param player player
 ---@param weaponHash Hash
----@return Entity
+---@return entity
 ---@return Hash weaponHash
 function NETWORK.NETWORK_GET_ENTITY_KILLER_OF_PLAYER(player, weaponHash) end
 
@@ -1547,12 +1547,12 @@ function NETWORK.NETWORK_SET_LOCAL_PLAYER_INVINCIBLE_TIME(time) end
 function NETWORK.NETWORK_IS_LOCAL_PLAYER_INVINCIBLE() end
 
 
----@param player Player
+---@param player player
 ---@param toggle BOOL
 function NETWORK.NETWORK_DISABLE_INVINCIBLE_FLASHING(player, toggle) end
 
 
----@param ped Ped
+---@param ped ped
 function NETWORK.NETWORK_PATCH_POST_CUTSCENE_HS4F_TUN_ENT(ped) end
 
 
@@ -1560,36 +1560,36 @@ function NETWORK.NETWORK_PATCH_POST_CUTSCENE_HS4F_TUN_ENT(ped) end
 function NETWORK.NETWORK_SET_LOCAL_PLAYER_SYNC_LOOK_AT(toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function NETWORK.NETWORK_HAS_ENTITY_BEEN_REGISTERED_WITH_THIS_THREAD(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return int
 function NETWORK.NETWORK_GET_NETWORK_ID_FROM_ENTITY(entity) end
 
 
 ---@param netId int
----@return Entity
+---@return entity
 function NETWORK.NETWORK_GET_ENTITY_FROM_NETWORK_ID(netId) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function NETWORK.NETWORK_GET_ENTITY_IS_NETWORKED(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function NETWORK.NETWORK_GET_ENTITY_IS_LOCAL(entity) end
 
 
----@param entity Entity
+---@param entity entity
 function NETWORK.NETWORK_REGISTER_ENTITY_AS_NETWORKED(entity) end
 
 
----@param entity Entity
+---@param entity entity
 function NETWORK.NETWORK_UNREGISTER_NETWORKED_ENTITY(entity) end
 
 
@@ -1618,7 +1618,7 @@ function NETWORK.NETWORK_HAS_CONTROL_OF_NETWORK_ID(netId) end
 function NETWORK.NETWORK_IS_NETWORK_ID_REMOTELY_CONTROLLED(netId) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function NETWORK.NETWORK_REQUEST_CONTROL_OF_ENTITY(entity) end
 
@@ -1628,7 +1628,7 @@ function NETWORK.NETWORK_REQUEST_CONTROL_OF_ENTITY(entity) end
 function NETWORK.NETWORK_REQUEST_CONTROL_OF_DOOR(doorID) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function NETWORK.NETWORK_HAS_CONTROL_OF_ENTITY(entity) end
 
@@ -1648,38 +1648,38 @@ function NETWORK.NETWORK_HAS_CONTROL_OF_DOOR(doorHash) end
 function NETWORK.NETWORK_IS_DOOR_NETWORKED(doorHash) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@return int
 function NETWORK.VEH_TO_NET(vehicle) end
 
 
----@param ped Ped
+---@param ped ped
 ---@return int
 function NETWORK.PED_TO_NET(ped) end
 
 
----@param object Object
+---@param object object
 ---@return int
 function NETWORK.OBJ_TO_NET(object) end
 
 
 ---@param netHandle int
----@return Vehicle
+---@return vehicle
 function NETWORK.NET_TO_VEH(netHandle) end
 
 
 ---@param netHandle int
----@return Ped
+---@return ped
 function NETWORK.NET_TO_PED(netHandle) end
 
 
 ---@param netHandle int
----@return Object
+---@return object
 function NETWORK.NET_TO_OBJ(netHandle) end
 
 
 ---@param netHandle int
----@return Entity
+---@return entity
 function NETWORK.NET_TO_ENT(netHandle) end
 
 
@@ -1700,13 +1700,13 @@ function NETWORK.NETWORK_HANDLE_FROM_USER_ID(userId, gamerHandle, gamerHandleSiz
 function NETWORK.NETWORK_HANDLE_FROM_MEMBER_ID(memberId, gamerHandle, gamerHandleSize) end
 
 
----@param player Player
+---@param player player
 ---@param gamerHandle number
 ---@param gamerHandleSize int
 function NETWORK.NETWORK_HANDLE_FROM_PLAYER(player, gamerHandle, gamerHandleSize) end
 
 
----@param player Player
+---@param player player
 ---@return Hash
 function NETWORK.NETWORK_HASH_FROM_PLAYER_HANDLE(player) end
 
@@ -1766,7 +1766,7 @@ function NETWORK.NETWORK_IS_HANDLE_VALID(gamerHandle, gamerHandleSize) end
 
 
 ---@param gamerHandle number
----@return Player
+---@return player
 function NETWORK.NETWORK_GET_PLAYER_FROM_GAMER_HANDLE(gamerHandle) end
 
 
@@ -1784,35 +1784,35 @@ function NETWORK.NETWORK_IS_GAMER_IN_MY_SESSION(gamerHandle) end
 function NETWORK.NETWORK_SHOW_PROFILE_UI(gamerHandle) end
 
 
----@param player Player
+---@param player player
 ---@return string
 function NETWORK.NETWORK_PLAYER_GET_NAME(player) end
 
 
----@param player Player
+---@param player player
 ---@param userID int
 ---@return string
 ---@return int userID
 function NETWORK.NETWORK_PLAYER_GET_USERID(player, userID) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_PLAYER_IS_ROCKSTAR_DEV(player) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_PLAYER_INDEX_IS_CHEATER(player) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return int
 function NETWORK.NETWORK_ENTITY_GET_OBJECT_ID(entity) end
 
 
 ---@param p0 Any
----@return Entity
+---@return entity
 function NETWORK.NETWORK_GET_ENTITY_FROM_OBJECT_ID(p0) end
 
 
@@ -1893,7 +1893,7 @@ function NETWORK.NETWORK_IS_FRIEND_INDEX_ONLINE(friendIndex) end
 function NETWORK.NETWORK_SET_PLAYER_IS_PASSIVE(toggle) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_GET_PLAYER_OWNS_WAYPOINT(player) end
 
@@ -2032,37 +2032,37 @@ function NETWORK.NETWORK_CAN_SEND_LOCAL_INVITE(gamerHandle) end
 function NETWORK.NETWORK_CAN_RECEIVE_LOCAL_INVITE(gamerHandle) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_IS_PLAYER_TALKING(player) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_PLAYER_HAS_HEADSET(player) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_IS_PLAYER_MUTED_BY_ME(player) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_AM_I_MUTED_BY_PLAYER(player) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_IS_PLAYER_BLOCKED_BY_ME(player) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_AM_I_BLOCKED_BY_PLAYER(player) end
 
 
----@param player Player
+---@param player player
 ---@return float
 function NETWORK.NETWORK_GET_PLAYER_LOUDNESS(player) end
 
@@ -2126,12 +2126,12 @@ function NETWORK.NETWORK_SET_NO_SPECTATOR_CHAT(toggle) end
 function NETWORK.NETWORK_SET_IGNORE_SPECTATOR_CHAT_LIMITS_SAME_TEAM(toggle) end
 
 
----@param player Player
+---@param player player
 ---@param toggle BOOL
 function NETWORK.NETWORK_OVERRIDE_CHAT_RESTRICTIONS(player, toggle) end
 
 
----@param player Player
+---@param player player
 ---@param toggle BOOL
 function NETWORK.NETWORK_OVERRIDE_SEND_RESTRICTIONS(player, toggle) end
 
@@ -2140,7 +2140,7 @@ function NETWORK.NETWORK_OVERRIDE_SEND_RESTRICTIONS(player, toggle) end
 function NETWORK.NETWORK_OVERRIDE_SEND_RESTRICTIONS_ALL(toggle) end
 
 
----@param player Player
+---@param player player
 ---@param toggle BOOL
 function NETWORK.NETWORK_OVERRIDE_RECEIVE_RESTRICTIONS(player, toggle) end
 
@@ -2165,15 +2165,15 @@ function NETWORK.NETWORK_APPLY_VOICE_PROXIMITY_OVERRIDE(x, y, z) end
 function NETWORK.NETWORK_CLEAR_VOICE_PROXIMITY_OVERRIDE() end
 
 
----@param player Player
+---@param player player
 function NETWORK.NETWORK_ENABLE_VOICE_BANDWIDTH_RESTRICTION(player) end
 
 
----@param player Player
+---@param player player
 function NETWORK.NETWORK_DISABLE_VOICE_BANDWIDTH_RESTRICTION(player) end
 
 
----@param p0 Player
+---@param p0 player
 ---@param p1 float
 ---@param p2 float
 ---@return float p1
@@ -2216,7 +2216,7 @@ function NETWORK.NETWORK_SET_RICH_PRESENCE_STRING(p0, textLabel) end
 function NETWORK.NETWORK_GET_TIMEOUT_TIME() end
 
 
----@param player Player
+---@param player player
 ---@param x float
 ---@param y float
 ---@param z float
@@ -2225,13 +2225,13 @@ function NETWORK.NETWORK_GET_TIMEOUT_TIME() end
 function NETWORK.NETWORK_LEAVE_PED_BEHIND_BEFORE_WARP(player, x, y, z, p4, p5) end
 
 
----@param player Player
+---@param player player
 ---@param p1 BOOL
 function NETWORK.NETWORK_LEAVE_PED_BEHIND_BEFORE_CUTSCENE(player, p1) end
 
 
----@param entity Entity
----@param ped Ped
+---@param entity entity
+---@param ped ped
 function NETWORK.REMOVE_ALL_STICKY_BOMBS_FROM_ENTITY(entity, ped) end
 
 
@@ -2411,7 +2411,7 @@ function NETWORK.SET_NETWORK_ID_EXISTS_ON_ALL_MACHINES(netId, toggle) end
 
 
 ---@param netId int
----@param player Player
+---@param player player
 ---@param toggle BOOL
 function NETWORK.SET_NETWORK_ID_ALWAYS_EXISTS_FOR_PLAYER(netId, player, toggle) end
 
@@ -2421,17 +2421,17 @@ function NETWORK.SET_NETWORK_ID_ALWAYS_EXISTS_FOR_PLAYER(netId, player, toggle) 
 function NETWORK.SET_NETWORK_ID_CAN_BE_REASSIGNED(netId, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function NETWORK.NETWORK_SET_ENTITY_CAN_BLEND(entity, toggle) end
 
 
----@param object Object
+---@param object object
 ---@param toggle BOOL
 function NETWORK.NETWORK_SET_OBJECT_CAN_BLEND_WHEN_FIXED(object, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function NETWORK.NETWORK_SET_ENTITY_ONLY_EXISTS_FOR_PARTICIPANTS(entity, toggle) end
 
@@ -2472,7 +2472,7 @@ function NETWORK.SET_NETWORK_ID_PASS_CONTROL_IN_TUTORIAL(netId, state) end
 function NETWORK.IS_NETWORK_ID_OWNED_BY_PARTICIPANT(netId) end
 
 
----@param player Player
+---@param player player
 ---@param locallyVisible BOOL
 function NETWORK.SET_REMOTE_PLAYER_VISIBLE_IN_CUTSCENE(player, locallyVisible) end
 
@@ -2482,51 +2482,51 @@ function NETWORK.SET_REMOTE_PLAYER_VISIBLE_IN_CUTSCENE(player, locallyVisible) e
 function NETWORK.SET_LOCAL_PLAYER_VISIBLE_IN_CUTSCENE(p0, p1) end
 
 
----@param bIncludePlayersVehicle BOOL
-function NETWORK.SET_LOCAL_PLAYER_INVISIBLE_LOCALLY(bIncludePlayersVehicle) end
+---@param bIncludeplayersvehicle BOOL
+function NETWORK.SET_LOCAL_PLAYER_INVISIBLE_LOCALLY(bIncludeplayersvehicle) end
 
 
----@param bIncludePlayersVehicle BOOL
-function NETWORK.SET_LOCAL_PLAYER_VISIBLE_LOCALLY(bIncludePlayersVehicle) end
+---@param bIncludeplayersvehicle BOOL
+function NETWORK.SET_LOCAL_PLAYER_VISIBLE_LOCALLY(bIncludeplayersvehicle) end
 
 
----@param player Player
----@param bIncludePlayersVehicle BOOL
-function NETWORK.SET_PLAYER_INVISIBLE_LOCALLY(player, bIncludePlayersVehicle) end
+---@param player player
+---@param bIncludeplayersvehicle BOOL
+function NETWORK.SET_PLAYER_INVISIBLE_LOCALLY(player, bIncludeplayersvehicle) end
 
 
----@param player Player
----@param bIncludePlayersVehicle BOOL
-function NETWORK.SET_PLAYER_VISIBLE_LOCALLY(player, bIncludePlayersVehicle) end
+---@param player player
+---@param bIncludeplayersvehicle BOOL
+function NETWORK.SET_PLAYER_VISIBLE_LOCALLY(player, bIncludeplayersvehicle) end
 
 
 ---@param p0 BOOL
 function NETWORK.FADE_OUT_LOCAL_PLAYER(p0) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param normal BOOL
 ---@param slow BOOL
 function NETWORK.NETWORK_FADE_OUT_ENTITY(entity, normal, slow) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param state BOOL
 ---@param p2 Any
 function NETWORK.NETWORK_FADE_IN_ENTITY(entity, state, p2) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_IS_PLAYER_FADING(player) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function NETWORK.NETWORK_IS_ENTITY_FADING(entity) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.IS_PLAYER_IN_CUTSCENE(player) end
 
@@ -2537,11 +2537,11 @@ function NETWORK.IS_PLAYER_IN_CUTSCENE(player) end
 function NETWORK.SET_ENTITY_VISIBLE_IN_CUTSCENE(p0, p1, p2) end
 
 
----@param entity Entity
+---@param entity entity
 function NETWORK.SET_ENTITY_LOCALLY_INVISIBLE(entity) end
 
 
----@param entity Entity
+---@param entity entity
 function NETWORK.SET_ENTITY_LOCALLY_VISIBLE(entity) end
 
 
@@ -2555,12 +2555,12 @@ function NETWORK.IS_DAMAGE_TRACKER_ACTIVE_ON_NETWORK_ID(netID) end
 function NETWORK.ACTIVATE_DAMAGE_TRACKER_ON_NETWORK_ID(netID, toggle) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.IS_DAMAGE_TRACKER_ACTIVE_ON_PLAYER(player) end
 
 
----@param player Player
+---@param player player
 ---@param toggle BOOL
 function NETWORK.ACTIVATE_DAMAGE_TRACKER_ON_PLAYER(player, toggle) end
 
@@ -2698,7 +2698,7 @@ function NETWORK.GET_MAX_NUM_NETWORK_VEHICLES() end
 function NETWORK.GET_MAX_NUM_NETWORK_PICKUPS() end
 
 
----@param object Object
+---@param object object
 ---@param range float
 function NETWORK.NETWORK_SET_OBJECT_SCOPE_DISTANCE(object, range) end
 
@@ -2778,14 +2778,14 @@ function NETWORK.CONVERT_POSIX_TIME(posixTime, timeStructure) end
 
 
 ---@param toggle BOOL
----@param playerPed Ped
-function NETWORK.NETWORK_SET_IN_SPECTATOR_MODE(toggle, playerPed) end
+---@param playerped ped
+function NETWORK.NETWORK_SET_IN_SPECTATOR_MODE(toggle, playerped) end
 
 
 ---@param toggle BOOL
----@param playerPed Ped
+---@param playerped ped
 ---@param p2 BOOL
-function NETWORK.NETWORK_SET_IN_SPECTATOR_MODE_EXTENDED(toggle, playerPed, p2) end
+function NETWORK.NETWORK_SET_IN_SPECTATOR_MODE_EXTENDED(toggle, playerped, p2) end
 
 
 ---@param toggle BOOL
@@ -2793,7 +2793,7 @@ function NETWORK.NETWORK_SET_IN_FREE_CAM_MODE(toggle) end
 
 
 ---@param toggle BOOL
----@param player Player
+---@param player player
 function NETWORK.NETWORK_SET_ANTAGONISTIC_TO_PLAYER(toggle, player) end
 
 
@@ -2810,7 +2810,7 @@ function NETWORK.NETWORK_SET_IN_MP_CUTSCENE(p0, p1) end
 function NETWORK.NETWORK_IS_IN_MP_CUTSCENE() end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_IS_PLAYER_IN_MP_CUTSCENE(player) end
 
@@ -2830,17 +2830,17 @@ function NETWORK.SET_NETWORK_VEHICLE_RESPOT_TIMER(netId, time, p2, p3) end
 function NETWORK.IS_NETWORK_VEHICLE_RUNNING_RESPOT_TIMER(networkID) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@param toggle BOOL
 function NETWORK.SET_NETWORK_VEHICLE_AS_GHOST(vehicle, toggle) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@param multiplier float
 function NETWORK.SET_NETWORK_VEHICLE_MAX_POSITION_DELTA_MULTIPLIER(vehicle, multiplier) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@param toggle BOOL
 function NETWORK.SET_NETWORK_ENABLE_HIGH_SPEED_EDGE_FALL_DETECTION(vehicle, toggle) end
 
@@ -2850,7 +2850,7 @@ function NETWORK.SET_NETWORK_ENABLE_HIGH_SPEED_EDGE_FALL_DETECTION(vehicle, togg
 function NETWORK.SET_LOCAL_PLAYER_AS_GHOST(toggle, p1) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function NETWORK.IS_ENTITY_A_GHOST(entity) end
 
@@ -2859,7 +2859,7 @@ function NETWORK.IS_ENTITY_A_GHOST(entity) end
 function NETWORK.SET_NON_PARTICIPANTS_OF_THIS_SCRIPT_AS_GHOSTS(p0) end
 
 
----@param player Player
+---@param player player
 ---@param p1 BOOL
 function NETWORK.SET_REMOTE_PLAYER_AS_GHOST(player, p1) end
 
@@ -2871,7 +2871,7 @@ function NETWORK.SET_GHOST_ALPHA(alpha) end
 function NETWORK.RESET_GHOST_ALPHA() end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function NETWORK.SET_ENTITY_GHOSTED_FOR_GHOST_PLAYERS(entity, toggle) end
 
@@ -2880,7 +2880,7 @@ function NETWORK.SET_ENTITY_GHOSTED_FOR_GHOST_PLAYERS(entity, toggle) end
 function NETWORK.SET_INVERT_GHOSTING(p0) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function NETWORK.IS_ENTITY_IN_GHOST_COLLISION(entity) end
 
@@ -2910,7 +2910,7 @@ function NETWORK.USE_PLAYER_COLOUR_INSTEAD_OF_TEAM_COLOUR(toggle) end
 function NETWORK.NETWORK_CREATE_SYNCHRONISED_SCENE(x, y, z, xRot, yRot, zRot, rotationOrder, useOcclusionPortal, looped, p9, animTime, p11) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param netScene int
 ---@param animDict string
 ---@param animnName string
@@ -2936,7 +2936,7 @@ function NETWORK.NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE(ped, netScene, animDict, 
 function NETWORK.NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE_WITH_IK(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param netScene int
 ---@param animDict string
 ---@param animName string
@@ -2966,7 +2966,7 @@ function NETWORK.NETWORK_ADD_SYNCHRONISED_SCENE_CAMERA(netScene, animDict, animN
 
 
 ---@param netScene int
----@param entity Entity
+---@param entity entity
 ---@param bone int
 function NETWORK.NETWORK_ATTACH_SYNCHRONISED_SCENE_TO_ENTITY(netScene, entity, bone) end
 
@@ -2998,7 +2998,7 @@ function NETWORK.NETWORK_ALLOW_REMOTE_SYNCED_SCENE_LOCAL_PLAYER_REQUESTS(p0) end
 function NETWORK.NETWORK_FIND_LARGEST_BUNCH_OF_PLAYERS(p0, p1) end
 
 
----@param player Player
+---@param player player
 ---@param x float
 ---@param y float
 ---@param z float
@@ -3011,7 +3011,7 @@ function NETWORK.NETWORK_FIND_LARGEST_BUNCH_OF_PLAYERS(p0, p1) end
 function NETWORK.NETWORK_START_RESPAWN_SEARCH_FOR_PLAYER(player, x, y, z, radius, p5, p6, p7, flags) end
 
 
----@param player Player
+---@param player player
 ---@param x1 float
 ---@param y1 float
 ---@param z1 float
@@ -3071,12 +3071,12 @@ function NETWORK.NETWORK_WAITING_POP_CLEAR_TUTORIAL_SESSION() end
 function NETWORK.NETWORK_IS_TUTORIAL_SESSION_CHANGE_PENDING() end
 
 
----@param player Player
+---@param player player
 ---@return int
 function NETWORK.NETWORK_GET_PLAYER_TUTORIAL_SESSION_INSTANCE(player) end
 
 
----@param player Player
+---@param player player
 ---@param index int
 ---@return boolean
 function NETWORK.NETWORK_ARE_PLAYERS_IN_SAME_TUTORIAL_SESSION(player, index) end
@@ -3086,23 +3086,23 @@ function NETWORK.NETWORK_ARE_PLAYERS_IN_SAME_TUTORIAL_SESSION(player, index) end
 function NETWORK.NETWORK_BLOCK_PROXY_MIGRATION_BETWEEN_TUTORIAL_SESSIONS(p0) end
 
 
----@param player Player
+---@param player player
 ---@param toggle BOOL
 ---@param p2 BOOL
 function NETWORK.NETWORK_CONCEAL_PLAYER(player, toggle, p2) end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_IS_PLAYER_CONCEALED(player) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function NETWORK.NETWORK_CONCEAL_ENTITY(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function NETWORK.NETWORK_IS_ENTITY_CONCEALED(entity) end
 
@@ -3356,33 +3356,33 @@ function NETWORK.NETWORK_GET_NUMBER_BODY_TRACKER_HITS() end
 function NETWORK.NETWORK_HAS_BONE_BEEN_HIT_BY_KILLER(boneIndex) end
 
 
----@param ped Ped
----@param player Player
+---@param ped ped
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_SET_ATTRIBUTE_DAMAGE_TO_PLAYER(ped, player) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function NETWORK.NETWORK_TRIGGER_DAMAGE_EVENT_FOR_ZERO_DAMAGE(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param trigger BOOL
 function NETWORK.NETWORK_TRIGGER_DAMAGE_EVENT_FOR_ZERO_PED_DAMAGE_(entity, trigger) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function NETWORK.NETWORK_TRIGGER_DAMAGE_EVENT_FOR_ZERO_WEAPON_HASH(entity, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function NETWORK.NETWORK_SET_NO_LONGER_NEEDED(entity, toggle) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@param isAudible BOOL
 ---@param isInvisible BOOL
 ---@param netId int
@@ -3390,18 +3390,18 @@ function NETWORK.NETWORK_SET_NO_LONGER_NEEDED(entity, toggle) end
 function NETWORK.NETWORK_EXPLODE_VEHICLE(vehicle, isAudible, isInvisible, netId) end
 
 
----@param vehicle Vehicle
+---@param vehicle vehicle
 ---@param isAudible BOOL
 ---@param isInvisible BOOL
 ---@param netId int
 function NETWORK.NETWORK_EXPLODE_HELI(vehicle, isAudible, isInvisible, netId) end
 
 
----@param entity Entity
+---@param entity entity
 function NETWORK.NETWORK_USE_LOGARITHMIC_BLENDING_THIS_FRAME(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param x float
 ---@param y float
 ---@param z float
@@ -3436,13 +3436,13 @@ function NETWORK.NETWORK_SET_MINIMUM_RANK_FOR_MISSION(p0) end
 function NETWORK.NETWORK_CACHE_LOCAL_PLAYER_HEAD_BLEND_DATA() end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_HAS_CACHED_PLAYER_HEAD_BLEND_DATA(player) end
 
 
----@param ped Ped
----@param player Player
+---@param ped ped
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_APPLY_CACHED_PLAYER_HEAD_BLEND_DATA(ped, player) end
 
@@ -4201,12 +4201,12 @@ function NETWORK.NETWORK_FORCE_LOCAL_PLAYER_SCAR_SYNC() end
 function NETWORK.NETWORK_DISABLE_LEAVE_REMOTE_PED_BEHIND(toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function NETWORK.NETWORK_ALLOW_REMOTE_ATTACHMENT_MODIFICATION(entity, toggle) end
 
 
----@param player Player
+---@param player player
 function NETWORK.NETWORK_SHOW_CHAT_RESTRICTION_MSC(player) end
 
 
@@ -4220,37 +4220,37 @@ function NETWORK.NETWORK_IS_TITLE_UPDATE_REQUIRED() end
 function NETWORK.NETWORK_QUIT_MP_TO_DESKTOP() end
 
 
----@param player Player
+---@param player player
 ---@return boolean
 function NETWORK.NETWORK_IS_CONNECTED_VIA_RELAY(player) end
 
 
----@param player Player
+---@param player player
 ---@return float
 function NETWORK.NETWORK_GET_AVERAGE_LATENCY(player) end
 
 
----@param player Player
+---@param player player
 ---@return float
 function NETWORK.NETWORK_GET_AVERAGE_PING(player) end
 
 
----@param player Player
+---@param player player
 ---@return float
 function NETWORK.NETWORK_GET_AVERAGE_PACKET_LOSS(player) end
 
 
----@param player Player
+---@param player player
 ---@return int
 function NETWORK.NETWORK_GET_NUM_UNACKED_RELIABLES(player) end
 
 
----@param player Player
+---@param player player
 ---@return int
 function NETWORK.NETWORK_GET_UNRELIABLE_RESEND_COUNT(player) end
 
 
----@param player Player
+---@param player player
 ---@return int
 function NETWORK.NETWORK_GET_HIGHEST_RELIABLE_RESEND_COUNT(player) end
 
@@ -4258,22 +4258,22 @@ function NETWORK.NETWORK_GET_HIGHEST_RELIABLE_RESEND_COUNT(player) end
 function NETWORK.NETWORK_REPORT_CODE_TAMPER() end
 
 
----@param entity Entity
+---@param entity entity
 ---@return Vector3
 function NETWORK.NETWORK_GET_LAST_ENTITY_POS_RECEIVED_OVER_NETWORK(entity) end
 
 
----@param player Player
+---@param player player
 ---@return Vector3
 function NETWORK.NETWORK_GET_LAST_PLAYER_POS_RECEIVED_OVER_NETWORK(player) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return Vector3
 function NETWORK.NETWORK_GET_LAST_VEL_RECEIVED_OVER_NETWORK(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param maxSpeedToPredict float
 ---@return Vector3
 function NETWORK.NETWORK_GET_PREDICTED_VELOCITY(entity, maxSpeedToPredict) end
@@ -4290,7 +4290,7 @@ function NETWORK.NETWORK_GET_SIGNALLING_INFO(p0) end
 function NETWORK.NETWORK_GET_NET_STATISTICS_INFO(p0) end
 
 
----@param player Player
+---@param player player
 ---@return int
 function NETWORK.NETWORK_GET_PLAYER_ACCOUNT_ID(player) end
 

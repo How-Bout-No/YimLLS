@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -32,16 +32,16 @@ function FIRE.START_SCRIPT_FIRE(X, Y, Z, maxChildren, isGasFire) end
 function FIRE.REMOVE_SCRIPT_FIRE(fireHandle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return FireId
 function FIRE.START_ENTITY_FIRE(entity) end
 
 
----@param entity Entity
+---@param entity entity
 function FIRE.STOP_ENTITY_FIRE(entity) end
 
 
----@param entity Entity
+---@param entity entity
 ---@return boolean
 function FIRE.IS_ENTITY_ON_FIRE(entity) end
 
@@ -86,7 +86,7 @@ function FIRE.GET_CLOSEST_FIRE_POS(outPosition, x, y, z) end
 function FIRE.ADD_EXPLOSION(x, y, z, explosionType, damageScale, isAudible, isInvisible, cameraShake, noDamage) end
 
 
----@param ped Ped
+---@param ped ped
 ---@param x float
 ---@param y float
 ---@param z float
@@ -146,7 +146,7 @@ function FIRE.IS_EXPLOSION_IN_SPHERE(explosionType, x, y, z, radius) end
 ---@param y float
 ---@param z float
 ---@param radius float
----@return Entity
+---@return entity
 function FIRE.GET_OWNER_OF_EXPLOSION_IN_SPHERE(explosionType, x, y, z, radius) end
 
 
@@ -170,7 +170,7 @@ function FIRE.IS_EXPLOSION_IN_ANGLED_AREA(explosionType, x1, y1, z1, x2, y2, z2,
 ---@param y2 float
 ---@param z2 float
 ---@param radius float
----@return Entity
+---@return entity
 function FIRE.GET_OWNER_OF_EXPLOSION_IN_ANGLED_AREA(explosionType, x1, y1, z1, x2, y2, z2, radius) end
 
 

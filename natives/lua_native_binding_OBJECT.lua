@@ -3,18 +3,18 @@
 ---@alias float number
 ---@alias int integer
 ---@alias Hash integer
----@alias Blip integer
+---@alias blip integer
 ---@alias Cam integer
----@alias Entity integer
+---@alias entity integer
 ---@alias FireId integer
 ---@alias Interior integer
 ---@alias ItemSet integer
----@alias Object integer
----@alias Ped integer
+---@alias object integer
+---@alias ped integer
 ---@alias Pickup integer
----@alias Player integer
+---@alias player integer
 ---@alias ScrHandle integer
----@alias Vehicle integer
+---@alias vehicle integer
 ---@alias Any any
 ---@alias Vector3 vec3
 
@@ -26,7 +26,7 @@ OBJECT = {}
 ---@param isNetwork BOOL
 ---@param bScriptHostObj BOOL
 ---@param dynamic BOOL
----@return Object
+---@return object
 function OBJECT.CREATE_OBJECT(modelHash, x, y, z, isNetwork, bScriptHostObj, dynamic) end
 
 
@@ -38,25 +38,25 @@ function OBJECT.CREATE_OBJECT(modelHash, x, y, z, isNetwork, bScriptHostObj, dyn
 ---@param bScriptHostObj BOOL
 ---@param dynamic BOOL
 ---@param p7 Any
----@return Object
+---@return object
 function OBJECT.CREATE_OBJECT_NO_OFFSET(modelHash, x, y, z, isNetwork, bScriptHostObj, dynamic, p7) end
 
 
----@param object Object
+---@param object object
 function OBJECT.DELETE_OBJECT(object) end
 
 
----@param object Object
+---@param object object
 ---@return boolean
 function OBJECT.PLACE_OBJECT_ON_GROUND_PROPERLY(object) end
 
 
----@param object Object
+---@param object object
 ---@return boolean
 function OBJECT.PLACE_OBJECT_ON_GROUND_OR_OBJECT_PROPERLY(object) end
 
 
----@param object Object
+---@param object object
 ---@param p1 float
 ---@param p2 float
 ---@param p3 BOOL
@@ -64,7 +64,7 @@ function OBJECT.PLACE_OBJECT_ON_GROUND_OR_OBJECT_PROPERLY(object) end
 function OBJECT.ROTATE_OBJECT(object, p1, p2, p3) end
 
 
----@param object Object
+---@param object object
 ---@param toX float
 ---@param toY float
 ---@param toZ float
@@ -76,19 +76,19 @@ function OBJECT.ROTATE_OBJECT(object, p1, p2, p3) end
 function OBJECT.SLIDE_OBJECT(object, toX, toY, toZ, speedX, speedY, speedZ, collision) end
 
 
----@param object Object
+---@param object object
 ---@param targettable BOOL
 ---@param p2 Any
 function OBJECT.SET_OBJECT_TARGETTABLE(object, targettable, p2) end
 
 
----@param object Object
+---@param object object
 ---@param setFlag34 BOOL
 ---@param setFlag35 BOOL
 function OBJECT.SET_OBJECT_TARGETTABLE_BY_PLAYER_(object, setFlag34, setFlag35) end
 
 
----@param object Object
+---@param object object
 ---@param toggle BOOL
 function OBJECT.SET_OBJECT_FORCE_VEHICLES_TO_AVOID(object, toggle) end
 
@@ -101,11 +101,11 @@ function OBJECT.SET_OBJECT_FORCE_VEHICLES_TO_AVOID(object, toggle) end
 ---@param isMission BOOL
 ---@param p6 BOOL
 ---@param p7 BOOL
----@return Object
+---@return object
 function OBJECT.GET_CLOSEST_OBJECT_OF_TYPE(x, y, z, radius, modelHash, isMission, p6, p7) end
 
 
----@param object Object
+---@param object object
 ---@param p1 Any
 ---@return boolean
 function OBJECT.HAS_OBJECT_BEEN_BROKEN(object, p1) end
@@ -319,7 +319,7 @@ function OBJECT.IS_GARAGE_EMPTY(garageHash, p1, p2) end
 
 
 ---@param garageHash Hash
----@param player Player
+---@param player player
 ---@param p2 float
 ---@param p3 int
 ---@return boolean
@@ -327,7 +327,7 @@ function OBJECT.IS_PLAYER_ENTIRELY_INSIDE_GARAGE(garageHash, player, p2, p3) end
 
 
 ---@param garageHash Hash
----@param player Player
+---@param player player
 ---@param p2 int
 ---@return boolean
 function OBJECT.IS_PLAYER_PARTIALLY_INSIDE_GARAGE(garageHash, player, p2) end
@@ -352,7 +352,7 @@ function OBJECT.IS_ANY_ENTITY_ENTIRELY_INSIDE_GARAGE(garageHash, p1, p2, p3, p4)
 
 
 ---@param garageHash Hash
----@param entity Entity
+---@param entity entity
 ---@param p2 float
 ---@param p3 int
 ---@return boolean
@@ -360,7 +360,7 @@ function OBJECT.IS_OBJECT_ENTIRELY_INSIDE_GARAGE(garageHash, entity, p2, p3) end
 
 
 ---@param garageHash Hash
----@param entity Entity
+---@param entity entity
 ---@param p2 int
 ---@return boolean
 function OBJECT.IS_OBJECT_PARTIALLY_INSIDE_GARAGE(garageHash, entity, p2) end
@@ -418,12 +418,12 @@ function OBJECT.DOES_OBJECT_OF_TYPE_EXIST_AT_COORDS(x, y, z, radius, hash, p5) e
 function OBJECT.IS_POINT_IN_ANGLED_AREA(xPos, yPos, zPos, x1, y1, z1, x2, y2, z2, width, debug, includeZ) end
 
 
----@param object Object
+---@param object object
 ---@param toggle BOOL
 function OBJECT.SET_OBJECT_ALLOW_LOW_LOD_BUOYANCY(object, toggle) end
 
 
----@param object Object
+---@param object object
 ---@param weight float
 ---@param p2 float
 ---@param p3 float
@@ -444,7 +444,7 @@ function OBJECT.SET_OBJECT_PHYSICS_PARAMS(object, weight, p2, p3, p4, p5, gravit
 function OBJECT.GET_OBJECT_FRAGMENT_DAMAGE_HEALTH(p0, p1) end
 
 
----@param object Object
+---@param object object
 ---@param toggle BOOL
 function OBJECT.SET_ACTIVATE_OBJECT_PHYSICS_AS_SOON_AS_IT_IS_UNFROZEN(object, toggle) end
 
@@ -467,11 +467,11 @@ function OBJECT.IS_ANY_OBJECT_NEAR_POINT(x, y, z, range, p4) end
 function OBJECT.IS_OBJECT_NEAR_POINT(objectHash, x, y, z, range) end
 
 
----@param object Object
+---@param object object
 function OBJECT.REMOVE_OBJECT_HIGH_DETAIL_MODEL(object) end
 
 
----@param p0 Object
+---@param p0 object
 ---@param p1 Any
 ---@param p2 BOOL
 function OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(p0, p1, p2) end
@@ -483,20 +483,20 @@ function OBJECT.BREAK_OBJECT_FRAGMENT_CHILD(p0, p1, p2) end
 function OBJECT.DAMAGE_OBJECT_FRAGMENT_CHILD(p0, p1, p2) end
 
 
----@param object Object
+---@param object object
 function OBJECT.FIX_OBJECT_FRAGMENT(object) end
 
 
----@param object Object
+---@param object object
 function OBJECT.TRACK_OBJECT_VISIBILITY(object) end
 
 
----@param object Object
+---@param object object
 ---@return boolean
 function OBJECT.IS_OBJECT_VISIBLE(object) end
 
 
----@param object Object
+---@param object object
 ---@param toggle BOOL
 function OBJECT.SET_OBJECT_IS_SPECIAL_GOLFBALL(object, toggle) end
 
@@ -510,7 +510,7 @@ function OBJECT.SET_OBJECT_TAKES_DAMAGE_FROM_COLLIDING_WITH_BUILDINGS(p0, p1) en
 function OBJECT.ALLOW_DAMAGE_EVENTS_FOR_NON_NETWORKED_OBJECTS(value) end
 
 
----@param object Object
+---@param object object
 ---@param toggle BOOL
 function OBJECT.SET_CUTSCENES_WEAPON_FLASHLIGHT_ON_THIS_FRAME(object, toggle) end
 
@@ -520,26 +520,26 @@ function OBJECT.SET_CUTSCENES_WEAPON_FLASHLIGHT_ON_THIS_FRAME(object, toggle) en
 ---@param z float
 ---@param radius float
 ---@param name string
----@return Object
+---@return object
 function OBJECT.GET_RAYFIRE_MAP_OBJECT(x, y, z, radius, name) end
 
 
----@param object Object
+---@param object object
 ---@param state int
 function OBJECT.SET_STATE_OF_RAYFIRE_MAP_OBJECT(object, state) end
 
 
----@param object Object
+---@param object object
 ---@return int
 function OBJECT.GET_STATE_OF_RAYFIRE_MAP_OBJECT(object) end
 
 
----@param object Object
+---@param object object
 ---@return boolean
 function OBJECT.DOES_RAYFIRE_MAP_OBJECT_EXIST(object) end
 
 
----@param object Object
+---@param object object
 ---@return float
 function OBJECT.GET_RAYFIRE_MAP_OBJECT_ANIM_PHASE(object) end
 
@@ -589,7 +589,7 @@ function OBJECT.SET_CUSTOM_PICKUP_WEAPON_HASH(pickupHash, pickup) end
 ---@param modelHash Hash
 ---@param p7 BOOL
 ---@param p8 BOOL
----@return Object
+---@return object
 function OBJECT.CREATE_AMBIENT_PICKUP(pickupHash, posX, posY, posZ, flags, value, modelHash, p7, p8) end
 
 
@@ -602,7 +602,7 @@ function OBJECT.CREATE_AMBIENT_PICKUP(pickupHash, posX, posY, posZ, flags, value
 ---@param modelHash Hash
 ---@param p7 BOOL
 ---@param p8 BOOL
----@return Object
+---@return object
 function OBJECT.CREATE_NON_NETWORKED_AMBIENT_PICKUP(pickupHash, posX, posY, posZ, flags, value, modelHash, p7, p8) end
 
 
@@ -617,7 +617,7 @@ function OBJECT.BLOCK_PLAYERS_FOR_AMBIENT_PICKUP(p0, p1) end
 ---@param z float
 ---@param placeOnGround BOOL
 ---@param modelHash Hash
----@return Object
+---@return object
 function OBJECT.CREATE_PORTABLE_PICKUP(pickupHash, x, y, z, placeOnGround, modelHash) end
 
 
@@ -627,26 +627,26 @@ function OBJECT.CREATE_PORTABLE_PICKUP(pickupHash, x, y, z, placeOnGround, model
 ---@param z float
 ---@param placeOnGround BOOL
 ---@param modelHash Hash
----@return Object
+---@return object
 function OBJECT.CREATE_NON_NETWORKED_PORTABLE_PICKUP(pickupHash, x, y, z, placeOnGround, modelHash) end
 
 
----@param pickupObject Object
----@param ped Ped
-function OBJECT.ATTACH_PORTABLE_PICKUP_TO_PED(pickupObject, ped) end
+---@param pickupobject object
+---@param ped ped
+function OBJECT.ATTACH_PORTABLE_PICKUP_TO_PED(pickupobject, ped) end
 
 
----@param pickupObject Object
-function OBJECT.DETACH_PORTABLE_PICKUP_FROM_PED(pickupObject) end
+---@param pickupobject object
+function OBJECT.DETACH_PORTABLE_PICKUP_FROM_PED(pickupobject) end
 
 
----@param object Object
+---@param object object
 function OBJECT.FORCE_PORTABLE_PICKUP_LAST_ACCESSIBLE_POSITION_SETTING(object) end
 
 
----@param pickupObject Object
+---@param pickupobject object
 ---@param toggle BOOL
-function OBJECT.HIDE_PORTABLE_PICKUP_WHEN_DETACHED(pickupObject, toggle) end
+function OBJECT.HIDE_PORTABLE_PICKUP_WHEN_DETACHED(pickupobject, toggle) end
 
 
 ---@param modelHash Hash
@@ -714,22 +714,22 @@ function OBJECT.CREATE_MONEY_PICKUPS(x, y, z, value, amount, model) end
 function OBJECT.DOES_PICKUP_EXIST(pickup) end
 
 
----@param pickupObject Object
+---@param pickupobject object
 ---@return boolean
-function OBJECT.DOES_PICKUP_OBJECT_EXIST(pickupObject) end
+function OBJECT.DOES_PICKUP_OBJECT_EXIST(pickupobject) end
 
 
 ---@param pickup Pickup
----@return Object
+---@return object
 function OBJECT.GET_PICKUP_OBJECT(pickup) end
 
 
----@param object Object
+---@param object object
 ---@return boolean
 function OBJECT.IS_OBJECT_A_PICKUP(object) end
 
 
----@param object Object
+---@param object object
 ---@return boolean
 function OBJECT.IS_OBJECT_A_PORTABLE_PICKUP(object) end
 
@@ -752,7 +752,7 @@ function OBJECT.SET_PICKUP_REGENERATION_TIME(pickup, duration) end
 function OBJECT.FORCE_PICKUP_REGENERATE(p0) end
 
 
----@param player Player
+---@param player player
 ---@param pickupHash Hash
 ---@param toggle BOOL
 function OBJECT.SET_PLAYER_PERMITTED_TO_COLLECT_PICKUPS_OF_TYPE(player, pickupHash, toggle) end
@@ -767,13 +767,13 @@ function OBJECT.SET_LOCAL_PLAYER_PERMITTED_TO_COLLECT_PICKUPS_WITH_MODEL(modelHa
 function OBJECT.ALLOW_ALL_PLAYERS_TO_COLLECT_PICKUPS_OF_TYPE(pickupHash) end
 
 
----@param object Object
+---@param object object
 ---@param p1 Any
 ---@param p2 BOOL
 function OBJECT.SET_TEAM_PICKUP_OBJECT(object, p1, p2) end
 
 
----@param object Object
+---@param object object
 ---@param p1 BOOL
 ---@param p2 BOOL
 function OBJECT.PREVENT_COLLECTION_OF_PORTABLE_PICKUP(object, p1, p2) end
@@ -898,12 +898,12 @@ function OBJECT.SET_PICKUP_OBJECT_COLLECTABLE_IN_VEHICLE(pickup) end
 function OBJECT.SET_PICKUP_TRACK_DAMAGE_EVENTS(pickup, toggle) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param toggle BOOL
 function OBJECT.SET_ENTITY_FLAG_SUPPRESS_SHADOW(entity, toggle) end
 
 
----@param object Object
+---@param object object
 ---@param toggle BOOL
 function OBJECT.SET_ENTITY_FLAG_RENDER_SMALL_SHADOW(object, toggle) end
 
@@ -918,17 +918,17 @@ function OBJECT.GET_WEAPON_TYPE_FROM_PICKUP_TYPE(pickupHash) end
 function OBJECT.GET_PICKUP_TYPE_FROM_WEAPON_HASH(weaponHash) end
 
 
----@param object Object
+---@param object object
 ---@return boolean
 function OBJECT.IS_PICKUP_WEAPON_OBJECT_VALID(object) end
 
 
----@param object Object
+---@param object object
 ---@return int
 function OBJECT.GET_OBJECT_TINT_INDEX(object) end
 
 
----@param object Object
+---@param object object
 ---@param textureVariation int
 function OBJECT.SET_OBJECT_TINT_INDEX(object, textureVariation) end
 
@@ -948,7 +948,7 @@ function OBJECT.SET_TINT_INDEX_CLOSEST_BUILDING_OF_TYPE(x, y, z, radius, modelHa
 function OBJECT.SET_PROP_TINT_INDEX(p0, p1) end
 
 
----@param object Object
+---@param object object
 ---@param p1 BOOL
 ---@param r int
 ---@param g int
@@ -957,22 +957,22 @@ function OBJECT.SET_PROP_TINT_INDEX(p0, p1) end
 function OBJECT.SET_PROP_LIGHT_COLOR(object, p1, r, g, b) end
 
 
----@param object Object
+---@param object object
 ---@return boolean
 function OBJECT.IS_PROP_LIGHT_OVERRIDEN(object) end
 
 
----@param object Object
+---@param object object
 ---@param toggle BOOL
 function OBJECT.SET_OBJECT_IS_VISIBLE_IN_MIRRORS(object, toggle) end
 
 
----@param object Object
+---@param object object
 ---@param p1 Any
 function OBJECT.SET_OBJECT_SPEED_BOOST_AMOUNT(object, p1) end
 
 
----@param object Object
+---@param object object
 ---@param duration float
 function OBJECT.SET_OBJECT_SPEED_BOOST_DURATION(object, duration) end
 
@@ -989,7 +989,7 @@ function OBJECT.CONVERT_OLD_PICKUP_TYPE_TO_NEW(pickupHash) end
 function OBJECT.SET_FORCE_OBJECT_THIS_FRAME(x, y, z, p3) end
 
 
----@param object Object
+---@param object object
 function OBJECT.ONLY_CLEAN_UP_OBJECT_WHEN_OUT_OF_RANGE(object) end
 
 
@@ -997,35 +997,35 @@ function OBJECT.ONLY_CLEAN_UP_OBJECT_WHEN_OUT_OF_RANGE(object) end
 function OBJECT.SET_DISABLE_COLLISIONS_BETWEEN_CARS_AND_CAR_PARACHUTE(p0) end
 
 
----@param entity Entity
+---@param entity entity
 ---@param p1 Any
 function OBJECT.SET_PROJECTILES_SHOULD_EXPLODE_ON_CONTACT(entity, p1) end
 
 
----@param object Object
+---@param object object
 ---@param toggle BOOL
 ---@param p2 int
 function OBJECT.SET_DRIVE_ARTICULATED_JOINT(object, toggle, p2) end
 
 
----@param object Object
+---@param object object
 ---@param toggle BOOL
 ---@param p2 int
----@param ped Ped
+---@param ped ped
 function OBJECT.SET_DRIVE_ARTICULATED_JOINT_WITH_INFLICTOR(object, toggle, p2, ped) end
 
 
----@param object Object
+---@param object object
 ---@param toggle BOOL
 function OBJECT.SET_OBJECT_IS_A_PRESSURE_PLATE(object, toggle) end
 
 
----@param object Object
+---@param object object
 ---@param p1 BOOL
 function OBJECT.SET_WEAPON_IMPACTS_APPLY_GREATER_FORCE(object, p1) end
 
 
----@param object Object
+---@param object object
 ---@param p1 Any
 ---@return boolean
 function OBJECT.GET_IS_ARTICULATED_JOINT_AT_MIN_ANGLE(object, p1) end
@@ -1037,12 +1037,12 @@ function OBJECT.GET_IS_ARTICULATED_JOINT_AT_MIN_ANGLE(object, p1) end
 function OBJECT.GET_IS_ARTICULATED_JOINT_AT_MAX_ANGLE(p0, p1) end
 
 
----@param object Object
+---@param object object
 ---@param toggle BOOL
 function OBJECT.SET_IS_OBJECT_ARTICULATED(object, toggle) end
 
 
----@param object Object
+---@param object object
 ---@param toggle BOOL
 function OBJECT.SET_IS_OBJECT_BALL(object, toggle) end
 

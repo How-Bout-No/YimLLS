@@ -12,9 +12,6 @@ log = {}
 ---@param data string
 function log.info(data) end
 
----@param format string
----@param ... any
-function log.finfo(format, ...) end
 
 ---Logs a warning message.
 ---**Example Usage:**
@@ -24,9 +21,6 @@ function log.finfo(format, ...) end
 ---@param data string
 function log.warning(data) end
 
----@param format string
----@param ... any
-function log.fwarning(format, ...) end
 
 ---Logs a debug message.
 ---**Example Usage:**
@@ -36,8 +30,31 @@ function log.fwarning(format, ...) end
 ---@param data string
 function log.debug(data) end
 
----@param format string
+---Logs a formatted informational message.
+---**Example Usage:**
+---```lua
+---log.finfo("Loaded %d objects in %.2f ms", count, duration)
+---```
+---@param fmt string
 ---@param ... any
-function log.fdebug(format, ...) end
+function log.finfo(fmt, ...) end
 
 
+---Logs a formatted warning message.
+---**Example Usage:**
+---```lua
+---log.fwarning("Spawned %d objects out of a maximum of %d", count, max_entities)
+---```
+---@param fmt string
+---@param ... any
+function log.fwarning(fmt, ...) end
+
+
+---Logs a formatted debug message.
+---**Example Usage:**
+---```lua
+---log.fdebug("Current player position: %s", Self:GetPos())
+---```
+---@param fmt string
+---@param ... any
+function log.fdebug(fmt, ...) end
