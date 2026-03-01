@@ -87,188 +87,238 @@ ImGuiTableColumnFlags = {}
 
 ---@alias ImGuiTableSortSpecs any
 
----@enum ImGuiStyleVar
+---@class ImGuiStyleVar
+---@field Alpha                       integer = 0,  // float Alpha
+---@field DisabledAlpha               integer = 1,  // float DisabledAlpha
+---@field WindowPadding               integer = 2,  // ImVec2 WindowPadding
+---@field WindowRounding              integer = 3,  // float WindowRounding
+---@field WindowBorderSize            integer = 4,  // float WindowBorderSize
+---@field WindowMinSize               integer = 5,  // ImVec2 WindowMinSize
+---@field WindowTitleAlign            integer = 6,  // ImVec2 WindowTitleAlign
+---@field ChildRounding               integer = 7,  // float ChildRounding
+---@field ChildBorderSize             integer = 8,  // float ChildBorderSize
+---@field PopupRounding               integer = 9,  // float PopupRounding
+---@field PopupBorderSize             integer = 10,  // float PopupBorderSize
+---@field FramePadding                integer = 11,  // ImVec2 FramePadding
+---@field FrameRounding               integer = 12,  // float FrameRounding
+---@field FrameBorderSize             integer = 13,  // float FrameBorderSize
+---@field ItemSpacing                 integer = 14,  // ImVec2 ItemSpacing
+---@field ItemInnerSpacing            integer = 15,  // ImVec2 ItemInnerSpacing
+---@field IndentSpacing               integer = 16,  // float IndentSpacing
+---@field CellPadding                 integer = 17,  // ImVec2 CellPadding
+---@field ScrollbarSize               integer = 18,  // float ScrollbarSize
+---@field ScrollbarRounding           integer = 19,  // float ScrollbarRounding
+---@field GrabMinSize                 integer = 20,  // float GrabMinSize
+---@field GrabRounding                integer = 21,  // float GrabRounding
+---@field TabRounding                 integer = 22,  // float TabRounding
+---@field TabBorderSize               integer = 23,  // float TabBorderSize
+---@field TabBarBorderSize            integer = 24,  // float TabBarBorderSize
+---@field TableAngledHeadersAngle     integer = 25,  // float TableAngledHeadersAngle
+---@field TableAngledHeadersTextAlign integer = 26,  // ImVec2 TableAngledHeadersTextAlign
+---@field ButtonTextAlign             integer = 27,  // ImVec2 ButtonTextAlign
+---@field SelectableTextAlign         integer = 28,  // ImVec2 SelectableTextAlign
+---@field SeparatorTextBorderSize     integer = 29,  // float SeparatorTextBorderSize
+---@field SeparatorTextAlign          integer = 30,  // ImVec2 SeparatorTextAlign
+---@field SeparatorTextPadding        integer = 31,  // ImVec2 SeparatorTextPadding
+---@field Count                       integer = 33,
 ImGuiStyleVar = {
-	Alpha                   = 0, -- `float`
-	DisabledAlpha           = 1, -- `float`
-	WindowPadding           = 2, -- `ImVec2`
-	WindowRounding          = 3, -- `float`
-	WindowBorderSize        = 4, -- `float`
-	WindowMinSize           = 5, -- `ImVec2`
-	WindowTitleAlign        = 6, -- `ImVec2`
-	ChildRounding           = 7, -- `float`
-	ChildBorderSize         = 8, -- `float`
-	PopupRounding           = 9, -- `float`
-	PopupBorderSize         = 10, -- `float`
-	FramePadding            = 11, -- `ImVec2`
-	FrameRounding           = 12, -- `float`
-	FrameBorderSize         = 13, -- `float`
-	ItemSpacing             = 14, -- `ImVec2`
-	ItemInnerSpacing        = 15, -- `ImVec2`
-	IndentSpacing           = 16, -- `float`
-	CellPadding             = 17, -- `ImVec2`
-	ScrollbarSize           = 18, -- `float`
-	ScrollbarRounding       = 19, -- `float`
-	GrabMinSize             = 20, -- `float`
-	GrabRounding            = 21, -- `float`
-	TabRounding             = 22, -- `float`
-	ButtonTextAlign         = 23, -- `ImVec2`
-	SelectableTextAlign     = 24, -- `ImVec2`
-	SeparatorTextBorderSize = 25, -- `float`
-	SeparatorTextAlign      = 26, -- `ImVec2`
-	SeparatorTextPadding    = 27, -- `ImVec2`
-	Count                   = 28
+	-- Alpha                   = 0, -- `float`
+	-- DisabledAlpha           = 1, -- `float`
+	-- WindowPadding           = 2, -- `ImVec2`
+	-- WindowRounding          = 3, -- `float`
+	-- WindowBorderSize        = 4, -- `float`
+	-- WindowMinSize           = 5, -- `ImVec2`
+	-- WindowTitleAlign        = 6, -- `ImVec2`
+	-- ChildRounding           = 7, -- `float`
+	-- ChildBorderSize         = 8, -- `float`
+	-- PopupRounding           = 9, -- `float`
+	-- PopupBorderSize         = 10, -- `float`
+	-- FramePadding            = 11, -- `ImVec2`
+	-- FrameRounding           = 12, -- `float`
+	-- FrameBorderSize         = 13, -- `float`
+	-- ItemSpacing             = 14, -- `ImVec2`
+	-- ItemInnerSpacing        = 15, -- `ImVec2`
+	-- IndentSpacing           = 16, -- `float`
+	-- CellPadding             = 17, -- `ImVec2`
+	-- ScrollbarSize           = 18, -- `float`
+	-- ScrollbarRounding       = 19, -- `float`
+	-- GrabMinSize             = 20, -- `float`
+	-- GrabRounding            = 21, -- `float`
+	-- TabRounding             = 22, -- `float`
+	-- ButtonTextAlign         = 23, -- `ImVec2`
+	-- SelectableTextAlign     = 24, -- `ImVec2`
+	-- SeparatorTextBorderSize = 25, -- `float`
+	-- SeparatorTextAlign      = 26, -- `ImVec2`
+	-- SeparatorTextPadding    = 27, -- `ImVec2`
+	-- Count                   = 28
 }
 
----@enum ImGuiCol
-ImGuiCol = {
-	Text                  = 0x00,
-	TextDisabled          = 0x01,
-	WindowBg              = 0x02,
-	ChildBg               = 0x03,
-	PopupBg               = 0x04,
-	Border                = 0x05,
-	BorderShadow          = 0x06,
-	FrameBg               = 0x07,
-	FrameBgHovered        = 0x08,
-	FrameBgActive         = 0x09,
-	TitleBg               = 0x0A,
-	TitleBgActive         = 0x0B,
-	TitleBgCollapsed      = 0x0C,
-	MenuBarBg             = 0x0D,
-	ScrollbarBg           = 0x0E,
-	ScrollbarGrab         = 0x0F,
-	ScrollbarGrabHovered  = 0x10,
-	ScrollbarGrabActive   = 0x11,
-	CheckMark             = 0x12,
-	SliderGrab            = 0x13,
-	SliderGrabActive      = 0x14,
-	Button                = 0x15,
-	ButtonHovered         = 0x16,
-	ButtonActive          = 0x17,
-	Header                = 0x18,
-	HeaderHovered         = 0x19,
-	HeaderActive          = 0x1A,
-	Separator             = 0x1B,
-	SeparatorHovered      = 0x1C,
-	SeparatorActive       = 0x1D,
-	ResizeGrip            = 0x1E,
-	ResizeGripHovered     = 0x1F,
-	ResizeGripActive      = 0x20,
-	Tab                   = 0x21,
-	TabHovered            = 0x22,
-	TabActive             = 0x23,
-	TabUnfocused          = 0x24,
-	TabUnfocusedActive    = 0x25,
-	PlotLines             = 0x26,
-	PlotLinesHovered      = 0x27,
-	PlotHistogram         = 0x28,
-	PlotHistogramHovered  = 0x29,
-	TableHeaderBg         = 0x2A,
-	TableBorderStrong     = 0x2B,
-	TableBorderLight      = 0x2C,
-	TableRowBg            = 0x2D,
-	TableRowBgAlt         = 0x2E,
-	TextSelectedBg        = 0x2F,
-	DragDropTarget        = 0x30,
-	NavHighlight          = 0x31,
-	NavWindowingHighlight = 0x32,
-	NavWindowingDimBg     = 0x33,
-	ModalWindowDimBg      = 0x34,
-	Count                 = 0x35
-}
+---@class ImGuiCol
+---@field Text                  integer = 0
+---@field TextDisabled          integer = 1
+---@field WindowBg              integer = 2,  // Background of normal windows
+---@field ChildBg               integer = 3,  // Background of child windows
+---@field PopupBg               integer = 4,  // Background of popups, menus, tooltips windows
+---@field Border                integer = 5
+---@field BorderShadow          integer = 6
+---@field FrameBg               integer = 7,  // Background of checkbox, radio button, plot, slider, text input
+---@field FrameBgHovered        integer = 8
+---@field FrameBgActive         integer = 9
+---@field TitleBg               integer = 10,  // Title bar
+---@field TitleBgActive         integer = 11,  // Title bar when focused
+---@field TitleBgCollapsed      integer = 12,  // Title bar when collapsed
+---@field MenuBarBg             integer = 13
+---@field ScrollbarBg           integer = 14
+---@field ScrollbarGrab         integer = 15
+---@field ScrollbarGrabHovered  integer = 16
+---@field ScrollbarGrabActive   integer = 17
+---@field CheckMark             integer = 18,  // Checkbox tick and RadioButton circle
+---@field SliderGrab            integer = 19
+---@field SliderGrabActive      integer = 20
+---@field Button                integer = 21
+---@field ButtonHovered         integer = 22
+---@field ButtonActive          integer = 23
+---@field Header                integer = 24,  // Header* colors are used for CollapsingHeader, TreeNode, Selectable, MenuItem
+---@field HeaderHovered         integer = 25
+---@field HeaderActive          integer = 26
+---@field Separator             integer = 27
+---@field SeparatorHovered      integer = 28
+---@field SeparatorActive       integer = 29
+---@field ResizeGrip            integer = 30,  // Resize grip in lower-right and lower-left corners of windows.
+---@field ResizeGripHovered     integer = 31
+---@field ResizeGripActive      integer = 32
+---@field Tab                   integer = 33,  // TabItem in a TabBar
+---@field TabHovered            integer = 34
+---@field TabActive             integer = 35
+---@field TabUnfocusedActive    integer = 37
+---@field PlotLines             integer = 38
+---@field PlotLinesHovered      integer = 39
+---@field PlotHistogram         integer = 40
+---@field PlotHistogramHovered  integer = 41
+---@field TableHeaderBg         integer = 42,  // Table header background
+---@field TableBorderStrong     integer = 43,  // Table outer and header borders (prefer using Alpha=1.0 here)
+---@field TableBorderLight      integer = 44,  // Table inner borders (prefer using Alpha=1.0 here)
+---@field TableRowBg            integer = 45,  // Table row background (even rows)
+---@field TableRowBgAlt         integer = 46,  // Table row background (odd rows)
+---@field TextSelectedBg        integer = 47
+---@field DragDropTarget        integer = 48,  // Rectangle highlighting a drop target
+---@field NavHighlight          integer = 49,  // Gamepad/keyboard: current highlighted item
+---@field NavWindowingHighlight integer = 50,  // Highlight window when using CTRL+TAB
+---@field NavWindowingDimBg     integer = 51,  // Darken/colorize entire screen behind the CTRL+TAB window list, when active
+---@field ModalWindowDimBg      integer = 52,  // Darken/colorize entire screen behind a modal window, when one is active
+---@field Count	                integer = 53,
+ImGuiCol = {}
 
----@enum ImGuiWindowFlags
-ImGuiWindowFlags = {
-	None                      = 0x00000000,
-	NoTitleBar                = 0x00000001,
-	NoResize                  = 0x00000002,
-	NoMove                    = 0x00000004,
-	NoScrollbar               = 0x00000008,
-	NoScrollWithMouse         = 0x00000010,
-	NoCollapse                = 0x00000020,
-	AlwaysAutoResize          = 0x00000040,
-	NoBackground              = 0x00000080,
-	NoSavedSettings           = 0x00000100,
-	NoMouseInputs             = 0x00000200,
-	MenuBar                   = 0x00000400,
-	HorizontalScrollbar       = 0x00000800,
-	NoFocusOnAppearing        = 0x00001000,
-	NoBringToFrontOnFocus     = 0x00002000,
-	AlwaysVerticalScrollbar   = 0x00004000,
-	AlwaysHorizontalScrollbar = 0x00008000,
-	AlwaysUseWindowPadding    = 0x00010000,
-	NoNavInputs               = 0x00020000,
-	NoNavFocus                = 0x00040000,
-	UnsavedDocument           = 0x00080000,
-	NoDocking                 = 0x00100000,
-	NoNav                     = 0x00060000, -- `NoNavInputs | NoNavFocus`
-	NoDecoration              = 0x0000003F, -- `NoTitleBar | NoResize | NoScrollbar | NoCollapse`
-	NoInputs                  = 0x000C0000, -- `NoMouseInputs | NoNav`
-	NavFlattened              = 0x00200000,
-	ChildWindow               = 0x00000001, -- **[Internal]** Used by `BeginChild()`
-	Tooltip                   = 0x00000002, -- **[Internal]** Used by `BeginTooltip()`
-	Popup                     = 0x00000004, -- **[Internal]** Used by `BeginPopup()`
-	Modal                     = 0x00000008, -- **[Internal]** Used by `BeginPopupModal()`
-	ChildMenu                 = 0x00000010, -- **[Internal]** Used by `BeginMenu()`
-}
+---@class ImGuiWindowFlags
+---@field None                      integer = 0
+---@field NoTitleBar                integer = 1 << 0,  // Disable title-bar
+---@field NoResize                  integer = 1 << 1,  // Disable user resizing with the lower-right grip
+---@field NoMove                    integer = 1 << 2,  // Disable user moving the window
+---@field NoScrollbar               integer = 1 << 3,  // Disable scrollbars (window can still scroll with mouse or programmatically)
+---@field NoScrollWithMouse         integer = 1 << 4,  // Disable user vertically scrolling with mouse wheel. On child window, mouse wheel will be forwarded to the parent unless NoScrollbar is also set.
+---@field NoCollapse                integer = 1 << 5,  // Disable user collapsing window by double-clicking on it. Also referred to as Window Menu Button (e.g. within a docking node).
+---@field AlwaysAutoResize          integer = 1 << 6,  // Resize every window to its content every frame
+---@field NoBackground              integer = 1 << 7,  // Disable drawing background color (WindowBg, etc.) and outside border. Similar as using SetNextWindowBgAlpha(0.0f).
+---@field NoSavedSettings           integer = 1 << 8,  // Never load/save settings in .ini file
+---@field NoMouseInputs             integer = 1 << 9,  // Disable catching mouse, hovering test with pass through.
+---@field MenuBar                   integer = 1 << 10,  // Has a menu-bar
+---@field HorizontalScrollbar       integer = 1 << 11,  // Allow horizontal scrollbar to appear (off by default). You may use SetNextWindowContentSize(ImVec2(width,0.0f)); prior to calling Begin() to specify width. Read code in imgui_demo in the "Horizontal Scrolling" section.
+---@field NoFocusOnAppearing        integer = 1 << 12,  // Disable taking focus when transitioning from hidden to visible state
+---@field NoBringToFrontOnFocus     integer = 1 << 13,  // Disable bringing window to front when taking focus (e.g. clicking on it or programmatically giving it focus)
+---@field AlwaysVerticalScrollbar   integer = 1 << 14,  // Always show vertical scrollbar (even if ContentSize.y < Size.y)
+---@field AlwaysHorizontalScrollbar integer = 1 << 15,  // Always show horizontal scrollbar (even if ContentSize.x < Size.x)
+---@field NoNavInputs               integer = 1 << 16,  // No gamepad/keyboard navigation within the window
+---@field NoNavFocus                integer = 1 << 17,  // No focusing toward this window with gamepad/keyboard navigation (e.g. skipped by CTRL+TAB)
+---@field UnsavedDocument           integer = 1 << 18,  // Display a dot next to the title. When used in a tab/docking context, tab is selected when clicking the X + closure is not assumed (will wait for user to stop submitting the tab). Otherwise closure is assumed when pressing the X, so if you keep submitting the tab may reappear at end of tab bar.
+---@field NoNav                     integer = 196608
+---@field NoDecoration              integer = 43
+---@field NoInputs                  integer = 197120
+---@field NavFlattened              integer = 1 << 23,  // [BETA] On child window: share focus scope, allow gamepad/keyboard navigation to cross over parent border to this child or between sibling child windows.   
+---@field ChildWindow               integer = 1 << 24,  // Don't use! For internal use by BeginChild()
+---@field Tooltip                   integer = 1 << 25,  // Don't use! For internal use by BeginTooltip()
+---@field Popup                     integer = 1 << 26,  // Don't use! For internal use by BeginPopup()
+---@field Modal                     integer = 1 << 27,  // Don't use! For internal use by BeginPopupModal()
+---@field ChildMenu                 integer = 1 << 28,  // Don't use! For internal use by BeginMenu()
+ImGuiWindowFlags = {}
+
+---@class ImGuiSliderFlags
+---@field None            integer = 0
+---@field AlwaysClamp     integer = 1 << 4,  // Clamp value to min/max bounds when input manually with CTRL+Click. By default CTRL+Click allows going out of bounds.
+---@field Logarithmic     integer = 1 << 5,  // Make the widget logarithmic (linear otherwise). Consider using ImGuiSliderFlags_NoRoundToFormat with this if using a format-string with small amount of digits.       
+---@field NoRoundToFormat integer = 1 << 6,  // Disable rounding underlying value to match precision of the display format string (e.g. %.3f values are rounded to those 3 digits)
+---@field NoInput         integer = 1 << 7,  // Disable CTRL+Click or Enter key allowing to input text directly into the widget
+---@field InvalidMask_    integer = 1879048207,  // [Internal] We treat using those bits as being potentially a 'float power' argument from the previous API that has got miscast to this enum, and will trigger an assert if needed.
+ImGuiSliderFlags = {}
+
+---@class ImGuiTabItemFlags
+---@field None                         integer = 0
+---@field UnsavedDocument              integer = 1 << 0,  // Display a dot next to the title + set ImGuiTabItemFlags_NoAssumedClosure.
+---@field SetSelected                  integer = 1 << 1,  // Trigger flag to programmatically make the tab selected when calling BeginTabItem()
+---@field NoCloseWithMiddleMouseButton integer = 1 << 2,  // Disable behavior of closing tabs (that are submitted with p_open != NULL) with middle mouse button. You may handle this behavior manually on user's side with if (IsItemHovered() && IsMouseClicked(2)) *p_open = false.
+---@field NoPushId                     integer = 1 << 3,  // Don't call PushID()/PopID() on BeginTabItem()/EndTabItem()
+---@field NoTooltip                    integer = 1 << 4,  // Disable tooltip for the given tab
+---@field NoReorder                    integer = 1 << 5,  // Disable reordering this tab or having another tab cross over this tab
+---@field Leading                      integer = 1 << 6,  // Enforce the tab position to the left of the tab bar (after the tab list popup button)
+---@field Trailing                     integer = 1 << 7,  // Enforce the tab position to the right of the tab bar (before the scrolling buttons)
+---@field NoAssumedClosure             integer = 1 << 8,  // Tab is selected when trying to close + closure is not immediately assumed (will wait for user to stop submitting the tab). Otherwise closure is assumed when pressing the X, so if you keep submitting the tab may reappear at end of tab bar.
+ImGuiTabItemFlags = {}
 
 ---@class ImGuiInputTextFlags
----@field All number
----@field None number
----@field CharsDecimal number
----@field CharsHexadecimal number
----@field CharsUppercase number
----@field CharsNoBlank number
----@field AutoSelectAll number
----@field EnterReturnsTrue number
----@field CallbackCompletion number
----@field CallbackHistory number
----@field CallbackAlways number
----@field CallbackCharFilter number
----@field AllowTabInput number
----@field CtrlEnterForNewLine number
----@field NoHorizontalScroll number
----@field AlwaysOverwrite number
----@field ReadOnly number
----@field Password number
----@field NoUndoRedo number
----@field CharsScientific number
----@field CallbackResize number
----@field CallbackEdit number
----@field EscapeClearsAll number
+---@field All                 integer = 2097151
+---@field None                integer = 0
+---@field CharsDecimal        integer = 1 << 0,  // Allow 0123456789.+-*/
+---@field CharsHexadecimal    integer = 1 << 1,  // Allow 0123456789ABCDEFabcdef
+---@field CharsUppercase      integer = 1 << 2,  // Turn a..z into A..Z
+---@field CharsNoBlank        integer = 1 << 3,  // Filter out spaces, tabs
+---@field AutoSelectAll       integer = 1 << 4,  // Select entire text when first taking mouse focus
+---@field EnterReturnsTrue    integer = 1 << 5,  // Return 'true' when Enter is pressed (as opposed to every time the value was modified). Consider looking at the IsItemDeactivatedAfterEdit() function.
+---@field CallbackCompletion  integer = 1 << 6,  // Callback on pressing TAB (for completion handling)
+---@field CallbackHistory     integer = 1 << 7,  // Callback on pressing Up/Down arrows (for history handling)
+---@field CallbackAlways      integer = 1 << 8,  // Callback on each iteration. User code may query cursor position, modify text buffer.
+---@field CallbackCharFilter  integer = 1 << 9,  // Callback on character inputs to replace or discard them. Modify 'EventChar' to replace or discard, or return 1 in callback to discard.
+---@field AllowTabInput       integer = 1 << 10,  // Pressing TAB input a '\t' character into the text field
+---@field CtrlEnterForNewLine integer = 1 << 11,  // In multi-line mode, unfocus with Enter, add new line with Ctrl+Enter (default is opposite: unfocus with Ctrl+Enter, add line with Enter).
+---@field NoHorizontalScroll  integer = 1 << 12,  // Disable following the cursor horizontally
+---@field AlwaysOverwrite     integer = 1 << 13,  // Overwrite mode
+---@field ReadOnly            integer = 1 << 14,  // Read-only mode
+---@field Password            integer = 1 << 15,  // Password mode, display all characters as '*'
+---@field NoUndoRedo          integer = 1 << 16,  // Disable undo/redo. Note that input text owns the text data while active, if you want to provide your own undo/redo stack you need e.g. to call ClearActiveID().  
+---@field CharsScientific     integer = 1 << 17,  // Allow 0123456789.+-*/eE (Scientific notation input)
+---@field CallbackResize      integer = 1 << 18,  // Callback on buffer capacity changes request (beyond 'buf_size' parameter value), allowing the string to grow. Notify when the string wants to be resized (for string types which hold a cache of their Size). You will be provided a new BufSize in the callback and NEED to honor it. (see misc/cpp/imgui_stdlib.h for an example of using this)
+---@field CallbackEdit        integer = 1 << 19,  // Callback on any edit (note that InputText() already returns true on edit, the callback is useful mainly to manipulate the underlying buffer while focus is active)
+---@field EscapeClearsAll     integer = 1 << 20,  // Escape key clears content if not empty, and deactivate otherwise (contrast to default behavior of Escape to revert)
 ImGuiInputTextFlags = {}
 
 ---@class ImGuiHoveredFlags
----@field All number
----@field None number
----@field ChildWindows number
----@field RootWindow number
----@field AnyWindow number
----@field NoPopupHierarchy number
----@field AllowWhenBlockedByPopup number
----@field AllowWhenBlockedByActiveItem number
----@field AllowWhenOverlappedByItem number
----@field AllowWhenOverlappedByWindow number
----@field AllowWhenDisabled number
----@field NoNavOverride number
----@field AllowWhenOverlapped number
----@field RectOnly number
----@field RootAndChildWindows number
----@field ForTooltip number
----@field Stationary number
----@field DelayNone number
----@field DelayShort number
----@field DelayNormal number
----@field NoSharedDelay number
+---@field All                          integer = 262063
+---@field None                         integer = 0,  // Return true if directly over the item/window, not obstructed by another window, not obstructed by an active popup or modal blocking inputs under them.
+---@field ChildWindows                 integer = 1 << 0,  // IsWindowHovered() only: Return true if any children of the window is hovered
+---@field RootWindow                   integer = 1 << 1,  // IsWindowHovered() only: Test from root window (top most parent of the current hierarchy)
+---@field AnyWindow                    integer = 1 << 2,  // IsWindowHovered() only: Return true if any window is hovered
+---@field NoPopupHierarchy             integer = 1 << 3,  // IsWindowHovered() only: Do not consider popup hierarchy (do not treat popup emitter as parent of popup) (when used with _ChildWindows or _RootWindow)    
+---@field AllowWhenBlockedByPopup      integer = 1 << 5,  // Return true even if a popup window is normally blocking access to this item/window
+---@field AllowWhenBlockedByActiveItem integer = 1 << 7,  // Return true even if an active item is blocking access to this item/window. Useful for Drag and Drop patterns.
+---@field AllowWhenOverlappedByItem    integer = 1 << 8,  // IsItemHovered() only: Return true even if the item uses AllowOverlap mode and is overlapped by another hoverable item.
+---@field AllowWhenOverlappedByWindow  integer = 1 << 9,  // IsItemHovered() only: Return true even if the position is obstructed or overlapped by another window.
+---@field AllowWhenDisabled            integer = 1 << 10,  // IsItemHovered() only: Return true even if the item is disabled
+---@field NoNavOverride                integer = 1 << 11,  // IsItemHovered() only: Disable using gamepad/keyboard navigation state when active, always query mouse
+---@field AllowWhenOverlapped          integer = 768
+---@field RectOnly                     integer = 928
+---@field RootAndChildWindows          integer = 3
+---@field ForTooltip                   integer = 1 << 12,  // Shortcut for standard flags when using IsItemHovered() + SetTooltip() sequence.
+---@field Stationary                   integer = 1 << 13,  // Require mouse to be stationary for style.HoverStationaryDelay (~0.15 sec) at least one time. After this, can move on same item/window. Using the stationary test tends to reduces the need for a long delay.
+---@field DelayNone                    integer = 1 << 14,  // IsItemHovered() only: Return true immediately (default). As this is the default you generally ignore this.
+---@field DelayShort                   integer = 1 << 15,  // IsItemHovered() only: Return true after style.HoverDelayShort elapsed (~0.15 sec) (shared between items) + requires mouse to be stationary for style.HoverStationaryDelay (once per item).
+---@field DelayNormal                  integer = 1 << 16,  // IsItemHovered() only: Return true after style.HoverDelayNormal elapsed (~0.40 sec) (shared between items) + requires mouse to be stationary for style.HoverStationaryDelay (once per item).
+---@field NoSharedDelay                integer = 1 << 17,  // IsItemHovered() only: Disable shared delay system where moving from one item to the next keeps the previous timer for a short time (standard for tooltips with long delays)
 ImGuiHoveredFlags = {}
 
 ---@class ImGuiCond
----@field None number 0x0
----@field Always number 0x1
----@field Once number 0x2
----@field FirstUseEver number 0x4
----@field Appearing number 0x8
+---@field None         integer = 0,  // No condition (always set the variable), same as _Always
+---@field Always       integer = 1 << 0,  // No condition (always set the variable), same as _None
+---@field Once         integer = 1 << 1,  // Set the variable once per runtime session (only the first call will succeed)
+---@field FirstUseEver integer = 1 << 2,  // Set the variable if the object/window has no persistently saved data (no entry in .ini file)
+---@field Appearing    integer = 1 << 3,  // Set the variable if the object/window is appearing after being hidden/inactive (or the first time) Instance Method S
 ImGuiCond = {}
 
 ---@class ImGui

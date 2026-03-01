@@ -569,7 +569,7 @@ for class_name, class_ in classes.items():
     f.close()
 
 
-commands_file_name = f"../docs/lua/types.lua"
+commands_file_name = f"../docs/luals/types.lua"
 f = open(commands_file_name, "w")
 
 f.write(
